@@ -56,7 +56,7 @@ const char *message_get_sender(struct message *m)
 	return NULL;
 }
 
-char *message_pack(struct message *m)
+char *message_pack(struct message *m, int *len)
 {
 	char *pack = NULL;
 	if (m) {
@@ -64,11 +64,14 @@ char *message_pack(struct message *m)
 		char *sender  = (char *)message_get_sender(m);
 
 		int size = strlen(content) + strlen(sender) + 2;
+
 		pack = malloc(sizeof(char) * size);
 		if (pack) {
 			strcpy(pack, content);
 			strcpy(pack + strlen(pack) + 1, sender);
 		}
+
+		*len = size;
 	}
 
 	return pack;

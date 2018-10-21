@@ -24,12 +24,44 @@ pthread_mutex_t CLIENT_LIST_MUTEX;
 
 void client_thread_broadcast(struct client *c, const char *msg)
 {
-	struct message *m = message_create(msg, client_get_name(c));
-	pthread_mutex_lock(&CLIENT_LIST_MUTEX);
+	char *pack = "";
 
-	pthread_mutex_unlock(&CLIENT_LIST_MUTEX);
+	struct message *m = message_create(msg, client_get_name(c));
+	if (m) {
+		int len;
+		pack = message_pack(m, &len);
+		if (pack) {
+			pthread_mutex_lock(&CLIENT_LIST_MUTEX);
+
+			for (struct sllist *p = CLIENT_LIST; p; p = sll_get_next(&p)) {
+				struct client *current_client = (struct client *)sll_get_key(p);
+				int rv = send(client_get_socket(current_client), pack, len, 0);
+				if (rv == -1) {
+					perror("send()");
+				}
+			}
+
+			pthread_mutex_unlock(&CLIENT_LIST_MUTEX);
+
+			free(pack);
+		}
+		message_destroy(m);
+	}
 }
 
+void kill_client(struct client *c)
+{
+	if (c) {
+		pthread_mutex_lock(&CLIENT_LIST_MUTEX);
+		void *key = sll_remove_elm(&CLIENT_LIST, c);
+		pthread_mutex_unlock(&CLIENT_LIST_MUTEX);
+
+		if (key) {
+			client_destroy(c);
+		}
+	}
+
+}
 void *client_thread_listen(void *client)
 {
 	struct client *c = (struct client *)client;
@@ -40,11 +72,10 @@ void *client_thread_listen(void *client)
 		msg[numbytes] = '\0';
 		client_thread_broadcast(c, msg);
 	}
+	kill_client(c);
 
 	return NULL;
 }
-
-
 
 struct addrinfo *get_internet_addr(void)
 {

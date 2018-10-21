@@ -71,6 +71,19 @@ void *sll_remove_last(struct sllist **l)
 	return key;
 }
 
+void *sll_remove_elm(struct sllist **l, void *elm)
+{
+	for ( ; *l; l = &(*l)->next) {
+		void *key = sll_get_key(*l);
+		if (key == elm) {
+			sll_remove_first(l);
+		}
+	}
+
+	if (*l) 
+		return elm;
+	return NULL;
+}
 void *sll_get_key(struct sllist *l)
 {
 	if (l)

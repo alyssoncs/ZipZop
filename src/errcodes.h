@@ -7,7 +7,8 @@ enum errcodes {
 	E_BIND,
 	E_LISTEN,
 	E_BAD_ARGS,
-	E_CONNECT
+	E_CONNECT,
+	E_PTHREAD_CREATE
 };
 
 #endif

@@ -5,6 +5,8 @@
 
 struct sllist;
 
+#define SLL_INIT() NULL;
+
 struct sllist *sll_init(void);
 struct sllist *sll_get_next(struct sllist **l);
 void sll_insert_first(struct sllist **l, void *a);

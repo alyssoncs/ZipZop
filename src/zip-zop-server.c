@@ -7,11 +7,44 @@
 #include <sys/socket.h>
 #include <netdb.h>
 #include <unistd.h>
+#include <pthread.h>
 
 #include "errcodes.h"
+#include "message.h"
+#include "client.h"
+#include "sllist.h"
 
 #define PORT "1234"
 #define BACKLOG 10
+#define CLIENT_NAME_LEN 100
+#define MESSAGE_LEN 2000
+
+struct sllist *CLIENT_LIST = SLL_INIT();
+pthread_mutex_t CLIENT_LIST_MUTEX;
+
+void client_thread_broadcast(struct client *c, const char *msg)
+{
+	struct message *m = message_create(msg, client_get_name(c));
+	pthread_mutex_lock(&CLIENT_LIST_MUTEX);
+
+	pthread_mutex_unlock(&CLIENT_LIST_MUTEX);
+}
+
+void *client_thread_listen(void *client)
+{
+	struct client *c = (struct client *)client;
+	char msg[MESSAGE_LEN];
+	
+	ssize_t numbytes;
+	while ((numbytes = recv(client_get_socket(c), msg, MESSAGE_LEN - 1, 0)) > 0) {
+		msg[numbytes] = '\0';
+		client_thread_broadcast(c, msg);
+	}
+
+	return NULL;
+}
+
+
 
 struct addrinfo *get_internet_addr(void)
 {
@@ -51,8 +84,28 @@ int create_and_bind(struct addrinfo *addr)
 	return sockfd;
 }
 
+void create_new_client(int sockfd)
+{
+	char client_name[CLIENT_NAME_LEN];
+	ssize_t numbytes = recv(sockfd, client_name, CLIENT_NAME_LEN - 1, 0);
+	client_name[numbytes] = '\0';
+
+	struct client *c = client_create(client_name, sockfd);
+	if (c) {
+		pthread_mutex_lock(&CLIENT_LIST_MUTEX);
+		sll_insert_last(&CLIENT_LIST, c);
+		pthread_mutex_unlock(&CLIENT_LIST_MUTEX);
+
+		if (pthread_create(client_get_thread(c), NULL, client_thread_listen, c)) {
+			exit(E_PTHREAD_CREATE);
+		}
+	}
+}
+
 int accept_clients(int sockfd)
 {
+	pthread_mutex_init(&CLIENT_LIST_MUTEX, NULL);
+
 	struct sockaddr_storage client_addr;
 	socklen_t addrlen = sizeof(client_addr);
 	int client_sockfd;
@@ -64,17 +117,14 @@ int accept_clients(int sockfd)
 			continue;
 		}
 
-		int numbytes = 100;
-		char msg[100];
-		recv(client_sockfd, msg, numbytes, 0);
-		printf("cliente: %s\n", msg);
-
+		create_new_client(client_sockfd);
 		close(client_sockfd);
-
 	}
 
 	return 0;
 }
+
+
 
 int main(void)
 {

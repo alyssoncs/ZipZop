@@ -150,7 +150,6 @@ int accept_clients(int sockfd)
 		}
 
 		create_new_client(client_sockfd);
-		//close(client_sockfd);
 	}
 
 	return 0;

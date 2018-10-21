@@ -10,6 +10,11 @@ struct sllist *sll_init(void)
 	return NULL;
 }
 
+struct sllist *sll_get_next(struct sllist **l)
+{
+	return (*l)->next;
+}
+
 void sll_insert_first(struct sllist **l, void *a)
 {
 	struct sllist *node = malloc(sizeof(struct sllist));

@@ -72,6 +72,7 @@ void *client_thread_listen(void *client)
 		msg[numbytes] = '\0';
 		client_thread_broadcast(c, msg);
 	}
+	perror("client_thread_listen -> recv():");
 	kill_client(c);
 
 	return NULL;
@@ -149,7 +150,7 @@ int accept_clients(int sockfd)
 		}
 
 		create_new_client(client_sockfd);
-		close(client_sockfd);
+		//close(client_sockfd);
 	}
 
 	return 0;

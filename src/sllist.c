@@ -40,18 +40,20 @@ void sll_insert_last(struct sllist **l, void *a)
 	}
 }
 
-struct sllist *sll_remove_first(struct sllist **l)
+void *sll_remove_first(struct sllist **l)
 {
 	struct sllist *node = *l;
 
 	if (*l)
 		*l = (*l)->next;
 
-	return node;
+	void *key = sll_get_key(node);
+	free(node);
+	return key;
 }
 
 
-struct sllist *sll_remove_last(struct sllist **l)
+void *sll_remove_last(struct sllist **l)
 {
 	struct sllist *node = *l;
 
@@ -64,7 +66,9 @@ struct sllist *sll_remove_last(struct sllist **l)
 		l = &(*l)->next;
 	}
 
-	return node;
+	void *key = sll_get_key(node);
+	free(node);
+	return key;
 }
 
 void *sll_get_key(struct sllist *l)

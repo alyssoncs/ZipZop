@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-Wall -Wextra -lpthread
-OBJSERV=zip-zop-server.o client.o sllist.o
-OBJCLIE=zip-zop-client.o client.o
+OBJSERV=zip-zop-server.o client.o sllist.o message.o
+OBJCLIE=zip-zop-client.o client.o message.o
 
 start: zip-zop-server zip-zop-client
 

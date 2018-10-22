@@ -1,0 +1,70 @@
+\hypertarget{message_8c}{}\section{src/message.c File Reference}
+\label{message_8c}\index{src/message.\+c@{src/message.\+c}}
+{\ttfamily \#include \char`\"{}message.\+h\char`\"{}}\newline
+Include dependency graph for message.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{message_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmessage}{message}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmessage}{message} $\ast$ \hyperlink{message_8c_af0270eefb03058e936215fd11fde4b93}{message\+\_\+create} (const char $\ast$content, const char $\ast$sender\+\_\+name)
+\item 
+void \hyperlink{message_8c_ad0eaa8623d0f22248ec230fd91bd819b}{message\+\_\+destroy} (struct \hyperlink{structmessage}{message} $\ast$m)
+\item 
+const char $\ast$ \hyperlink{message_8c_a31cd31a7acd86c44c38238f5a5b1da76}{message\+\_\+get\+\_\+content} (struct \hyperlink{structmessage}{message} $\ast$m)
+\item 
+const char $\ast$ \hyperlink{message_8c_ac6e3d955212965dc1ab7b5e3f88bc535}{message\+\_\+get\+\_\+sender} (struct \hyperlink{structmessage}{message} $\ast$m)
+\item 
+char $\ast$ \hyperlink{message_8c_a0e07715664284f7a821216ca83317e60}{message\+\_\+pack} (struct \hyperlink{structmessage}{message} $\ast$m, int $\ast$len)
+\item 
+struct \hyperlink{structmessage}{message} $\ast$ \hyperlink{message_8c_a3ba54a38dd0b04dea973f33437bb9125}{message\+\_\+unpack} (char $\ast$pack)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{message_8c_af0270eefb03058e936215fd11fde4b93}\label{message_8c_af0270eefb03058e936215fd11fde4b93}} 
+\index{message.\+c@{message.\+c}!message\+\_\+create@{message\+\_\+create}}
+\index{message\+\_\+create@{message\+\_\+create}!message.\+c@{message.\+c}}
+\subsubsection{\texorpdfstring{message\+\_\+create()}{message\_create()}}
+{\footnotesize\ttfamily struct \hyperlink{structmessage}{message}$\ast$ message\+\_\+create (\begin{DoxyParamCaption}\item[{const char $\ast$}]{content,  }\item[{const char $\ast$}]{sender\+\_\+name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{message_8c_ad0eaa8623d0f22248ec230fd91bd819b}\label{message_8c_ad0eaa8623d0f22248ec230fd91bd819b}} 
+\index{message.\+c@{message.\+c}!message\+\_\+destroy@{message\+\_\+destroy}}
+\index{message\+\_\+destroy@{message\+\_\+destroy}!message.\+c@{message.\+c}}
+\subsubsection{\texorpdfstring{message\+\_\+destroy()}{message\_destroy()}}
+{\footnotesize\ttfamily void message\+\_\+destroy (\begin{DoxyParamCaption}\item[{struct \hyperlink{structmessage}{message} $\ast$}]{m }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{message_8c_a31cd31a7acd86c44c38238f5a5b1da76}\label{message_8c_a31cd31a7acd86c44c38238f5a5b1da76}} 
+\index{message.\+c@{message.\+c}!message\+\_\+get\+\_\+content@{message\+\_\+get\+\_\+content}}
+\index{message\+\_\+get\+\_\+content@{message\+\_\+get\+\_\+content}!message.\+c@{message.\+c}}
+\subsubsection{\texorpdfstring{message\+\_\+get\+\_\+content()}{message\_get\_content()}}
+{\footnotesize\ttfamily const char$\ast$ message\+\_\+get\+\_\+content (\begin{DoxyParamCaption}\item[{struct \hyperlink{structmessage}{message} $\ast$}]{m }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{message_8c_ac6e3d955212965dc1ab7b5e3f88bc535}\label{message_8c_ac6e3d955212965dc1ab7b5e3f88bc535}} 
+\index{message.\+c@{message.\+c}!message\+\_\+get\+\_\+sender@{message\+\_\+get\+\_\+sender}}
+\index{message\+\_\+get\+\_\+sender@{message\+\_\+get\+\_\+sender}!message.\+c@{message.\+c}}
+\subsubsection{\texorpdfstring{message\+\_\+get\+\_\+sender()}{message\_get\_sender()}}
+{\footnotesize\ttfamily const char$\ast$ message\+\_\+get\+\_\+sender (\begin{DoxyParamCaption}\item[{struct \hyperlink{structmessage}{message} $\ast$}]{m }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{message_8c_a0e07715664284f7a821216ca83317e60}\label{message_8c_a0e07715664284f7a821216ca83317e60}} 
+\index{message.\+c@{message.\+c}!message\+\_\+pack@{message\+\_\+pack}}
+\index{message\+\_\+pack@{message\+\_\+pack}!message.\+c@{message.\+c}}
+\subsubsection{\texorpdfstring{message\+\_\+pack()}{message\_pack()}}
+{\footnotesize\ttfamily char$\ast$ message\+\_\+pack (\begin{DoxyParamCaption}\item[{struct \hyperlink{structmessage}{message} $\ast$}]{m,  }\item[{int $\ast$}]{len }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{message_8c_a3ba54a38dd0b04dea973f33437bb9125}\label{message_8c_a3ba54a38dd0b04dea973f33437bb9125}} 
+\index{message.\+c@{message.\+c}!message\+\_\+unpack@{message\+\_\+unpack}}
+\index{message\+\_\+unpack@{message\+\_\+unpack}!message.\+c@{message.\+c}}
+\subsubsection{\texorpdfstring{message\+\_\+unpack()}{message\_unpack()}}
+{\footnotesize\ttfamily struct \hyperlink{structmessage}{message}$\ast$ message\+\_\+unpack (\begin{DoxyParamCaption}\item[{char $\ast$}]{pack }\end{DoxyParamCaption})}
+

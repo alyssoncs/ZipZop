@@ -1,0 +1,103 @@
+\hypertarget{sllist_8h}{}\section{src/sllist.h File Reference}
+\label{sllist_8h}\index{src/sllist.\+h@{src/sllist.\+h}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for sllist.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{sllist_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{sllist_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{sllist_8h_a4f1348bb9eb6fe8c2b112e39c1887290}{S\+L\+L\+\_\+\+I\+N\+IT}()~N\+U\+LL;
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structsllist}{sllist} $\ast$ \hyperlink{sllist_8h_ada173d32da00693ac4e803b1343ec4ac}{sll\+\_\+init} (void)
+\item 
+struct \hyperlink{structsllist}{sllist} $\ast$ \hyperlink{sllist_8h_aa391dba476f2cf8290a77d7445bde246}{sll\+\_\+get\+\_\+next} (struct \hyperlink{structsllist}{sllist} $\ast$$\ast$l)
+\item 
+void \hyperlink{sllist_8h_a798d672d70a10222966c9de995496f9f}{sll\+\_\+insert\+\_\+first} (struct \hyperlink{structsllist}{sllist} $\ast$$\ast$l, void $\ast$a)
+\item 
+void \hyperlink{sllist_8h_a25e60a1bd89c31e00660743c50aeac87}{sll\+\_\+insert\+\_\+last} (struct \hyperlink{structsllist}{sllist} $\ast$$\ast$l, void $\ast$a)
+\item 
+void $\ast$ \hyperlink{sllist_8h_a3d88e7dea230b8d5854a17f106fb9740}{sll\+\_\+remove\+\_\+first} (struct \hyperlink{structsllist}{sllist} $\ast$$\ast$l)
+\item 
+void $\ast$ \hyperlink{sllist_8h_ab30ebb23c8ba76871885110c64f026f9}{sll\+\_\+remove\+\_\+last} (struct \hyperlink{structsllist}{sllist} $\ast$$\ast$l)
+\item 
+void $\ast$ \hyperlink{sllist_8h_a6a16207cf8ef79ba25ae8e1453ccf0bc}{sll\+\_\+remove\+\_\+elm} (struct \hyperlink{structsllist}{sllist} $\ast$$\ast$l, void $\ast$elm)
+\item 
+void $\ast$ \hyperlink{sllist_8h_ac2c3278ad40114c39ec8d55e7ffc46b3}{sll\+\_\+get\+\_\+key} (struct \hyperlink{structsllist}{sllist} $\ast$l)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{sllist_8h_a4f1348bb9eb6fe8c2b112e39c1887290}\label{sllist_8h_a4f1348bb9eb6fe8c2b112e39c1887290}} 
+\index{sllist.\+h@{sllist.\+h}!S\+L\+L\+\_\+\+I\+N\+IT@{S\+L\+L\+\_\+\+I\+N\+IT}}
+\index{S\+L\+L\+\_\+\+I\+N\+IT@{S\+L\+L\+\_\+\+I\+N\+IT}!sllist.\+h@{sllist.\+h}}
+\subsubsection{\texorpdfstring{S\+L\+L\+\_\+\+I\+N\+IT}{SLL\_INIT}}
+{\footnotesize\ttfamily \#define S\+L\+L\+\_\+\+I\+N\+IT(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~N\+U\+LL;}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{sllist_8h_ac2c3278ad40114c39ec8d55e7ffc46b3}\label{sllist_8h_ac2c3278ad40114c39ec8d55e7ffc46b3}} 
+\index{sllist.\+h@{sllist.\+h}!sll\+\_\+get\+\_\+key@{sll\+\_\+get\+\_\+key}}
+\index{sll\+\_\+get\+\_\+key@{sll\+\_\+get\+\_\+key}!sllist.\+h@{sllist.\+h}}
+\subsubsection{\texorpdfstring{sll\+\_\+get\+\_\+key()}{sll\_get\_key()}}
+{\footnotesize\ttfamily void$\ast$ sll\+\_\+get\+\_\+key (\begin{DoxyParamCaption}\item[{struct \hyperlink{structsllist}{sllist} $\ast$}]{l }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sllist_8h_aa391dba476f2cf8290a77d7445bde246}\label{sllist_8h_aa391dba476f2cf8290a77d7445bde246}} 
+\index{sllist.\+h@{sllist.\+h}!sll\+\_\+get\+\_\+next@{sll\+\_\+get\+\_\+next}}
+\index{sll\+\_\+get\+\_\+next@{sll\+\_\+get\+\_\+next}!sllist.\+h@{sllist.\+h}}
+\subsubsection{\texorpdfstring{sll\+\_\+get\+\_\+next()}{sll\_get\_next()}}
+{\footnotesize\ttfamily struct \hyperlink{structsllist}{sllist}$\ast$ sll\+\_\+get\+\_\+next (\begin{DoxyParamCaption}\item[{struct \hyperlink{structsllist}{sllist} $\ast$$\ast$}]{l }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sllist_8h_ada173d32da00693ac4e803b1343ec4ac}\label{sllist_8h_ada173d32da00693ac4e803b1343ec4ac}} 
+\index{sllist.\+h@{sllist.\+h}!sll\+\_\+init@{sll\+\_\+init}}
+\index{sll\+\_\+init@{sll\+\_\+init}!sllist.\+h@{sllist.\+h}}
+\subsubsection{\texorpdfstring{sll\+\_\+init()}{sll\_init()}}
+{\footnotesize\ttfamily struct \hyperlink{structsllist}{sllist}$\ast$ sll\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sllist_8h_a798d672d70a10222966c9de995496f9f}\label{sllist_8h_a798d672d70a10222966c9de995496f9f}} 
+\index{sllist.\+h@{sllist.\+h}!sll\+\_\+insert\+\_\+first@{sll\+\_\+insert\+\_\+first}}
+\index{sll\+\_\+insert\+\_\+first@{sll\+\_\+insert\+\_\+first}!sllist.\+h@{sllist.\+h}}
+\subsubsection{\texorpdfstring{sll\+\_\+insert\+\_\+first()}{sll\_insert\_first()}}
+{\footnotesize\ttfamily void sll\+\_\+insert\+\_\+first (\begin{DoxyParamCaption}\item[{struct \hyperlink{structsllist}{sllist} $\ast$$\ast$}]{l,  }\item[{void $\ast$}]{a }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sllist_8h_a25e60a1bd89c31e00660743c50aeac87}\label{sllist_8h_a25e60a1bd89c31e00660743c50aeac87}} 
+\index{sllist.\+h@{sllist.\+h}!sll\+\_\+insert\+\_\+last@{sll\+\_\+insert\+\_\+last}}
+\index{sll\+\_\+insert\+\_\+last@{sll\+\_\+insert\+\_\+last}!sllist.\+h@{sllist.\+h}}
+\subsubsection{\texorpdfstring{sll\+\_\+insert\+\_\+last()}{sll\_insert\_last()}}
+{\footnotesize\ttfamily void sll\+\_\+insert\+\_\+last (\begin{DoxyParamCaption}\item[{struct \hyperlink{structsllist}{sllist} $\ast$$\ast$}]{l,  }\item[{void $\ast$}]{a }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sllist_8h_a6a16207cf8ef79ba25ae8e1453ccf0bc}\label{sllist_8h_a6a16207cf8ef79ba25ae8e1453ccf0bc}} 
+\index{sllist.\+h@{sllist.\+h}!sll\+\_\+remove\+\_\+elm@{sll\+\_\+remove\+\_\+elm}}
+\index{sll\+\_\+remove\+\_\+elm@{sll\+\_\+remove\+\_\+elm}!sllist.\+h@{sllist.\+h}}
+\subsubsection{\texorpdfstring{sll\+\_\+remove\+\_\+elm()}{sll\_remove\_elm()}}
+{\footnotesize\ttfamily void$\ast$ sll\+\_\+remove\+\_\+elm (\begin{DoxyParamCaption}\item[{struct \hyperlink{structsllist}{sllist} $\ast$$\ast$}]{l,  }\item[{void $\ast$}]{elm }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sllist_8h_a3d88e7dea230b8d5854a17f106fb9740}\label{sllist_8h_a3d88e7dea230b8d5854a17f106fb9740}} 
+\index{sllist.\+h@{sllist.\+h}!sll\+\_\+remove\+\_\+first@{sll\+\_\+remove\+\_\+first}}
+\index{sll\+\_\+remove\+\_\+first@{sll\+\_\+remove\+\_\+first}!sllist.\+h@{sllist.\+h}}
+\subsubsection{\texorpdfstring{sll\+\_\+remove\+\_\+first()}{sll\_remove\_first()}}
+{\footnotesize\ttfamily void$\ast$ sll\+\_\+remove\+\_\+first (\begin{DoxyParamCaption}\item[{struct \hyperlink{structsllist}{sllist} $\ast$$\ast$}]{l }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sllist_8h_ab30ebb23c8ba76871885110c64f026f9}\label{sllist_8h_ab30ebb23c8ba76871885110c64f026f9}} 
+\index{sllist.\+h@{sllist.\+h}!sll\+\_\+remove\+\_\+last@{sll\+\_\+remove\+\_\+last}}
+\index{sll\+\_\+remove\+\_\+last@{sll\+\_\+remove\+\_\+last}!sllist.\+h@{sllist.\+h}}
+\subsubsection{\texorpdfstring{sll\+\_\+remove\+\_\+last()}{sll\_remove\_last()}}
+{\footnotesize\ttfamily void$\ast$ sll\+\_\+remove\+\_\+last (\begin{DoxyParamCaption}\item[{struct \hyperlink{structsllist}{sllist} $\ast$$\ast$}]{l }\end{DoxyParamCaption})}
+

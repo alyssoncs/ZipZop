@@ -1,0 +1,130 @@
+\hypertarget{zip-zop-client_8c}{}\section{src/zip-\/zop-\/client.c File Reference}
+\label{zip-zop-client_8c}\index{src/zip-\/zop-\/client.\+c@{src/zip-\/zop-\/client.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netdb.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}errcodes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}message.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}client.\+h\char`\"{}}\newline
+Include dependency graph for zip-\/zop-\/client.c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{zip-zop-client_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{zip-zop-client_8c_a614217d263be1fb1a5f76e2ff7be19a2}{P\+O\+RT}~\char`\"{}1234\char`\"{}
+\item 
+\#define \hyperlink{zip-zop-client_8c_aa2dfc63100e2bed7efb1b0cd09dea107}{M\+E\+S\+S\+A\+G\+E\+\_\+\+L\+EN}~2000
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{zip-zop-client_8c_ae42aaff0193542f01451e25d0d0e6725}{check\+\_\+args} (int argc)
+\item 
+void \hyperlink{zip-zop-client_8c_a120fec5c70bad673e9b1c2e91b28fe5f}{print\+\_\+usage} (const char $\ast$name)
+\item 
+void \hyperlink{zip-zop-client_8c_aec5550cf115ba01d0da023ba9d1876bb}{show\+\_\+message} (struct \hyperlink{structmessage}{message} $\ast$m)
+\item 
+void $\ast$ \hyperlink{zip-zop-client_8c_aafa1438575f3295609976f35a6518cca}{listen\+\_\+thread} (void $\ast$\hyperlink{structclient}{client})
+\item 
+void $\ast$ \hyperlink{zip-zop-client_8c_a7ca038c133aa6aca1c539e69d4ee675f}{speak\+\_\+thread} (void $\ast$\hyperlink{structclient}{client})
+\item 
+struct addrinfo $\ast$ \hyperlink{zip-zop-client_8c_a76840de4643d86b9d0a968ec2d1acae3}{get\+\_\+server\+\_\+addr} (const char $\ast$server\+\_\+name)
+\item 
+int \hyperlink{zip-zop-client_8c_aff1f8c91603968e32da45fc6ef4bad4d}{create\+\_\+and\+\_\+connect} (struct addrinfo $\ast$addr)
+\item 
+void \hyperlink{zip-zop-client_8c_acb0e43d47379736b891394dd383064be}{server\+\_\+introduction} (struct \hyperlink{structclient}{client} $\ast$c)
+\item 
+void \hyperlink{zip-zop-client_8c_a1c3a34b362da4351d526c8af94b228c6}{communicate} (const char $\ast$user\+\_\+name, int sockfd)
+\item 
+int \hyperlink{zip-zop-client_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{zip-zop-client_8c_aa2dfc63100e2bed7efb1b0cd09dea107}\label{zip-zop-client_8c_aa2dfc63100e2bed7efb1b0cd09dea107}} 
+\index{zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}!M\+E\+S\+S\+A\+G\+E\+\_\+\+L\+EN@{M\+E\+S\+S\+A\+G\+E\+\_\+\+L\+EN}}
+\index{M\+E\+S\+S\+A\+G\+E\+\_\+\+L\+EN@{M\+E\+S\+S\+A\+G\+E\+\_\+\+L\+EN}!zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}}
+\subsubsection{\texorpdfstring{M\+E\+S\+S\+A\+G\+E\+\_\+\+L\+EN}{MESSAGE\_LEN}}
+{\footnotesize\ttfamily \#define M\+E\+S\+S\+A\+G\+E\+\_\+\+L\+EN~2000}
+
+\mbox{\Hypertarget{zip-zop-client_8c_a614217d263be1fb1a5f76e2ff7be19a2}\label{zip-zop-client_8c_a614217d263be1fb1a5f76e2ff7be19a2}} 
+\index{zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}!P\+O\+RT@{P\+O\+RT}}
+\index{P\+O\+RT@{P\+O\+RT}!zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}}
+\subsubsection{\texorpdfstring{P\+O\+RT}{PORT}}
+{\footnotesize\ttfamily \#define P\+O\+RT~\char`\"{}1234\char`\"{}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{zip-zop-client_8c_ae42aaff0193542f01451e25d0d0e6725}\label{zip-zop-client_8c_ae42aaff0193542f01451e25d0d0e6725}} 
+\index{zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}!check\+\_\+args@{check\+\_\+args}}
+\index{check\+\_\+args@{check\+\_\+args}!zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}}
+\subsubsection{\texorpdfstring{check\+\_\+args()}{check\_args()}}
+{\footnotesize\ttfamily bool check\+\_\+args (\begin{DoxyParamCaption}\item[{int}]{argc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{zip-zop-client_8c_a1c3a34b362da4351d526c8af94b228c6}\label{zip-zop-client_8c_a1c3a34b362da4351d526c8af94b228c6}} 
+\index{zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}!communicate@{communicate}}
+\index{communicate@{communicate}!zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}}
+\subsubsection{\texorpdfstring{communicate()}{communicate()}}
+{\footnotesize\ttfamily void communicate (\begin{DoxyParamCaption}\item[{const char $\ast$}]{user\+\_\+name,  }\item[{int}]{sockfd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{zip-zop-client_8c_aff1f8c91603968e32da45fc6ef4bad4d}\label{zip-zop-client_8c_aff1f8c91603968e32da45fc6ef4bad4d}} 
+\index{zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}!create\+\_\+and\+\_\+connect@{create\+\_\+and\+\_\+connect}}
+\index{create\+\_\+and\+\_\+connect@{create\+\_\+and\+\_\+connect}!zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}}
+\subsubsection{\texorpdfstring{create\+\_\+and\+\_\+connect()}{create\_and\_connect()}}
+{\footnotesize\ttfamily int create\+\_\+and\+\_\+connect (\begin{DoxyParamCaption}\item[{struct addrinfo $\ast$}]{addr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{zip-zop-client_8c_a76840de4643d86b9d0a968ec2d1acae3}\label{zip-zop-client_8c_a76840de4643d86b9d0a968ec2d1acae3}} 
+\index{zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}!get\+\_\+server\+\_\+addr@{get\+\_\+server\+\_\+addr}}
+\index{get\+\_\+server\+\_\+addr@{get\+\_\+server\+\_\+addr}!zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}}
+\subsubsection{\texorpdfstring{get\+\_\+server\+\_\+addr()}{get\_server\_addr()}}
+{\footnotesize\ttfamily struct addrinfo$\ast$ get\+\_\+server\+\_\+addr (\begin{DoxyParamCaption}\item[{const char $\ast$}]{server\+\_\+name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{zip-zop-client_8c_aafa1438575f3295609976f35a6518cca}\label{zip-zop-client_8c_aafa1438575f3295609976f35a6518cca}} 
+\index{zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}!listen\+\_\+thread@{listen\+\_\+thread}}
+\index{listen\+\_\+thread@{listen\+\_\+thread}!zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}}
+\subsubsection{\texorpdfstring{listen\+\_\+thread()}{listen\_thread()}}
+{\footnotesize\ttfamily void$\ast$ listen\+\_\+thread (\begin{DoxyParamCaption}\item[{void $\ast$}]{client }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{zip-zop-client_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{zip-zop-client_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}!main@{main}}
+\index{main@{main}!zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{zip-zop-client_8c_a120fec5c70bad673e9b1c2e91b28fe5f}\label{zip-zop-client_8c_a120fec5c70bad673e9b1c2e91b28fe5f}} 
+\index{zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}!print\+\_\+usage@{print\+\_\+usage}}
+\index{print\+\_\+usage@{print\+\_\+usage}!zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}}
+\subsubsection{\texorpdfstring{print\+\_\+usage()}{print\_usage()}}
+{\footnotesize\ttfamily void print\+\_\+usage (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{zip-zop-client_8c_acb0e43d47379736b891394dd383064be}\label{zip-zop-client_8c_acb0e43d47379736b891394dd383064be}} 
+\index{zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}!server\+\_\+introduction@{server\+\_\+introduction}}
+\index{server\+\_\+introduction@{server\+\_\+introduction}!zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}}
+\subsubsection{\texorpdfstring{server\+\_\+introduction()}{server\_introduction()}}
+{\footnotesize\ttfamily void server\+\_\+introduction (\begin{DoxyParamCaption}\item[{struct \hyperlink{structclient}{client} $\ast$}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{zip-zop-client_8c_aec5550cf115ba01d0da023ba9d1876bb}\label{zip-zop-client_8c_aec5550cf115ba01d0da023ba9d1876bb}} 
+\index{zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}!show\+\_\+message@{show\+\_\+message}}
+\index{show\+\_\+message@{show\+\_\+message}!zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}}
+\subsubsection{\texorpdfstring{show\+\_\+message()}{show\_message()}}
+{\footnotesize\ttfamily void show\+\_\+message (\begin{DoxyParamCaption}\item[{struct \hyperlink{structmessage}{message} $\ast$}]{m }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{zip-zop-client_8c_a7ca038c133aa6aca1c539e69d4ee675f}\label{zip-zop-client_8c_a7ca038c133aa6aca1c539e69d4ee675f}} 
+\index{zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}!speak\+\_\+thread@{speak\+\_\+thread}}
+\index{speak\+\_\+thread@{speak\+\_\+thread}!zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}}
+\subsubsection{\texorpdfstring{speak\+\_\+thread()}{speak\_thread()}}
+{\footnotesize\ttfamily void$\ast$ speak\+\_\+thread (\begin{DoxyParamCaption}\item[{void $\ast$}]{client }\end{DoxyParamCaption})}
+

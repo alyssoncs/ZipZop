@@ -1,0 +1,86 @@
+\hypertarget{client_8c}{}\section{src/client.c File Reference}
+\label{client_8c}\index{src/client.\+c@{src/client.\+c}}
+{\ttfamily \#include \char`\"{}client.\+h\char`\"{}}\newline
+Include dependency graph for client.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{client_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structclient}{client}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structclient}{client} $\ast$ \hyperlink{client_8c_a2a4a2cc446bcd65f49daf665868ede23}{client\+\_\+create} (const char $\ast$name, int sockfd)
+\item 
+void \hyperlink{client_8c_a992d912c8130441b3a85079ab28832e9}{client\+\_\+destroy} (struct \hyperlink{structclient}{client} $\ast$c)
+\item 
+const char $\ast$ \hyperlink{client_8c_a609e1a23ff124b38eebeaf968f3296f3}{client\+\_\+get\+\_\+name} (struct \hyperlink{structclient}{client} $\ast$c)
+\item 
+int \hyperlink{client_8c_a9d2dab7f0e59959392e6b674d45a0183}{client\+\_\+get\+\_\+socket} (struct \hyperlink{structclient}{client} $\ast$c)
+\item 
+pthread\+\_\+t $\ast$ \hyperlink{client_8c_acbc30fcef0ca5de9f1768ff03a3af727}{client\+\_\+get\+\_\+thread} (struct \hyperlink{structclient}{client} $\ast$c)
+\item 
+void \hyperlink{client_8c_a1a0a4dc1973ebe7e14fb34546f870829}{client\+\_\+set\+\_\+name} (struct \hyperlink{structclient}{client} $\ast$c, const char $\ast$name)
+\item 
+void \hyperlink{client_8c_af6bd0240b4fb0e0128cb9d91da55f2b8}{client\+\_\+set\+\_\+socket} (struct \hyperlink{structclient}{client} $\ast$c, int sockfd)
+\item 
+void \hyperlink{client_8c_a8316dd83e8f2d0fff9b3953897db8f4b}{client\+\_\+set\+\_\+thread} (struct \hyperlink{structclient}{client} $\ast$c, pthread\+\_\+t thread)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{client_8c_a2a4a2cc446bcd65f49daf665868ede23}\label{client_8c_a2a4a2cc446bcd65f49daf665868ede23}} 
+\index{client.\+c@{client.\+c}!client\+\_\+create@{client\+\_\+create}}
+\index{client\+\_\+create@{client\+\_\+create}!client.\+c@{client.\+c}}
+\subsubsection{\texorpdfstring{client\+\_\+create()}{client\_create()}}
+{\footnotesize\ttfamily struct \hyperlink{structclient}{client}$\ast$ client\+\_\+create (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{int}]{sockfd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{client_8c_a992d912c8130441b3a85079ab28832e9}\label{client_8c_a992d912c8130441b3a85079ab28832e9}} 
+\index{client.\+c@{client.\+c}!client\+\_\+destroy@{client\+\_\+destroy}}
+\index{client\+\_\+destroy@{client\+\_\+destroy}!client.\+c@{client.\+c}}
+\subsubsection{\texorpdfstring{client\+\_\+destroy()}{client\_destroy()}}
+{\footnotesize\ttfamily void client\+\_\+destroy (\begin{DoxyParamCaption}\item[{struct \hyperlink{structclient}{client} $\ast$}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{client_8c_a609e1a23ff124b38eebeaf968f3296f3}\label{client_8c_a609e1a23ff124b38eebeaf968f3296f3}} 
+\index{client.\+c@{client.\+c}!client\+\_\+get\+\_\+name@{client\+\_\+get\+\_\+name}}
+\index{client\+\_\+get\+\_\+name@{client\+\_\+get\+\_\+name}!client.\+c@{client.\+c}}
+\subsubsection{\texorpdfstring{client\+\_\+get\+\_\+name()}{client\_get\_name()}}
+{\footnotesize\ttfamily const char$\ast$ client\+\_\+get\+\_\+name (\begin{DoxyParamCaption}\item[{struct \hyperlink{structclient}{client} $\ast$}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{client_8c_a9d2dab7f0e59959392e6b674d45a0183}\label{client_8c_a9d2dab7f0e59959392e6b674d45a0183}} 
+\index{client.\+c@{client.\+c}!client\+\_\+get\+\_\+socket@{client\+\_\+get\+\_\+socket}}
+\index{client\+\_\+get\+\_\+socket@{client\+\_\+get\+\_\+socket}!client.\+c@{client.\+c}}
+\subsubsection{\texorpdfstring{client\+\_\+get\+\_\+socket()}{client\_get\_socket()}}
+{\footnotesize\ttfamily int client\+\_\+get\+\_\+socket (\begin{DoxyParamCaption}\item[{struct \hyperlink{structclient}{client} $\ast$}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{client_8c_acbc30fcef0ca5de9f1768ff03a3af727}\label{client_8c_acbc30fcef0ca5de9f1768ff03a3af727}} 
+\index{client.\+c@{client.\+c}!client\+\_\+get\+\_\+thread@{client\+\_\+get\+\_\+thread}}
+\index{client\+\_\+get\+\_\+thread@{client\+\_\+get\+\_\+thread}!client.\+c@{client.\+c}}
+\subsubsection{\texorpdfstring{client\+\_\+get\+\_\+thread()}{client\_get\_thread()}}
+{\footnotesize\ttfamily pthread\+\_\+t$\ast$ client\+\_\+get\+\_\+thread (\begin{DoxyParamCaption}\item[{struct \hyperlink{structclient}{client} $\ast$}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{client_8c_a1a0a4dc1973ebe7e14fb34546f870829}\label{client_8c_a1a0a4dc1973ebe7e14fb34546f870829}} 
+\index{client.\+c@{client.\+c}!client\+\_\+set\+\_\+name@{client\+\_\+set\+\_\+name}}
+\index{client\+\_\+set\+\_\+name@{client\+\_\+set\+\_\+name}!client.\+c@{client.\+c}}
+\subsubsection{\texorpdfstring{client\+\_\+set\+\_\+name()}{client\_set\_name()}}
+{\footnotesize\ttfamily void client\+\_\+set\+\_\+name (\begin{DoxyParamCaption}\item[{struct \hyperlink{structclient}{client} $\ast$}]{c,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{client_8c_af6bd0240b4fb0e0128cb9d91da55f2b8}\label{client_8c_af6bd0240b4fb0e0128cb9d91da55f2b8}} 
+\index{client.\+c@{client.\+c}!client\+\_\+set\+\_\+socket@{client\+\_\+set\+\_\+socket}}
+\index{client\+\_\+set\+\_\+socket@{client\+\_\+set\+\_\+socket}!client.\+c@{client.\+c}}
+\subsubsection{\texorpdfstring{client\+\_\+set\+\_\+socket()}{client\_set\_socket()}}
+{\footnotesize\ttfamily void client\+\_\+set\+\_\+socket (\begin{DoxyParamCaption}\item[{struct \hyperlink{structclient}{client} $\ast$}]{c,  }\item[{int}]{sockfd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{client_8c_a8316dd83e8f2d0fff9b3953897db8f4b}\label{client_8c_a8316dd83e8f2d0fff9b3953897db8f4b}} 
+\index{client.\+c@{client.\+c}!client\+\_\+set\+\_\+thread@{client\+\_\+set\+\_\+thread}}
+\index{client\+\_\+set\+\_\+thread@{client\+\_\+set\+\_\+thread}!client.\+c@{client.\+c}}
+\subsubsection{\texorpdfstring{client\+\_\+set\+\_\+thread()}{client\_set\_thread()}}
+{\footnotesize\ttfamily void client\+\_\+set\+\_\+thread (\begin{DoxyParamCaption}\item[{struct \hyperlink{structclient}{client} $\ast$}]{c,  }\item[{pthread\+\_\+t}]{thread }\end{DoxyParamCaption})}
+

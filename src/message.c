@@ -1,7 +1,7 @@
 #include "message.h"
 
 /**
- * @brief Struct reresenting a messege sent by some sender.
+ * @brief Struct representing a messege sent by some sender.
  */
 struct message {
 	const char *content; 		/**< The content of the message */

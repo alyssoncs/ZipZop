@@ -74,8 +74,6 @@ $(function() {
 Include dependency graph for message.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="message_8h__incl.png" border="0" usemap="#src_2message_8h" alt=""/></div>
-<map name="src_2message_8h" id="src_2message_8h">
-</map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -93,14 +91,19 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:af0270eefb03058e936215fd11fde4b93"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structmessage.html">message</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="message_8h.html#af0270eefb03058e936215fd11fde4b93">message_create</a> (const char *content, const char *sender_name)</td></tr>
+<tr class="memdesc:af0270eefb03058e936215fd11fde4b93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a message.  <a href="#af0270eefb03058e936215fd11fde4b93">More...</a><br /></td></tr>
 <tr class="separator:af0270eefb03058e936215fd11fde4b93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0eaa8623d0f22248ec230fd91bd819b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="message_8h.html#ad0eaa8623d0f22248ec230fd91bd819b">message_destroy</a> (struct <a class="el" href="structmessage.html">message</a> *m)</td></tr>
+<tr class="memdesc:ad0eaa8623d0f22248ec230fd91bd819b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys a message.  <a href="#ad0eaa8623d0f22248ec230fd91bd819b">More...</a><br /></td></tr>
 <tr class="separator:ad0eaa8623d0f22248ec230fd91bd819b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31cd31a7acd86c44c38238f5a5b1da76"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="message_8h.html#a31cd31a7acd86c44c38238f5a5b1da76">message_get_content</a> (struct <a class="el" href="structmessage.html">message</a> *m)</td></tr>
+<tr class="memdesc:a31cd31a7acd86c44c38238f5a5b1da76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the message content.  <a href="#a31cd31a7acd86c44c38238f5a5b1da76">More...</a><br /></td></tr>
 <tr class="separator:a31cd31a7acd86c44c38238f5a5b1da76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6e3d955212965dc1ab7b5e3f88bc535"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="message_8h.html#ac6e3d955212965dc1ab7b5e3f88bc535">message_get_sender</a> (struct <a class="el" href="structmessage.html">message</a> *m)</td></tr>
+<tr class="memdesc:ac6e3d955212965dc1ab7b5e3f88bc535"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the message sender.  <a href="#ac6e3d955212965dc1ab7b5e3f88bc535">More...</a><br /></td></tr>
 <tr class="separator:ac6e3d955212965dc1ab7b5e3f88bc535"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e07715664284f7a821216ca83317e60"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="message_8h.html#a0e07715664284f7a821216ca83317e60">message_pack</a> (struct <a class="el" href="structmessage.html">message</a> *m, int *len)</td></tr>
+<tr class="memdesc:a0e07715664284f7a821216ca83317e60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize a message.  <a href="#a0e07715664284f7a821216ca83317e60">More...</a><br /></td></tr>
 <tr class="separator:a0e07715664284f7a821216ca83317e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ba54a38dd0b04dea973f33437bb9125"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structmessage.html">message</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="message_8h.html#a3ba54a38dd0b04dea973f33437bb9125">message_unpack</a> (char *pack)</td></tr>
 <tr class="separator:a3ba54a38dd0b04dea973f33437bb9125"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,6 +135,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Creates a message. </p>
+<p>Both parameters will be copied into the message, so the user is free to <code>free()</code> the parameters passed to this function if necessary.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">content</td><td>The content of the message. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sender_name</td><td>The username of the sender.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to a struct message in case of success, NULL otherwise. The message must be freed, using <a class="el" href="message_8c.html#ad0eaa8623d0f22248ec230fd91bd819b" title="Destroys a message. ">message_destroy()</a>, when is not needed anymore. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="message_8c.html#ad0eaa8623d0f22248ec230fd91bd819b" title="Destroys a message. ">message_destroy</a> </dd></dl>
+
 </div>
 </div>
 <a id="ad0eaa8623d0f22248ec230fd91bd819b"></a>
@@ -149,6 +164,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Destroys a message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>A pointer to the message.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="message_8c.html#af0270eefb03058e936215fd11fde4b93" title="Creates a message. ">message_create</a> </dd></dl>
 
 </div>
 </div>
@@ -168,6 +192,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Get the message content. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>A pointer to the message.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the message content.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>The returned value should not be freed. </dd></dl>
+
 </div>
 </div>
 <a id="ac6e3d955212965dc1ab7b5e3f88bc535"></a>
@@ -185,6 +219,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get the message sender. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>A pointer to the message.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the sender name.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>The returned value should not be freed. </dd></dl>
 
 </div>
 </div>
@@ -214,6 +258,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Serialize a message. </p>
+<p>Pack/Serialize the struct message in a format that can be sent through the network.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>A pointer to the message. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">len</td><td>A pointer to a integer where the length of the serialized message will be stored.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the serialized message. This should be freed when is not necessary anymore.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="message_8c.html#a3ba54a38dd0b04dea973f33437bb9125">message_unpack</a> </dd></dl>
+
 </div>
 </div>
 <a id="a3ba54a38dd0b04dea973f33437bb9125"></a>
@@ -231,6 +287,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Deserialize a message.</p>
+<p>Unpack/Deserialize a string into a struct message.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pack</td><td>The string that represent the packed message generated by <a class="el" href="message_8c.html#a0e07715664284f7a821216ca83317e60" title="Serialize a message. ">message_pack()</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the deserialized message. This should be freed when is not necessary anymore.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="message_8c.html#a0e07715664284f7a821216ca83317e60" title="Serialize a message. ">message_pack</a> </dd></dl>
 
 </div>
 </div>

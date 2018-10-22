@@ -2,16 +2,14 @@
 \label{message_8h}\index{src/message.\+h@{src/message.\+h}}
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$string.\+h$>$}\newline
-Include dependency graph for message.\+h\+:
-\nopagebreak
+Include dependency graph for message.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=196pt]{message_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -22,15 +20,15 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 struct \hyperlink{structmessage}{message} $\ast$ \hyperlink{message_8h_af0270eefb03058e936215fd11fde4b93}{message\+\_\+create} (const char $\ast$content, const char $\ast$sender\+\_\+name)
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a message. \end{DoxyCompactList}\item 
 void \hyperlink{message_8h_ad0eaa8623d0f22248ec230fd91bd819b}{message\+\_\+destroy} (struct \hyperlink{structmessage}{message} $\ast$m)
-\item 
+\begin{DoxyCompactList}\small\item\em Destroys a message. \end{DoxyCompactList}\item 
 const char $\ast$ \hyperlink{message_8h_a31cd31a7acd86c44c38238f5a5b1da76}{message\+\_\+get\+\_\+content} (struct \hyperlink{structmessage}{message} $\ast$m)
-\item 
+\begin{DoxyCompactList}\small\item\em Get the message content. \end{DoxyCompactList}\item 
 const char $\ast$ \hyperlink{message_8h_ac6e3d955212965dc1ab7b5e3f88bc535}{message\+\_\+get\+\_\+sender} (struct \hyperlink{structmessage}{message} $\ast$m)
-\item 
+\begin{DoxyCompactList}\small\item\em Get the message sender. \end{DoxyCompactList}\item 
 char $\ast$ \hyperlink{message_8h_a0e07715664284f7a821216ca83317e60}{message\+\_\+pack} (struct \hyperlink{structmessage}{message} $\ast$m, int $\ast$len)
-\item 
+\begin{DoxyCompactList}\small\item\em Serialize a message. \end{DoxyCompactList}\item 
 struct \hyperlink{structmessage}{message} $\ast$ \hyperlink{message_8h_a3ba54a38dd0b04dea973f33437bb9125}{message\+\_\+unpack} (char $\ast$pack)
 \end{DoxyCompactItemize}
 
@@ -42,33 +40,128 @@ struct \hyperlink{structmessage}{message} $\ast$ \hyperlink{message_8h_a3ba54a38
 \subsubsection{\texorpdfstring{message\+\_\+create()}{message\_create()}}
 {\footnotesize\ttfamily struct \hyperlink{structmessage}{message}$\ast$ message\+\_\+create (\begin{DoxyParamCaption}\item[{const char $\ast$}]{content,  }\item[{const char $\ast$}]{sender\+\_\+name }\end{DoxyParamCaption})}
 
+
+
+Creates a message. 
+
+Both parameters will be copied into the message, so the user is free to {\ttfamily free()} the parameters passed to this function if necessary.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em content} & The content of the message. \\
+\hline
+\mbox{\tt in}  & {\em sender\+\_\+name} & The username of the sender.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to a struct message in case of success, N\+U\+LL otherwise. The message must be freed, using \hyperlink{message_8c_ad0eaa8623d0f22248ec230fd91bd819b}{message\+\_\+destroy()}, when is not needed anymore. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{message_8c_ad0eaa8623d0f22248ec230fd91bd819b}{message\+\_\+destroy} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{message_8h_ad0eaa8623d0f22248ec230fd91bd819b}\label{message_8h_ad0eaa8623d0f22248ec230fd91bd819b}} 
 \index{message.\+h@{message.\+h}!message\+\_\+destroy@{message\+\_\+destroy}}
 \index{message\+\_\+destroy@{message\+\_\+destroy}!message.\+h@{message.\+h}}
 \subsubsection{\texorpdfstring{message\+\_\+destroy()}{message\_destroy()}}
 {\footnotesize\ttfamily void message\+\_\+destroy (\begin{DoxyParamCaption}\item[{struct \hyperlink{structmessage}{message} $\ast$}]{m }\end{DoxyParamCaption})}
 
+
+
+Destroys a message. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em m} & A pointer to the message.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{message_8c_af0270eefb03058e936215fd11fde4b93}{message\+\_\+create} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{message_8h_a31cd31a7acd86c44c38238f5a5b1da76}\label{message_8h_a31cd31a7acd86c44c38238f5a5b1da76}} 
 \index{message.\+h@{message.\+h}!message\+\_\+get\+\_\+content@{message\+\_\+get\+\_\+content}}
 \index{message\+\_\+get\+\_\+content@{message\+\_\+get\+\_\+content}!message.\+h@{message.\+h}}
 \subsubsection{\texorpdfstring{message\+\_\+get\+\_\+content()}{message\_get\_content()}}
 {\footnotesize\ttfamily const char$\ast$ message\+\_\+get\+\_\+content (\begin{DoxyParamCaption}\item[{struct \hyperlink{structmessage}{message} $\ast$}]{m }\end{DoxyParamCaption})}
 
+
+
+Get the message content. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em m} & A pointer to the message.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the message content.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+The returned value should not be freed. 
+\end{DoxyWarning}
 \mbox{\Hypertarget{message_8h_ac6e3d955212965dc1ab7b5e3f88bc535}\label{message_8h_ac6e3d955212965dc1ab7b5e3f88bc535}} 
 \index{message.\+h@{message.\+h}!message\+\_\+get\+\_\+sender@{message\+\_\+get\+\_\+sender}}
 \index{message\+\_\+get\+\_\+sender@{message\+\_\+get\+\_\+sender}!message.\+h@{message.\+h}}
 \subsubsection{\texorpdfstring{message\+\_\+get\+\_\+sender()}{message\_get\_sender()}}
 {\footnotesize\ttfamily const char$\ast$ message\+\_\+get\+\_\+sender (\begin{DoxyParamCaption}\item[{struct \hyperlink{structmessage}{message} $\ast$}]{m }\end{DoxyParamCaption})}
 
+
+
+Get the message sender. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em m} & A pointer to the message.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the sender name.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+The returned value should not be freed. 
+\end{DoxyWarning}
 \mbox{\Hypertarget{message_8h_a0e07715664284f7a821216ca83317e60}\label{message_8h_a0e07715664284f7a821216ca83317e60}} 
 \index{message.\+h@{message.\+h}!message\+\_\+pack@{message\+\_\+pack}}
 \index{message\+\_\+pack@{message\+\_\+pack}!message.\+h@{message.\+h}}
 \subsubsection{\texorpdfstring{message\+\_\+pack()}{message\_pack()}}
 {\footnotesize\ttfamily char$\ast$ message\+\_\+pack (\begin{DoxyParamCaption}\item[{struct \hyperlink{structmessage}{message} $\ast$}]{m,  }\item[{int $\ast$}]{len }\end{DoxyParamCaption})}
 
+
+
+Serialize a message. 
+
+Pack/\+Serialize the struct message in a format that can be sent through the network.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em m} & A pointer to the message. \\
+\hline
+\mbox{\tt out}  & {\em len} & A pointer to a integer where the length of the serialized message will be stored.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the serialized message. This should be freed when is not necessary anymore.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{message_8c_a3ba54a38dd0b04dea973f33437bb9125}{message\+\_\+unpack} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{message_8h_a3ba54a38dd0b04dea973f33437bb9125}\label{message_8h_a3ba54a38dd0b04dea973f33437bb9125}} 
 \index{message.\+h@{message.\+h}!message\+\_\+unpack@{message\+\_\+unpack}}
 \index{message\+\_\+unpack@{message\+\_\+unpack}!message.\+h@{message.\+h}}
 \subsubsection{\texorpdfstring{message\+\_\+unpack()}{message\_unpack()}}
 {\footnotesize\ttfamily struct \hyperlink{structmessage}{message}$\ast$ message\+\_\+unpack (\begin{DoxyParamCaption}\item[{char $\ast$}]{pack }\end{DoxyParamCaption})}
 
+Deserialize a message.
+
+Unpack/\+Deserialize a string into a struct message.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pack} & The string that represent the packed message generated by \hyperlink{message_8c_a0e07715664284f7a821216ca83317e60}{message\+\_\+pack()}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the deserialized message. This should be freed when is not necessary anymore.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{message_8c_a0e07715664284f7a821216ca83317e60}{message\+\_\+pack} 
+\end{DoxySeeAlso}

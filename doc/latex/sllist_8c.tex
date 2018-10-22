@@ -12,26 +12,26 @@ Include dependency graph for sllist.\+c\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 struct \hyperlink{structsllist}{sllist}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A struct representing node in a singly linked list. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 struct \hyperlink{structsllist}{sllist} $\ast$ \hyperlink{sllist_8c_ada173d32da00693ac4e803b1343ec4ac}{sll\+\_\+init} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em Initilize a sllist to be a valid empty list. \end{DoxyCompactList}\item 
 struct \hyperlink{structsllist}{sllist} $\ast$ \hyperlink{sllist_8c_aa391dba476f2cf8290a77d7445bde246}{sll\+\_\+get\+\_\+next} (struct \hyperlink{structsllist}{sllist} $\ast$$\ast$l)
-\item 
+\begin{DoxyCompactList}\small\item\em Get the next node in the list. \end{DoxyCompactList}\item 
 void \hyperlink{sllist_8c_a798d672d70a10222966c9de995496f9f}{sll\+\_\+insert\+\_\+first} (struct \hyperlink{structsllist}{sllist} $\ast$$\ast$l, void $\ast$a)
-\item 
+\begin{DoxyCompactList}\small\item\em Insert an element on the head of the list. \end{DoxyCompactList}\item 
 void \hyperlink{sllist_8c_a25e60a1bd89c31e00660743c50aeac87}{sll\+\_\+insert\+\_\+last} (struct \hyperlink{structsllist}{sllist} $\ast$$\ast$l, void $\ast$a)
-\item 
+\begin{DoxyCompactList}\small\item\em Insert an element on the tail of the list. \end{DoxyCompactList}\item 
 void $\ast$ \hyperlink{sllist_8c_a3d88e7dea230b8d5854a17f106fb9740}{sll\+\_\+remove\+\_\+first} (struct \hyperlink{structsllist}{sllist} $\ast$$\ast$l)
-\item 
+\begin{DoxyCompactList}\small\item\em Remove the first element of the list. \end{DoxyCompactList}\item 
 void $\ast$ \hyperlink{sllist_8c_ab30ebb23c8ba76871885110c64f026f9}{sll\+\_\+remove\+\_\+last} (struct \hyperlink{structsllist}{sllist} $\ast$$\ast$l)
-\item 
+\begin{DoxyCompactList}\small\item\em Remove the last element of the list. \end{DoxyCompactList}\item 
 void $\ast$ \hyperlink{sllist_8c_a6a16207cf8ef79ba25ae8e1453ccf0bc}{sll\+\_\+remove\+\_\+elm} (struct \hyperlink{structsllist}{sllist} $\ast$$\ast$l, void $\ast$elm)
-\item 
+\begin{DoxyCompactList}\small\item\em Remove the specified element of the list. \end{DoxyCompactList}\item 
 void $\ast$ \hyperlink{sllist_8c_ac2c3278ad40114c39ec8d55e7ffc46b3}{sll\+\_\+get\+\_\+key} (struct \hyperlink{structsllist}{sllist} $\ast$l)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get the element stored in the especified list node. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
@@ -41,45 +41,155 @@ void $\ast$ \hyperlink{sllist_8c_ac2c3278ad40114c39ec8d55e7ffc46b3}{sll\+\_\+get
 \subsubsection{\texorpdfstring{sll\+\_\+get\+\_\+key()}{sll\_get\_key()}}
 {\footnotesize\ttfamily void$\ast$ sll\+\_\+get\+\_\+key (\begin{DoxyParamCaption}\item[{struct \hyperlink{structsllist}{sllist} $\ast$}]{l }\end{DoxyParamCaption})}
 
+
+
+Get the element stored in the especified list node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & A pointer to the list node.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{sllist_8c_aa391dba476f2cf8290a77d7445bde246}\label{sllist_8c_aa391dba476f2cf8290a77d7445bde246}} 
 \index{sllist.\+c@{sllist.\+c}!sll\+\_\+get\+\_\+next@{sll\+\_\+get\+\_\+next}}
 \index{sll\+\_\+get\+\_\+next@{sll\+\_\+get\+\_\+next}!sllist.\+c@{sllist.\+c}}
 \subsubsection{\texorpdfstring{sll\+\_\+get\+\_\+next()}{sll\_get\_next()}}
 {\footnotesize\ttfamily struct \hyperlink{structsllist}{sllist}$\ast$ sll\+\_\+get\+\_\+next (\begin{DoxyParamCaption}\item[{struct \hyperlink{structsllist}{sllist} $\ast$$\ast$}]{l }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{sllist_8c_ada173d32da00693ac4e803b1343ec4ac}\label{sllist_8c_ada173d32da00693ac4e803b1343ec4ac}} 
+
+
+Get the next node in the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & An address to a pointer to the list.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the next node in the list; N\+U\+LL if there is no next element.
+\end{DoxyReturn}
+Example to interate over a list\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }\hyperlink{structsllist}{sllist} **l = \hyperlink{sllist_8c_ada173d32da00693ac4e803b1343ec4ac}{sll\_init}();
+\textcolor{comment}{// fill the list}
+\textcolor{keywordflow}{for} (\textcolor{keyword}{struct} \hyperlink{structsllist}{sllist} *p = *l; p; p = \hyperlink{sllist_8c_aa391dba476f2cf8290a77d7445bde246}{sll\_get\_next}(&p)) \{
+    \textcolor{keywordtype}{void} *\hyperlink{structsllist_aba6ff88336afdd0d2a8cb0ce396f79b6}{key} = \hyperlink{sllist_8c_ac2c3278ad40114c39ec8d55e7ffc46b3}{sll\_get\_key}(p);
+    \textcolor{comment}{// do stuff with p}
+\}
+\end{DoxyCode}
+ \mbox{\Hypertarget{sllist_8c_ada173d32da00693ac4e803b1343ec4ac}\label{sllist_8c_ada173d32da00693ac4e803b1343ec4ac}} 
 \index{sllist.\+c@{sllist.\+c}!sll\+\_\+init@{sll\+\_\+init}}
 \index{sll\+\_\+init@{sll\+\_\+init}!sllist.\+c@{sllist.\+c}}
 \subsubsection{\texorpdfstring{sll\+\_\+init()}{sll\_init()}}
 {\footnotesize\ttfamily struct \hyperlink{structsllist}{sllist}$\ast$ sll\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
+
+
+Initilize a sllist to be a valid empty list. 
+
+\begin{DoxyReturn}{Returns}
+An empty list.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+One should not test the return against N\+U\+LL. N\+U\+LL is the default value. 
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{sllist_8h_a4f1348bb9eb6fe8c2b112e39c1887290}{S\+L\+L\+\_\+\+I\+N\+IT} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{sllist_8c_a798d672d70a10222966c9de995496f9f}\label{sllist_8c_a798d672d70a10222966c9de995496f9f}} 
 \index{sllist.\+c@{sllist.\+c}!sll\+\_\+insert\+\_\+first@{sll\+\_\+insert\+\_\+first}}
 \index{sll\+\_\+insert\+\_\+first@{sll\+\_\+insert\+\_\+first}!sllist.\+c@{sllist.\+c}}
 \subsubsection{\texorpdfstring{sll\+\_\+insert\+\_\+first()}{sll\_insert\_first()}}
 {\footnotesize\ttfamily void sll\+\_\+insert\+\_\+first (\begin{DoxyParamCaption}\item[{struct \hyperlink{structsllist}{sllist} $\ast$$\ast$}]{l,  }\item[{void $\ast$}]{a }\end{DoxyParamCaption})}
 
+
+
+Insert an element on the head of the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & An address to a pointer to the list. \\
+\hline
+{\em a} & The element. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{sllist_8c_a25e60a1bd89c31e00660743c50aeac87}\label{sllist_8c_a25e60a1bd89c31e00660743c50aeac87}} 
 \index{sllist.\+c@{sllist.\+c}!sll\+\_\+insert\+\_\+last@{sll\+\_\+insert\+\_\+last}}
 \index{sll\+\_\+insert\+\_\+last@{sll\+\_\+insert\+\_\+last}!sllist.\+c@{sllist.\+c}}
 \subsubsection{\texorpdfstring{sll\+\_\+insert\+\_\+last()}{sll\_insert\_last()}}
 {\footnotesize\ttfamily void sll\+\_\+insert\+\_\+last (\begin{DoxyParamCaption}\item[{struct \hyperlink{structsllist}{sllist} $\ast$$\ast$}]{l,  }\item[{void $\ast$}]{a }\end{DoxyParamCaption})}
 
+
+
+Insert an element on the tail of the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & An address to a pointer to the list. \\
+\hline
+{\em a} & The element. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{sllist_8c_a6a16207cf8ef79ba25ae8e1453ccf0bc}\label{sllist_8c_a6a16207cf8ef79ba25ae8e1453ccf0bc}} 
 \index{sllist.\+c@{sllist.\+c}!sll\+\_\+remove\+\_\+elm@{sll\+\_\+remove\+\_\+elm}}
 \index{sll\+\_\+remove\+\_\+elm@{sll\+\_\+remove\+\_\+elm}!sllist.\+c@{sllist.\+c}}
 \subsubsection{\texorpdfstring{sll\+\_\+remove\+\_\+elm()}{sll\_remove\_elm()}}
 {\footnotesize\ttfamily void$\ast$ sll\+\_\+remove\+\_\+elm (\begin{DoxyParamCaption}\item[{struct \hyperlink{structsllist}{sllist} $\ast$$\ast$}]{l,  }\item[{void $\ast$}]{elm }\end{DoxyParamCaption})}
 
+
+
+Remove the specified element of the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & An address to a pointer to the list. \\
+\hline
+{\em elm} & The element.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element in case of success. N\+U\+LL if the list is empty or the element doesn\textquotesingle{}t exit. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{sllist_8c_a3d88e7dea230b8d5854a17f106fb9740}\label{sllist_8c_a3d88e7dea230b8d5854a17f106fb9740}} 
 \index{sllist.\+c@{sllist.\+c}!sll\+\_\+remove\+\_\+first@{sll\+\_\+remove\+\_\+first}}
 \index{sll\+\_\+remove\+\_\+first@{sll\+\_\+remove\+\_\+first}!sllist.\+c@{sllist.\+c}}
 \subsubsection{\texorpdfstring{sll\+\_\+remove\+\_\+first()}{sll\_remove\_first()}}
 {\footnotesize\ttfamily void$\ast$ sll\+\_\+remove\+\_\+first (\begin{DoxyParamCaption}\item[{struct \hyperlink{structsllist}{sllist} $\ast$$\ast$}]{l }\end{DoxyParamCaption})}
 
+
+
+Remove the first element of the list. 
+
+The list node will be freed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & An address to a pointer to the list.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element in case of success. N\+U\+LL if the list is empty. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{sllist_8c_ab30ebb23c8ba76871885110c64f026f9}\label{sllist_8c_ab30ebb23c8ba76871885110c64f026f9}} 
 \index{sllist.\+c@{sllist.\+c}!sll\+\_\+remove\+\_\+last@{sll\+\_\+remove\+\_\+last}}
 \index{sll\+\_\+remove\+\_\+last@{sll\+\_\+remove\+\_\+last}!sllist.\+c@{sllist.\+c}}
 \subsubsection{\texorpdfstring{sll\+\_\+remove\+\_\+last()}{sll\_remove\_last()}}
 {\footnotesize\ttfamily void$\ast$ sll\+\_\+remove\+\_\+last (\begin{DoxyParamCaption}\item[{struct \hyperlink{structsllist}{sllist} $\ast$$\ast$}]{l }\end{DoxyParamCaption})}
 
+
+
+Remove the last element of the list. 
+
+The list node will be freed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & An address to a pointer to the list.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element in case of success. N\+U\+LL if the list is empty. 
+\end{DoxyReturn}

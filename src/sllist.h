@@ -5,6 +5,15 @@
 
 struct sllist;
 
+ 
+/**
+ * @brief Macro that initialize a sllist to be a valid empty list.
+ *
+ * @return An empty list.
+ *
+ * @warning One should not test the return against NULL. NULL is the default value.
+ * @see sll_init
+ */
 #define SLL_INIT() NULL;
 
 struct sllist *sll_init(void);

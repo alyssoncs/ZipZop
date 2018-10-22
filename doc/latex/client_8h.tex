@@ -21,21 +21,21 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactItemize}
 \item 
 struct \hyperlink{structclient}{client} $\ast$ \hyperlink{client_8h_a2a4a2cc446bcd65f49daf665868ede23}{client\+\_\+create} (const char $\ast$name, int sockfd)
-\item 
+\begin{DoxyCompactList}\small\item\em Create a client instance. \end{DoxyCompactList}\item 
 void \hyperlink{client_8h_a992d912c8130441b3a85079ab28832e9}{client\+\_\+destroy} (struct \hyperlink{structclient}{client} $\ast$c)
 \item 
 const char $\ast$ \hyperlink{client_8h_a609e1a23ff124b38eebeaf968f3296f3}{client\+\_\+get\+\_\+name} (struct \hyperlink{structclient}{client} $\ast$c)
-\item 
+\begin{DoxyCompactList}\small\item\em Get the client name. \end{DoxyCompactList}\item 
 int \hyperlink{client_8h_a9d2dab7f0e59959392e6b674d45a0183}{client\+\_\+get\+\_\+socket} (struct \hyperlink{structclient}{client} $\ast$c)
-\item 
+\begin{DoxyCompactList}\small\item\em Get the client socket. \end{DoxyCompactList}\item 
 pthread\+\_\+t $\ast$ \hyperlink{client_8h_acbc30fcef0ca5de9f1768ff03a3af727}{client\+\_\+get\+\_\+thread} (struct \hyperlink{structclient}{client} $\ast$c)
-\item 
+\begin{DoxyCompactList}\small\item\em Get the client thread. \end{DoxyCompactList}\item 
 void \hyperlink{client_8h_a1a0a4dc1973ebe7e14fb34546f870829}{client\+\_\+set\+\_\+name} (struct \hyperlink{structclient}{client} $\ast$c, const char $\ast$name)
-\item 
+\begin{DoxyCompactList}\small\item\em Set the client name. \end{DoxyCompactList}\item 
 void \hyperlink{client_8h_af6bd0240b4fb0e0128cb9d91da55f2b8}{client\+\_\+set\+\_\+socket} (struct \hyperlink{structclient}{client} $\ast$c, int sockfd)
-\item 
+\begin{DoxyCompactList}\small\item\em Set the client socket. \end{DoxyCompactList}\item 
 void \hyperlink{client_8h_a8316dd83e8f2d0fff9b3953897db8f4b}{client\+\_\+set\+\_\+thread} (struct \hyperlink{structclient}{client} $\ast$c, pthread\+\_\+t thread)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Set the client thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
@@ -45,45 +45,143 @@ void \hyperlink{client_8h_a8316dd83e8f2d0fff9b3953897db8f4b}{client\+\_\+set\+\_
 \subsubsection{\texorpdfstring{client\+\_\+create()}{client\_create()}}
 {\footnotesize\ttfamily struct \hyperlink{structclient}{client}$\ast$ client\+\_\+create (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{int}]{sockfd }\end{DoxyParamCaption})}
 
+
+
+Create a client instance. 
+
+Both parameters will be copied into the message, so the user is free to {\ttfamily free()} the parameters passed to this function if necessary.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & The client name. \\
+\hline
+\mbox{\tt in}  & {\em sockfd} & The socket connected to this client.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the client in case of success, N\+U\+LL otherwise. The client must be freed, using \hyperlink{client_8c_a992d912c8130441b3a85079ab28832e9}{client\+\_\+destroy()}.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{client_8c_a992d912c8130441b3a85079ab28832e9}{client\+\_\+destroy} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{client_8h_a992d912c8130441b3a85079ab28832e9}\label{client_8h_a992d912c8130441b3a85079ab28832e9}} 
 \index{client.\+h@{client.\+h}!client\+\_\+destroy@{client\+\_\+destroy}}
 \index{client\+\_\+destroy@{client\+\_\+destroy}!client.\+h@{client.\+h}}
 \subsubsection{\texorpdfstring{client\+\_\+destroy()}{client\_destroy()}}
 {\footnotesize\ttfamily void client\+\_\+destroy (\begin{DoxyParamCaption}\item[{struct \hyperlink{structclient}{client} $\ast$}]{c }\end{DoxyParamCaption})}
 
+Destroys a client.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & A pointer to the client. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{client_8h_a609e1a23ff124b38eebeaf968f3296f3}\label{client_8h_a609e1a23ff124b38eebeaf968f3296f3}} 
 \index{client.\+h@{client.\+h}!client\+\_\+get\+\_\+name@{client\+\_\+get\+\_\+name}}
 \index{client\+\_\+get\+\_\+name@{client\+\_\+get\+\_\+name}!client.\+h@{client.\+h}}
 \subsubsection{\texorpdfstring{client\+\_\+get\+\_\+name()}{client\_get\_name()}}
 {\footnotesize\ttfamily const char$\ast$ client\+\_\+get\+\_\+name (\begin{DoxyParamCaption}\item[{struct \hyperlink{structclient}{client} $\ast$}]{c }\end{DoxyParamCaption})}
 
+
+
+Get the client name. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & The client.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The client name. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{client_8h_a9d2dab7f0e59959392e6b674d45a0183}\label{client_8h_a9d2dab7f0e59959392e6b674d45a0183}} 
 \index{client.\+h@{client.\+h}!client\+\_\+get\+\_\+socket@{client\+\_\+get\+\_\+socket}}
 \index{client\+\_\+get\+\_\+socket@{client\+\_\+get\+\_\+socket}!client.\+h@{client.\+h}}
 \subsubsection{\texorpdfstring{client\+\_\+get\+\_\+socket()}{client\_get\_socket()}}
 {\footnotesize\ttfamily int client\+\_\+get\+\_\+socket (\begin{DoxyParamCaption}\item[{struct \hyperlink{structclient}{client} $\ast$}]{c }\end{DoxyParamCaption})}
 
+
+
+Get the client socket. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & The client.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The client socket. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{client_8h_acbc30fcef0ca5de9f1768ff03a3af727}\label{client_8h_acbc30fcef0ca5de9f1768ff03a3af727}} 
 \index{client.\+h@{client.\+h}!client\+\_\+get\+\_\+thread@{client\+\_\+get\+\_\+thread}}
 \index{client\+\_\+get\+\_\+thread@{client\+\_\+get\+\_\+thread}!client.\+h@{client.\+h}}
 \subsubsection{\texorpdfstring{client\+\_\+get\+\_\+thread()}{client\_get\_thread()}}
 {\footnotesize\ttfamily pthread\+\_\+t$\ast$ client\+\_\+get\+\_\+thread (\begin{DoxyParamCaption}\item[{struct \hyperlink{structclient}{client} $\ast$}]{c }\end{DoxyParamCaption})}
 
+
+
+Get the client thread. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & The client.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An Address of the client thread.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+This function returns the address of the actual thread stored in the client. Do not try to free this address. 
+\end{DoxyWarning}
 \mbox{\Hypertarget{client_8h_a1a0a4dc1973ebe7e14fb34546f870829}\label{client_8h_a1a0a4dc1973ebe7e14fb34546f870829}} 
 \index{client.\+h@{client.\+h}!client\+\_\+set\+\_\+name@{client\+\_\+set\+\_\+name}}
 \index{client\+\_\+set\+\_\+name@{client\+\_\+set\+\_\+name}!client.\+h@{client.\+h}}
 \subsubsection{\texorpdfstring{client\+\_\+set\+\_\+name()}{client\_set\_name()}}
 {\footnotesize\ttfamily void client\+\_\+set\+\_\+name (\begin{DoxyParamCaption}\item[{struct \hyperlink{structclient}{client} $\ast$}]{c,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
 
+
+
+Set the client name. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & The client. \\
+\hline
+\mbox{\tt in}  & {\em name} & The client name. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{client_8h_af6bd0240b4fb0e0128cb9d91da55f2b8}\label{client_8h_af6bd0240b4fb0e0128cb9d91da55f2b8}} 
 \index{client.\+h@{client.\+h}!client\+\_\+set\+\_\+socket@{client\+\_\+set\+\_\+socket}}
 \index{client\+\_\+set\+\_\+socket@{client\+\_\+set\+\_\+socket}!client.\+h@{client.\+h}}
 \subsubsection{\texorpdfstring{client\+\_\+set\+\_\+socket()}{client\_set\_socket()}}
 {\footnotesize\ttfamily void client\+\_\+set\+\_\+socket (\begin{DoxyParamCaption}\item[{struct \hyperlink{structclient}{client} $\ast$}]{c,  }\item[{int}]{sockfd }\end{DoxyParamCaption})}
 
+
+
+Set the client socket. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & The client. \\
+\hline
+\mbox{\tt in}  & {\em sockfd} & The client socket. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{client_8h_a8316dd83e8f2d0fff9b3953897db8f4b}\label{client_8h_a8316dd83e8f2d0fff9b3953897db8f4b}} 
 \index{client.\+h@{client.\+h}!client\+\_\+set\+\_\+thread@{client\+\_\+set\+\_\+thread}}
 \index{client\+\_\+set\+\_\+thread@{client\+\_\+set\+\_\+thread}!client.\+h@{client.\+h}}
 \subsubsection{\texorpdfstring{client\+\_\+set\+\_\+thread()}{client\_set\_thread()}}
 {\footnotesize\ttfamily void client\+\_\+set\+\_\+thread (\begin{DoxyParamCaption}\item[{struct \hyperlink{structclient}{client} $\ast$}]{c,  }\item[{pthread\+\_\+t}]{thread }\end{DoxyParamCaption})}
 
+
+
+Set the client thread. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & The client. \\
+\hline
+\mbox{\tt in}  & {\em thread} & The client thread. \\
+\hline
+\end{DoxyParams}

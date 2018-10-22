@@ -163,7 +163,7 @@ Functions</h2></td></tr>
 <p>Get the element stored in the especified list node. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">l</td><td>A pointer to the list node.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">l</td><td>A pointer to the list node.</td></tr>
   </table>
   </dd>
 </dl>
@@ -190,7 +190,7 @@ Functions</h2></td></tr>
 <p>Get the next node in the list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">l</td><td>An address to a pointer to the list.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">l</td><td>An address to a pointer to the list.</td></tr>
   </table>
   </dd>
 </dl>
@@ -250,8 +250,8 @@ Functions</h2></td></tr>
 <p>Insert an element on the head of the list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">l</td><td>An address to a pointer to the list. </td></tr>
-    <tr><td class="paramname">a</td><td>The element. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">l</td><td>An address to a pointer to the list. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The element. </td></tr>
   </table>
   </dd>
 </dl>
@@ -287,8 +287,8 @@ Functions</h2></td></tr>
 <p>Insert an element on the tail of the list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">l</td><td>An address to a pointer to the list. </td></tr>
-    <tr><td class="paramname">a</td><td>The element. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">l</td><td>An address to a pointer to the list. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The element. </td></tr>
   </table>
   </dd>
 </dl>
@@ -324,8 +324,8 @@ Functions</h2></td></tr>
 <p>Remove the specified element of the list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">l</td><td>An address to a pointer to the list. </td></tr>
-    <tr><td class="paramname">elm</td><td>The element.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">l</td><td>An address to a pointer to the list. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elm</td><td>The element.</td></tr>
   </table>
   </dd>
 </dl>
@@ -353,7 +353,7 @@ Functions</h2></td></tr>
 <p>The list node will be freed.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">l</td><td>An address to a pointer to the list.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">l</td><td>An address to a pointer to the list.</td></tr>
   </table>
   </dd>
 </dl>
@@ -381,7 +381,7 @@ Functions</h2></td></tr>
 <p>The list node will be freed.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">l</td><td>An address to a pointer to the list.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">l</td><td>An address to a pointer to the list.</td></tr>
   </table>
   </dd>
 </dl>

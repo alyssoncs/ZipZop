@@ -24,7 +24,7 @@ struct sllist *sll_init(void)
 /**
  * @brief Get the next node in the list.
  *
- * @param l An address to a pointer to the list.
+ * @param[in,out] l An address to a pointer to the list.
  *
  * @return A pointer to the next node in the list; NULL if there is no next element.
  *
@@ -46,8 +46,8 @@ struct sllist *sll_get_next(struct sllist **l)
 /**
  * @brief Insert an element on the head of the list.
  *
- * @param l An address to a pointer to the list.
- * @param a The element.
+ * @param[in,out] l An address to a pointer to the list.
+ * @param[in] a The element.
  */
 void sll_insert_first(struct sllist **l, void *a)
 {
@@ -63,8 +63,8 @@ void sll_insert_first(struct sllist **l, void *a)
 /**
  * @brief Insert an element on the tail of the list.
  *
- * @param l An address to a pointer to the list.
- * @param a The element.
+ * @param[in,out] l An address to a pointer to the list.
+ * @param[in] a The element.
  */
 void sll_insert_last(struct sllist **l, void *a)
 {
@@ -84,7 +84,7 @@ void sll_insert_last(struct sllist **l, void *a)
  *
  * The list node will be freed.
  *
- * @param l An address to a pointer to the list.
+ * @param[in,out] l An address to a pointer to the list.
  *
  * @return The element in case of success. NULL if the list is empty.
  */
@@ -105,7 +105,7 @@ void *sll_remove_first(struct sllist **l)
  *
  * The list node will be freed.
  *
- * @param l An address to a pointer to the list.
+ * @param[in,out] l An address to a pointer to the list.
  *
  * @return The element in case of success. NULL if the list is empty.
  */
@@ -130,8 +130,8 @@ void *sll_remove_last(struct sllist **l)
 /**
  * @brief Remove the specified element of the list.
  *
- * @param l An address to a pointer to the list.
- * @param elm The element.
+ * @param[in,out] l An address to a pointer to the list.
+ * @param[in] elm The element.
  *
  * @return The element in case of success. NULL if the list is empty or the element doesn't exit.
  */
@@ -155,7 +155,7 @@ void *sll_remove_elm(struct sllist **l, void *elm)
 /** 
  * @brief Get the element stored in the especified list node.
  *
- * @param l A pointer to the list node.
+ * @param[in] l A pointer to the list node.
  *
  * @return The element.
  */

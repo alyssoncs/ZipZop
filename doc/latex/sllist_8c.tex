@@ -46,8 +46,8 @@ void $\ast$ \hyperlink{sllist_8c_ac2c3278ad40114c39ec8d55e7ffc46b3}{sll\+\_\+get
 Get the element stored in the especified list node. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em l} & A pointer to the list node.\\
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em l} & A pointer to the list node.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -64,8 +64,8 @@ The element.
 Get the next node in the list. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em l} & An address to a pointer to the list.\\
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em l} & An address to a pointer to the list.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -110,10 +110,10 @@ One should not test the return against N\+U\+LL. N\+U\+LL is the default value.
 Insert an element on the head of the list. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em l} & An address to a pointer to the list. \\
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em l} & An address to a pointer to the list. \\
 \hline
-{\em a} & The element. \\
+\mbox{\tt in}  & {\em a} & The element. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{sllist_8c_a25e60a1bd89c31e00660743c50aeac87}\label{sllist_8c_a25e60a1bd89c31e00660743c50aeac87}} 
@@ -127,10 +127,10 @@ Insert an element on the head of the list.
 Insert an element on the tail of the list. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em l} & An address to a pointer to the list. \\
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em l} & An address to a pointer to the list. \\
 \hline
-{\em a} & The element. \\
+\mbox{\tt in}  & {\em a} & The element. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{sllist_8c_a6a16207cf8ef79ba25ae8e1453ccf0bc}\label{sllist_8c_a6a16207cf8ef79ba25ae8e1453ccf0bc}} 
@@ -144,10 +144,10 @@ Insert an element on the tail of the list.
 Remove the specified element of the list. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em l} & An address to a pointer to the list. \\
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em l} & An address to a pointer to the list. \\
 \hline
-{\em elm} & The element.\\
+\mbox{\tt in}  & {\em elm} & The element.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -166,8 +166,8 @@ Remove the first element of the list.
 The list node will be freed.
 
 
-\begin{DoxyParams}{Parameters}
-{\em l} & An address to a pointer to the list.\\
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em l} & An address to a pointer to the list.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -186,8 +186,8 @@ Remove the last element of the list.
 The list node will be freed.
 
 
-\begin{DoxyParams}{Parameters}
-{\em l} & An address to a pointer to the list.\\
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em l} & An address to a pointer to the list.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

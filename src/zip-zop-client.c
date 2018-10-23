@@ -170,7 +170,7 @@ int create_and_connect(struct addrinfo *addr)
  *
  * In this case only the client name is sent to the server.
  *
- * @param c The client.
+ * @param[in] c The client.
  */
 void server_introduction(struct client *c)
 {

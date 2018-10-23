@@ -1,275 +1,43 @@
 \begin{theindex}
 
-  \item {accept\+\_\+clients}
-    \subitem {zip-\/zop-\/server.\+c}, \hyperpage{39}
-
-  \indexspace
-
-  \item {B\+A\+C\+K\+L\+OG}
-    \subitem {zip-\/zop-\/server.\+c}, \hyperpage{38}
-
-  \indexspace
-
-  \item {C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+S\+T\+\_\+\+M\+U\+T\+EX}
-    \subitem {zip-\/zop-\/server.\+c}, \hyperpage{42}
-  \item {C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST}
-    \subitem {zip-\/zop-\/server.\+c}, \hyperpage{42}
-  \item {C\+L\+I\+E\+N\+T\+\_\+\+N\+A\+M\+E\+\_\+\+L\+EN}
-    \subitem {zip-\/zop-\/server.\+c}, \hyperpage{38}
-  \item {check\+\_\+args}
-    \subitem {zip-\/zop-\/client.\+c}, \hyperpage{35}
-  \item {client}, \hyperpage{5}
-    \subitem {name}, \hyperpage{5}
-    \subitem {sockfd}, \hyperpage{5}
-    \subitem {thread}, \hyperpage{5}
-  \item {client.\+c}
-    \subitem {client\+\_\+create}, \hyperpage{10}
-    \subitem {client\+\_\+destroy}, \hyperpage{10}
-    \subitem {client\+\_\+get\+\_\+name}, \hyperpage{11}
-    \subitem {client\+\_\+get\+\_\+socket}, \hyperpage{11}
-    \subitem {client\+\_\+get\+\_\+thread}, \hyperpage{11}
-    \subitem {client\+\_\+set\+\_\+name}, \hyperpage{12}
-    \subitem {client\+\_\+set\+\_\+socket}, \hyperpage{12}
-    \subitem {client\+\_\+set\+\_\+thread}, \hyperpage{12}
-  \item {client.\+h}
-    \subitem {client\+\_\+create}, \hyperpage{14}
-    \subitem {client\+\_\+destroy}, \hyperpage{14}
-    \subitem {client\+\_\+get\+\_\+name}, \hyperpage{15}
-    \subitem {client\+\_\+get\+\_\+socket}, \hyperpage{15}
-    \subitem {client\+\_\+get\+\_\+thread}, \hyperpage{15}
-    \subitem {client\+\_\+set\+\_\+name}, \hyperpage{16}
-    \subitem {client\+\_\+set\+\_\+socket}, \hyperpage{16}
-    \subitem {client\+\_\+set\+\_\+thread}, \hyperpage{16}
-  \item {client\+\_\+create}
-    \subitem {client.\+c}, \hyperpage{10}
-    \subitem {client.\+h}, \hyperpage{14}
-  \item {client\+\_\+destroy}
-    \subitem {client.\+c}, \hyperpage{10}
-    \subitem {client.\+h}, \hyperpage{14}
-  \item {client\+\_\+get\+\_\+name}
-    \subitem {client.\+c}, \hyperpage{11}
-    \subitem {client.\+h}, \hyperpage{15}
-  \item {client\+\_\+get\+\_\+socket}
-    \subitem {client.\+c}, \hyperpage{11}
-    \subitem {client.\+h}, \hyperpage{15}
-  \item {client\+\_\+get\+\_\+thread}
-    \subitem {client.\+c}, \hyperpage{11}
-    \subitem {client.\+h}, \hyperpage{15}
-  \item {client\+\_\+set\+\_\+name}
-    \subitem {client.\+c}, \hyperpage{12}
-    \subitem {client.\+h}, \hyperpage{16}
-  \item {client\+\_\+set\+\_\+socket}
-    \subitem {client.\+c}, \hyperpage{12}
-    \subitem {client.\+h}, \hyperpage{16}
-  \item {client\+\_\+set\+\_\+thread}
-    \subitem {client.\+c}, \hyperpage{12}
-    \subitem {client.\+h}, \hyperpage{16}
-  \item {client\+\_\+thread\+\_\+broadcast}
-    \subitem {zip-\/zop-\/server.\+c}, \hyperpage{39}
-  \item {client\+\_\+thread\+\_\+listen}
-    \subitem {zip-\/zop-\/server.\+c}, \hyperpage{40}
-  \item {communicate}
-    \subitem {zip-\/zop-\/client.\+c}, \hyperpage{35}
+  \item {client}, \hyperpage{3}
+    \subitem {name}, \hyperpage{3}
+    \subitem {sockfd}, \hyperpage{3}
+    \subitem {thread}, \hyperpage{3}
   \item {content}
-    \subitem {message}, \hyperpage{6}
-  \item {create\+\_\+and\+\_\+bind}
-    \subitem {zip-\/zop-\/server.\+c}, \hyperpage{40}
-  \item {create\+\_\+and\+\_\+connect}
-    \subitem {zip-\/zop-\/client.\+c}, \hyperpage{36}
-  \item {create\+\_\+new\+\_\+client}
-    \subitem {zip-\/zop-\/server.\+c}, \hyperpage{40}
-
-  \indexspace
-
-  \item {errcodes}
-    \subitem {errcodes.\+h}, \hyperpage{17}
-  \item {errcodes.\+h}
-    \subitem {errcodes}, \hyperpage{17}
-
-  \indexspace
-
-  \item {get\+\_\+internet\+\_\+addr}
-    \subitem {zip-\/zop-\/server.\+c}, \hyperpage{41}
-  \item {get\+\_\+server\+\_\+addr}
-    \subitem {zip-\/zop-\/client.\+c}, \hyperpage{36}
+    \subitem {message}, \hyperpage{4}
 
   \indexspace
 
   \item {key}
-    \subitem {sllist}, \hyperpage{7}
-  \item {kill\+\_\+client}
-    \subitem {zip-\/zop-\/server.\+c}, \hyperpage{41}
+    \subitem {sllist}, \hyperpage{5}
 
   \indexspace
 
-  \item {listen\+\_\+thread}
-    \subitem {zip-\/zop-\/client.\+c}, \hyperpage{36}
-
-  \indexspace
-
-  \item {M\+E\+S\+S\+A\+G\+E\+\_\+\+L\+EN}
-    \subitem {zip-\/zop-\/client.\+c}, \hyperpage{35}
-    \subitem {zip-\/zop-\/server.\+c}, \hyperpage{38}
-  \item {main}
-    \subitem {zip-\/zop-\/client.\+c}, \hyperpage{36}
-    \subitem {zip-\/zop-\/server.\+c}, \hyperpage{41}
-  \item {message}, \hyperpage{6}
-    \subitem {content}, \hyperpage{6}
-    \subitem {sender\+\_\+name}, \hyperpage{6}
-  \item {message.\+c}
-    \subitem {message\+\_\+create}, \hyperpage{18}
-    \subitem {message\+\_\+destroy}, \hyperpage{19}
-    \subitem {message\+\_\+get\+\_\+content}, \hyperpage{19}
-    \subitem {message\+\_\+get\+\_\+sender}, \hyperpage{20}
-    \subitem {message\+\_\+pack}, \hyperpage{20}
-    \subitem {message\+\_\+unpack}, \hyperpage{21}
-  \item {message.\+h}
-    \subitem {message\+\_\+create}, \hyperpage{22}
-    \subitem {message\+\_\+destroy}, \hyperpage{23}
-    \subitem {message\+\_\+get\+\_\+content}, \hyperpage{23}
-    \subitem {message\+\_\+get\+\_\+sender}, \hyperpage{23}
-    \subitem {message\+\_\+pack}, \hyperpage{24}
-    \subitem {message\+\_\+unpack}, \hyperpage{24}
-  \item {message\+\_\+create}
-    \subitem {message.\+c}, \hyperpage{18}
-    \subitem {message.\+h}, \hyperpage{22}
-  \item {message\+\_\+destroy}
-    \subitem {message.\+c}, \hyperpage{19}
-    \subitem {message.\+h}, \hyperpage{23}
-  \item {message\+\_\+get\+\_\+content}
-    \subitem {message.\+c}, \hyperpage{19}
-    \subitem {message.\+h}, \hyperpage{23}
-  \item {message\+\_\+get\+\_\+sender}
-    \subitem {message.\+c}, \hyperpage{20}
-    \subitem {message.\+h}, \hyperpage{23}
-  \item {message\+\_\+pack}
-    \subitem {message.\+c}, \hyperpage{20}
-    \subitem {message.\+h}, \hyperpage{24}
-  \item {message\+\_\+unpack}
-    \subitem {message.\+c}, \hyperpage{21}
-    \subitem {message.\+h}, \hyperpage{24}
+  \item {message}, \hyperpage{4}
+    \subitem {content}, \hyperpage{4}
+    \subitem {sender\+\_\+name}, \hyperpage{4}
 
   \indexspace
 
   \item {name}
-    \subitem {client}, \hyperpage{5}
+    \subitem {client}, \hyperpage{3}
   \item {next}
-    \subitem {sllist}, \hyperpage{7}
+    \subitem {sllist}, \hyperpage{5}
 
   \indexspace
 
-  \item {P\+O\+RT}
-    \subitem {zip-\/zop-\/client.\+c}, \hyperpage{35}
-    \subitem {zip-\/zop-\/server.\+c}, \hyperpage{39}
-  \item {print\+\_\+usage}
-    \subitem {zip-\/zop-\/client.\+c}, \hyperpage{36}
-
-  \indexspace
-
-  \item {S\+L\+L\+\_\+\+I\+N\+IT}
-    \subitem {sllist.\+h}, \hyperpage{30}
   \item {sender\+\_\+name}
-    \subitem {message}, \hyperpage{6}
-  \item {server\+\_\+introduction}
-    \subitem {zip-\/zop-\/client.\+c}, \hyperpage{36}
-  \item {show\+\_\+message}
-    \subitem {zip-\/zop-\/client.\+c}, \hyperpage{36}
-  \item {sll\+\_\+get\+\_\+key}
-    \subitem {sllist.\+c}, \hyperpage{26}
-    \subitem {sllist.\+h}, \hyperpage{31}
-  \item {sll\+\_\+get\+\_\+next}
-    \subitem {sllist.\+c}, \hyperpage{26}
-    \subitem {sllist.\+h}, \hyperpage{31}
-  \item {sll\+\_\+init}
-    \subitem {sllist.\+c}, \hyperpage{27}
-    \subitem {sllist.\+h}, \hyperpage{32}
-  \item {sll\+\_\+insert\+\_\+first}
-    \subitem {sllist.\+c}, \hyperpage{27}
-    \subitem {sllist.\+h}, \hyperpage{32}
-  \item {sll\+\_\+insert\+\_\+last}
-    \subitem {sllist.\+c}, \hyperpage{28}
-    \subitem {sllist.\+h}, \hyperpage{33}
-  \item {sll\+\_\+remove\+\_\+elm}
-    \subitem {sllist.\+c}, \hyperpage{28}
-    \subitem {sllist.\+h}, \hyperpage{33}
-  \item {sll\+\_\+remove\+\_\+first}
-    \subitem {sllist.\+c}, \hyperpage{28}
-    \subitem {sllist.\+h}, \hyperpage{33}
-  \item {sll\+\_\+remove\+\_\+last}
-    \subitem {sllist.\+c}, \hyperpage{29}
-    \subitem {sllist.\+h}, \hyperpage{34}
-  \item {sllist}, \hyperpage{7}
-    \subitem {key}, \hyperpage{7}
-    \subitem {next}, \hyperpage{7}
-  \item {sllist.\+c}
-    \subitem {sll\+\_\+get\+\_\+key}, \hyperpage{26}
-    \subitem {sll\+\_\+get\+\_\+next}, \hyperpage{26}
-    \subitem {sll\+\_\+init}, \hyperpage{27}
-    \subitem {sll\+\_\+insert\+\_\+first}, \hyperpage{27}
-    \subitem {sll\+\_\+insert\+\_\+last}, \hyperpage{28}
-    \subitem {sll\+\_\+remove\+\_\+elm}, \hyperpage{28}
-    \subitem {sll\+\_\+remove\+\_\+first}, \hyperpage{28}
-    \subitem {sll\+\_\+remove\+\_\+last}, \hyperpage{29}
-  \item {sllist.\+h}
-    \subitem {S\+L\+L\+\_\+\+I\+N\+IT}, \hyperpage{30}
-    \subitem {sll\+\_\+get\+\_\+key}, \hyperpage{31}
-    \subitem {sll\+\_\+get\+\_\+next}, \hyperpage{31}
-    \subitem {sll\+\_\+init}, \hyperpage{32}
-    \subitem {sll\+\_\+insert\+\_\+first}, \hyperpage{32}
-    \subitem {sll\+\_\+insert\+\_\+last}, \hyperpage{33}
-    \subitem {sll\+\_\+remove\+\_\+elm}, \hyperpage{33}
-    \subitem {sll\+\_\+remove\+\_\+first}, \hyperpage{33}
-    \subitem {sll\+\_\+remove\+\_\+last}, \hyperpage{34}
+    \subitem {message}, \hyperpage{4}
+  \item {sllist}, \hyperpage{5}
+    \subitem {key}, \hyperpage{5}
+    \subitem {next}, \hyperpage{5}
   \item {sockfd}
-    \subitem {client}, \hyperpage{5}
-  \item {speak\+\_\+thread}
-    \subitem {zip-\/zop-\/client.\+c}, \hyperpage{37}
-  \item {src/client.\+c}, \hyperpage{9}
-  \item {src/client.\+h}, \hyperpage{13}
-  \item {src/errcodes.\+h}, \hyperpage{17}
-  \item {src/message.\+c}, \hyperpage{18}
-  \item {src/message.\+h}, \hyperpage{21}
-  \item {src/sllist.\+c}, \hyperpage{25}
-  \item {src/sllist.\+h}, \hyperpage{29}
-  \item {src/zip-\/zop-\/client.\+c}, \hyperpage{34}
-  \item {src/zip-\/zop-\/server.\+c}, \hyperpage{37}
+    \subitem {client}, \hyperpage{3}
 
   \indexspace
 
   \item {thread}
-    \subitem {client}, \hyperpage{5}
-
-  \indexspace
-
-  \item {zip-\/zop-\/client.\+c}
-    \subitem {check\+\_\+args}, \hyperpage{35}
-    \subitem {communicate}, \hyperpage{35}
-    \subitem {create\+\_\+and\+\_\+connect}, \hyperpage{36}
-    \subitem {get\+\_\+server\+\_\+addr}, \hyperpage{36}
-    \subitem {listen\+\_\+thread}, \hyperpage{36}
-    \subitem {M\+E\+S\+S\+A\+G\+E\+\_\+\+L\+EN}, \hyperpage{35}
-    \subitem {main}, \hyperpage{36}
-    \subitem {P\+O\+RT}, \hyperpage{35}
-    \subitem {print\+\_\+usage}, \hyperpage{36}
-    \subitem {server\+\_\+introduction}, \hyperpage{36}
-    \subitem {show\+\_\+message}, \hyperpage{36}
-    \subitem {speak\+\_\+thread}, \hyperpage{37}
-  \item {zip-\/zop-\/server.\+c}
-    \subitem {accept\+\_\+clients}, \hyperpage{39}
-    \subitem {B\+A\+C\+K\+L\+OG}, \hyperpage{38}
-    \subitem {C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+S\+T\+\_\+\+M\+U\+T\+EX}, 
-		\hyperpage{42}
-    \subitem {C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST}, \hyperpage{42}
-    \subitem {C\+L\+I\+E\+N\+T\+\_\+\+N\+A\+M\+E\+\_\+\+L\+EN}, 
-		\hyperpage{38}
-    \subitem {client\+\_\+thread\+\_\+broadcast}, \hyperpage{39}
-    \subitem {client\+\_\+thread\+\_\+listen}, \hyperpage{40}
-    \subitem {create\+\_\+and\+\_\+bind}, \hyperpage{40}
-    \subitem {create\+\_\+new\+\_\+client}, \hyperpage{40}
-    \subitem {get\+\_\+internet\+\_\+addr}, \hyperpage{41}
-    \subitem {kill\+\_\+client}, \hyperpage{41}
-    \subitem {M\+E\+S\+S\+A\+G\+E\+\_\+\+L\+EN}, \hyperpage{38}
-    \subitem {main}, \hyperpage{41}
-    \subitem {P\+O\+RT}, \hyperpage{39}
+    \subitem {client}, \hyperpage{3}
 
 \end{theindex}

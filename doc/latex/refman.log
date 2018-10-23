@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.10.18)  22 OCT 2018 15:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.10.18)  22 OCT 2018 21:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -887,9 +887,9 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 
 ]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 64.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 66.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 6.29996pt on input line 64.
+(Font)              scaled to size 6.29996pt on input line 66.
  [2] [3])
 \tf@toc=\write5
 \openout5 = `refman.toc'.
@@ -926,22 +926,22 @@ Chapter 2.
 Chapter 3.
 (./structclient.tex
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 3.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 8.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 3.
+(Font)              scaled to size 10.79993pt on input line 8.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 10.79993pt on input line 3.
-LaTeX Font Info:    Try loading font information for TS1+phv on input line 6.
+(Font)              scaled to size 10.79993pt on input line 8.
+LaTeX Font Info:    Try loading font information for TS1+phv on input line 11.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 )
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 6.
+(Font)              scaled to size 8.99994pt on input line 11.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 18.
+(Font)              scaled to size 8.99994pt on input line 26.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 19.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 19.
+(Font)              scaled to size 7.19995pt on input line 27.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 27.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
@@ -949,62 +949,124 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 6.29996pt on input line 30.
 ) (./structsllist.tex
-<structsllist__coll__graph.pdf, id=677, 157.58875pt x 100.375pt>
+<structsllist__coll__graph.pdf, id=687, 157.58875pt x 100.375pt>
 File: structsllist__coll__graph.pdf Graphic file (type pdf)
 <use structsllist__coll__graph.pdf>
-Package pdftex.def Info: structsllist__coll__graph.pdf  used on input line 9.
+Package pdftex.def Info: structsllist__coll__graph.pdf  used on input line 14.
 (pdftex.def)             Requested size: 157.0pt x 100.00562pt.
- [6 <./structsllist__coll__graph.pdf>]) [7] [8
+ [6]) [7 <./structsllist__coll__graph.pdf>] [8
 
 ]
 Chapter 4.
 (./client_8c.tex
-<client_8c__incl.pdf, id=711, 272.01625pt x 212.795pt>
+<client_8c__incl.pdf, id=721, 272.01625pt x 212.795pt>
 File: client_8c__incl.pdf Graphic file (type pdf)
 <use client_8c__incl.pdf>
 Package pdftex.def Info: client_8c__incl.pdf  used on input line 8.
 (pdftex.def)             Requested size: 271.0pt x 212.01193pt.
- [9 <./client_8c__incl.pdf>]
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 42.
- [10]) (./client_8h.tex
-<client_8h__incl.pdf, id=764, 272.01625pt x 156.585pt>
-File: client_8h__incl.pdf Graphic file (type pdf)
-<use client_8h__incl.pdf>
-Package pdftex.def Info: client_8h__incl.pdf  used on input line 10.
-(pdftex.def)             Requested size: 271.0pt x 156.00879pt.
-<client_8h__dep__incl.pdf, id=765, 384.43625pt x 156.585pt>
-File: client_8h__dep__incl.pdf Graphic file (type pdf)
-<use client_8h__dep__incl.pdf>
-Package pdftex.def Info: client_8h__dep__incl.pdf  used on input line 17.
-(pdftex.def)             Requested size: 350.0pt x 142.56902pt.
- [11 <./client_8h__incl.pdf> <./client_8h__dep__incl.pdf
-
-pdfTeX warning: pdflatex (file ./client_8h__dep__incl.pdf): PDF inclusion: mult
-iple pdfs with page group included in a single page
->] [12]) (./errcodes_8h.tex
-<errcodes_8h__dep__incl.pdf, id=821, 301.125pt x 156.585pt>
-File: errcodes_8h__dep__incl.pdf Graphic file (type pdf)
-<use errcodes_8h__dep__incl.pdf>
-Package pdftex.def Info: errcodes_8h__dep__incl.pdf  used on input line 7.
-(pdftex.def)             Requested size: 300.0pt x 156.01357pt.
- [13 <./errcodes_8h__dep__incl.pdf>])
-(./message_8c.tex
-<message_8c__incl.pdf, id=853, 196.735pt x 212.795pt>
-File: message_8c__incl.pdf Graphic file (type pdf)
-<use message_8c__incl.pdf>
-Package pdftex.def Info: message_8c__incl.pdf  used on input line 8.
-(pdftex.def)             Requested size: 196.0pt x 211.99895pt.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 8.09995pt on input line 15.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 15.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 8.09995pt on input line 15.
- [14 <./message_8c__incl.pdf>]
+ [9 <./client_8c__incl.pdf>]
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 42.
+
+Underfull \hbox (badness 10000) detected at line 57
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 60
+[][][]
+ []
+
+[10]
+Underfull \hbox (badness 10000) detected at line 91
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 109
+[][][]
+ []
+
+[11]
+Underfull \hbox (badness 10000) detected at line 127
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 130
+[][][]
+ []
+
+[12]) (./client_8h.tex
+<client_8h__incl.pdf, id=792, 272.01625pt x 156.585pt>
+File: client_8h__incl.pdf Graphic file (type pdf)
+<use client_8h__incl.pdf>
+Package pdftex.def Info: client_8h__incl.pdf  used on input line 10.
+(pdftex.def)             Requested size: 271.0pt x 156.00879pt.
+<client_8h__dep__incl.pdf, id=793, 384.43625pt x 156.585pt>
+File: client_8h__dep__incl.pdf Graphic file (type pdf)
+<use client_8h__dep__incl.pdf>
+Package pdftex.def Info: client_8h__dep__incl.pdf  used on input line 17.
+(pdftex.def)             Requested size: 350.0pt x 142.56902pt.
+ [13 <./client_8h__incl.pdf> <./client_8h__dep__incl.pdf
+
+pdfTeX warning: pdflatex (file ./client_8h__dep__incl.pdf): PDF inclusion: mult
+iple pdfs with page group included in a single page
+>]
+Underfull \hbox (badness 10000) detected at line 61
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 64
+[][][]
+ []
+
+[14]
+Underfull \hbox (badness 10000) detected at line 95
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 113
+[][][]
+ []
+
+[15]
+Underfull \hbox (badness 10000) detected at line 131
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 134
+[][][]
+ []
+
+[16]) (./errcodes_8h.tex
+<errcodes_8h__dep__incl.pdf, id=869, 301.125pt x 156.585pt>
+File: errcodes_8h__dep__incl.pdf Graphic file (type pdf)
+<use errcodes_8h__dep__incl.pdf>
+Package pdftex.def Info: errcodes_8h__dep__incl.pdf  used on input line 7.
+(pdftex.def)             Requested size: 300.0pt x 156.01357pt.
+
+Overfull \vbox (56.8429pt too high) has occurred while \output is active []
+
+
+[17 <./errcodes_8h__dep__incl.pdf>]) (./message_8c.tex
+<message_8c__incl.pdf, id=901, 196.735pt x 212.795pt>
+File: message_8c__incl.pdf Graphic file (type pdf)
+<use message_8c__incl.pdf>
+Package pdftex.def Info: message_8c__incl.pdf  used on input line 8.
+(pdftex.def)             Requested size: 196.0pt x 211.99895pt.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 38.
-
+ [18 <./message_8c__incl.pdf>]
 Underfull \hbox (badness 10000) detected at line 53
 [][][]
  []
@@ -1019,7 +1081,7 @@ Underfull \hbox (badness 10000) detected at line 74
 [][][]
  []
 
-[15]
+[19]
 Underfull \hbox (badness 10000) detected at line 92
 [][][]
  []
@@ -1039,7 +1101,11 @@ Underfull \hbox (badness 10000) detected at line 116
 [][][]
  []
 
-[16]
+
+Overfull \vbox (19.81557pt too high) has occurred while \output is active []
+
+
+[20]
 Underfull \hbox (badness 10000) detected at line 138
 [][][]
  []
@@ -1060,22 +1126,17 @@ Underfull \hbox (badness 10000) detected at line 162
  []
 
 ) (./message_8h.tex
-<message_8h__incl.pdf, id=914, 196.735pt x 156.585pt>
+<message_8h__incl.pdf, id=963, 196.735pt x 156.585pt>
 File: message_8h__incl.pdf Graphic file (type pdf)
 <use message_8h__incl.pdf>
 Package pdftex.def Info: message_8h__incl.pdf  used on input line 9.
 (pdftex.def)             Requested size: 196.0pt x 155.99922pt.
- [17]
-<message_8h__dep__incl.pdf, id=921, 400.49625pt x 156.585pt>
+<message_8h__dep__incl.pdf, id=964, 400.49625pt x 156.585pt>
 File: message_8h__dep__incl.pdf Graphic file (type pdf)
 <use message_8h__dep__incl.pdf>
 Package pdftex.def Info: message_8h__dep__incl.pdf  used on input line 16.
 (pdftex.def)             Requested size: 350.0pt x 136.84906pt.
- [18 <./message_8h__incl.pdf> <./message_8h__dep__incl.pdf
-
-pdfTeX warning: pdflatex (file ./message_8h__dep__incl.pdf): PDF inclusion: mul
-tiple pdfs with page group included in a single page
->]
+ [21 <./message_8h__incl.pdf>] [22 <./message_8h__dep__incl.pdf>]
 Underfull \hbox (badness 10000) detected at line 56
 [][][]
  []
@@ -1090,7 +1151,7 @@ Underfull \hbox (badness 10000) detected at line 77
 [][][]
  []
 
-[19]
+
 Underfull \hbox (badness 10000) detected at line 95
 [][][]
  []
@@ -1100,7 +1161,7 @@ Underfull \hbox (badness 10000) detected at line 98
 [][][]
  []
 
-
+[23]
 Underfull \hbox (badness 10000) detected at line 116
 [][][]
  []
@@ -1111,10 +1172,6 @@ Underfull \hbox (badness 10000) detected at line 119
  []
 
 
-Overfull \vbox (19.81557pt too high) has occurred while \output is active []
-
-
-[20]
 Underfull \hbox (badness 10000) detected at line 141
 [][][]
  []
@@ -1124,7 +1181,7 @@ Underfull \hbox (badness 10000) detected at line 144
 [][][]
  []
 
-
+[24]
 Underfull \hbox (badness 10000) detected at line 162
 [][][]
  []
@@ -1135,50 +1192,169 @@ Underfull \hbox (badness 10000) detected at line 165
  []
 
 ) (./sllist_8c.tex
-<sllist_8c__incl.pdf, id=987, 142.5325pt x 212.795pt>
+<sllist_8c__incl.pdf, id=1034, 142.5325pt x 212.795pt>
 File: sllist_8c__incl.pdf Graphic file (type pdf)
 <use sllist_8c__incl.pdf>
 Package pdftex.def Info: sllist_8c__incl.pdf  used on input line 8.
 (pdftex.def)             Requested size: 142.0pt x 211.99895pt.
+ [25 <./sllist_8c__incl.pdf>]
+Underfull \hbox (badness 10000) detected at line 53
+[][][]
+ []
 
-Underfull \vbox (badness 4726) has occurred while \output is active []
+[26]
+Underfull \hbox (badness 10000) detected at line 71
+[][][]
+ []
 
- [21]
-[22 <./sllist_8c__incl.pdf>]) (./sllist_8h.tex
-<sllist_8h__incl.pdf, id=1041, 142.5325pt x 156.585pt>
+
+Underfull \hbox (badness 10000) detected at line 93
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 96
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 99
+[][][]
+ []
+
+[27]
+Underfull \hbox (badness 10000) detected at line 153
+[][][]
+ []
+
+[28]
+Underfull \hbox (badness 10000) detected at line 173
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 193
+[][][]
+ []
+
+) (./sllist_8h.tex
+<sllist_8h__incl.pdf, id=1111, 142.5325pt x 156.585pt>
 File: sllist_8h__incl.pdf Graphic file (type pdf)
 <use sllist_8h__incl.pdf>
 Package pdftex.def Info: sllist_8h__incl.pdf  used on input line 8.
 (pdftex.def)             Requested size: 142.0pt x 155.99922pt.
- [23]
-<sllist_8h__dep__incl.pdf, id=1047, 264.99pt x 156.585pt>
+<sllist_8h__dep__incl.pdf, id=1112, 264.99pt x 156.585pt>
 File: sllist_8h__dep__incl.pdf Graphic file (type pdf)
 <use sllist_8h__dep__incl.pdf>
 Package pdftex.def Info: sllist_8h__dep__incl.pdf  used on input line 15.
 (pdftex.def)             Requested size: 264.0pt x 156.01117pt.
- [24 <./sllist_8h__incl.pdf> <./sllist_8h__dep__incl.pdf
+ [29 <./sllist_8h__incl.pdf>]
+Underfull \hbox (badness 10000) detected at line 55
+[][][]
+ []
 
-pdfTeX warning: pdflatex (file ./sllist_8h__dep__incl.pdf): PDF inclusion: mult
-iple pdfs with page group included in a single page
->] [25]) (./zip-zop-client_8c.tex
-<zip-zop-client_8c__incl.pdf, id=1108, 861.2175pt x 212.795pt>
+[30 <./sllist_8h__dep__incl.pdf>]
+Underfull \hbox (badness 10000) detected at line 58
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 61
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 82
+[][][]
+ []
+
+[31]
+Underfull \hbox (badness 10000) detected at line 100
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 122
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 125
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 128
+[][][]
+ []
+
+[32]
+Underfull \hbox (badness 10000) detected at line 182
+[][][]
+ []
+
+[33]
+Underfull \hbox (badness 10000) detected at line 202
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 222
+[][][]
+ []
+
+) (./zip-zop-client_8c.tex
+<zip-zop-client_8c__incl.pdf, id=1201, 861.2175pt x 212.795pt>
 File: zip-zop-client_8c__incl.pdf Graphic file (type pdf)
 <use zip-zop-client_8c__incl.pdf>
 Package pdftex.def Info: zip-zop-client_8c__incl.pdf  used on input line 19.
 (pdftex.def)             Requested size: 350.0pt x 86.48021pt.
- [26 <./zip-zop-client_8c__incl.pdf>] [27])
+ [34 <./zip-zop-client_8c__incl.pdf>] [35] [36])
 (./zip-zop-server_8c.tex
-<zip-zop-server_8c__incl.pdf, id=1157, 925.4575pt x 212.795pt>
+<zip-zop-server_8c__incl.pdf, id=1256, 925.4575pt x 212.795pt>
 File: zip-zop-server_8c__incl.pdf Graphic file (type pdf)
 <use zip-zop-server_8c__incl.pdf>
 Package pdftex.def Info: zip-zop-server_8c__incl.pdf  used on input line 20.
 (pdftex.def)             Requested size: 350.0pt x 80.47653pt.
- [28] [29 <./zip-zop-server_8c__incl.pdf>] [30])
-[31] [32] (./refman.ind [33
+ [37 <./zip-zop-server_8c__incl.pdf>]
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <9> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 48.
+ [38] [39]
+Underfull \hbox (badness 10000) detected at line 150
+[][][]
+ []
 
 
+Underfull \hbox (badness 10000) detected at line 168
+[][][]
+ []
 
-] [34] [35
+
+Underfull \hbox (badness 10000) detected at line 183
+[][][]
+ []
+
+[40]
+Underfull \hbox (badness 10000) detected at line 215
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 218
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 233
+[][][]
+ []
+
+) [41] [42
+
+] (./refman.ind [43
+
+
+] [44] [45
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 169.
@@ -1187,15 +1363,15 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 169.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 169.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 169.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 2A918338FC67661FF3D1A5EEBD6F262F;22865.
+(rerunfilecheck)             Checksum: 70E6B3A0351B28214DE859C120D1BFB0;23263.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 169.
  ) 
 Here is how much of TeX's memory you used:
- 15366 strings out of 492638
- 227425 string characters out of 6131709
- 326689 words of memory out of 5000000
- 18688 multiletter control sequences out of 15000+600000
- 65722 words of font info for 84 fonts, out of 8000000 for 9000
+ 15451 strings out of 492638
+ 228184 string characters out of 6131709
+ 328037 words of memory out of 5000000
+ 18726 multiletter control sequences out of 15000+600000
+ 66758 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  53i,14n,92p,2068b,627s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -1207,10 +1383,10 @@ rier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (41 pages, 216127 bytes).
+Output written on refman.pdf (51 pages, 239996 bytes).
 PDF statistics:
- 1509 PDF objects out of 1728 (max. 8388607)
- 1412 compressed objects within 15 object streams
- 295 named destinations out of 1000 (max. 500000)
- 986 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1631 PDF objects out of 1728 (max. 8388607)
+ 1521 compressed objects within 16 object streams
+ 340 named destinations out of 1000 (max. 500000)
+ 1002 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -24,13 +24,13 @@ Include dependency graph for zip-\/zop-\/server.c\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \#define \hyperlink{zip-zop-server_8c_a614217d263be1fb1a5f76e2ff7be19a2}{P\+O\+RT}~\char`\"{}1234\char`\"{}
-\item 
+\begin{DoxyCompactList}\small\item\em The port where this application will be running. \end{DoxyCompactList}\item 
 \#define \hyperlink{zip-zop-server_8c_aeefbbafa97642defe3ee6c3080b7d66f}{B\+A\+C\+K\+L\+OG}~10
-\item 
+\begin{DoxyCompactList}\small\item\em The number of clients that will be kept in the queue if the server is not ready for accepting them. \end{DoxyCompactList}\item 
 \#define \hyperlink{zip-zop-server_8c_a2966c973ff2fbc59d762420ad283e82f}{C\+L\+I\+E\+N\+T\+\_\+\+N\+A\+M\+E\+\_\+\+L\+EN}~100
-\item 
+\begin{DoxyCompactList}\small\item\em Maximum length of a client name. \end{DoxyCompactList}\item 
 \#define \hyperlink{zip-zop-server_8c_aa2dfc63100e2bed7efb1b0cd09dea107}{M\+E\+S\+S\+A\+G\+E\+\_\+\+L\+EN}~2000
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Maximum length of a client message. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -41,22 +41,22 @@ void \hyperlink{zip-zop-server_8c_ae5845d7e65c1c7407d1df63105450b5e}{kill\+\_\+c
 void $\ast$ \hyperlink{zip-zop-server_8c_a9076f5ad072ef4654917b662bfdd94ce}{client\+\_\+thread\+\_\+listen} (void $\ast$\hyperlink{structclient}{client})
 \item 
 struct addrinfo $\ast$ \hyperlink{zip-zop-server_8c_a2d9748875d07382b9dbecb97c6cd9b62}{get\+\_\+internet\+\_\+addr} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em Find a set of possible internet addresses of localhost. \end{DoxyCompactList}\item 
 int \hyperlink{zip-zop-server_8c_a0ecdeaf556729d827a07915b7a89866c}{create\+\_\+and\+\_\+bind} (struct addrinfo $\ast$addr)
-\item 
+\begin{DoxyCompactList}\small\item\em Attempts to create a socket and bind to a port with the given internet address. \end{DoxyCompactList}\item 
 void \hyperlink{zip-zop-server_8c_ab9a14cd690eac9781dd224e034fbd01d}{create\+\_\+new\+\_\+client} (int sockfd)
-\item 
+\begin{DoxyCompactList}\small\item\em Create a new client and add it in the {\ttfamily C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST}. \end{DoxyCompactList}\item 
 int \hyperlink{zip-zop-server_8c_acd1dc66d1afd8edcd165dc3f6855d355}{accept\+\_\+clients} (int sockfd)
-\item 
+\begin{DoxyCompactList}\small\item\em Keeps on accepting new clients connections. \end{DoxyCompactList}\item 
 int \hyperlink{zip-zop-server_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The zip-\/zop-\/server. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 struct \hyperlink{structsllist}{sllist} $\ast$ \hyperlink{zip-zop-server_8c_a32076dcdfaf1057a014d74d01cc7e08e}{C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST} = \hyperlink{sllist_8h_a4f1348bb9eb6fe8c2b112e39c1887290}{S\+L\+L\+\_\+\+I\+N\+IT}()
-\item 
+\begin{DoxyCompactList}\small\item\em A singly linked list that will keep all the connected clients. \end{DoxyCompactList}\item 
 pthread\+\_\+mutex\+\_\+t \hyperlink{zip-zop-server_8c_ac58873310e66c9bfafdbc798a8a7c7e2}{C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+S\+T\+\_\+\+M\+U\+T\+EX}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The {\ttfamily C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST} mutex. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Macro Definition Documentation}
@@ -66,11 +66,19 @@ pthread\+\_\+mutex\+\_\+t \hyperlink{zip-zop-server_8c_ac58873310e66c9bfafdbc798
 \subsubsection{\texorpdfstring{B\+A\+C\+K\+L\+OG}{BACKLOG}}
 {\footnotesize\ttfamily \#define B\+A\+C\+K\+L\+OG~10}
 
+
+
+The number of clients that will be kept in the queue if the server is not ready for accepting them. 
+
 \mbox{\Hypertarget{zip-zop-server_8c_a2966c973ff2fbc59d762420ad283e82f}\label{zip-zop-server_8c_a2966c973ff2fbc59d762420ad283e82f}} 
 \index{zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}!C\+L\+I\+E\+N\+T\+\_\+\+N\+A\+M\+E\+\_\+\+L\+EN@{C\+L\+I\+E\+N\+T\+\_\+\+N\+A\+M\+E\+\_\+\+L\+EN}}
 \index{C\+L\+I\+E\+N\+T\+\_\+\+N\+A\+M\+E\+\_\+\+L\+EN@{C\+L\+I\+E\+N\+T\+\_\+\+N\+A\+M\+E\+\_\+\+L\+EN}!zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}}
 \subsubsection{\texorpdfstring{C\+L\+I\+E\+N\+T\+\_\+\+N\+A\+M\+E\+\_\+\+L\+EN}{CLIENT\_NAME\_LEN}}
 {\footnotesize\ttfamily \#define C\+L\+I\+E\+N\+T\+\_\+\+N\+A\+M\+E\+\_\+\+L\+EN~100}
+
+
+
+Maximum length of a client name. 
 
 \mbox{\Hypertarget{zip-zop-server_8c_aa2dfc63100e2bed7efb1b0cd09dea107}\label{zip-zop-server_8c_aa2dfc63100e2bed7efb1b0cd09dea107}} 
 \index{zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}!M\+E\+S\+S\+A\+G\+E\+\_\+\+L\+EN@{M\+E\+S\+S\+A\+G\+E\+\_\+\+L\+EN}}
@@ -78,11 +86,19 @@ pthread\+\_\+mutex\+\_\+t \hyperlink{zip-zop-server_8c_ac58873310e66c9bfafdbc798
 \subsubsection{\texorpdfstring{M\+E\+S\+S\+A\+G\+E\+\_\+\+L\+EN}{MESSAGE\_LEN}}
 {\footnotesize\ttfamily \#define M\+E\+S\+S\+A\+G\+E\+\_\+\+L\+EN~2000}
 
+
+
+Maximum length of a client message. 
+
 \mbox{\Hypertarget{zip-zop-server_8c_a614217d263be1fb1a5f76e2ff7be19a2}\label{zip-zop-server_8c_a614217d263be1fb1a5f76e2ff7be19a2}} 
 \index{zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}!P\+O\+RT@{P\+O\+RT}}
 \index{P\+O\+RT@{P\+O\+RT}!zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}}
 \subsubsection{\texorpdfstring{P\+O\+RT}{PORT}}
 {\footnotesize\ttfamily \#define P\+O\+RT~\char`\"{}1234\char`\"{}}
+
+
+
+The port where this application will be running. 
 
 
 
@@ -93,6 +109,17 @@ pthread\+\_\+mutex\+\_\+t \hyperlink{zip-zop-server_8c_ac58873310e66c9bfafdbc798
 \subsubsection{\texorpdfstring{accept\+\_\+clients()}{accept\_clients()}}
 {\footnotesize\ttfamily int accept\+\_\+clients (\begin{DoxyParamCaption}\item[{int}]{sockfd }\end{DoxyParamCaption})}
 
+
+
+Keeps on accepting new clients connections. 
+
+Keeps listening for incoming connections, wen a new one arrives accepts it and instantiates a new client.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sockfd} & Socket used to listen to new connections. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{zip-zop-server_8c_a3608e5c14908c59afe16bf1fc85895c9}\label{zip-zop-server_8c_a3608e5c14908c59afe16bf1fc85895c9}} 
 \index{zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}!client\+\_\+thread\+\_\+broadcast@{client\+\_\+thread\+\_\+broadcast}}
 \index{client\+\_\+thread\+\_\+broadcast@{client\+\_\+thread\+\_\+broadcast}!zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}}
@@ -111,18 +138,51 @@ pthread\+\_\+mutex\+\_\+t \hyperlink{zip-zop-server_8c_ac58873310e66c9bfafdbc798
 \subsubsection{\texorpdfstring{create\+\_\+and\+\_\+bind()}{create\_and\_bind()}}
 {\footnotesize\ttfamily int create\+\_\+and\+\_\+bind (\begin{DoxyParamCaption}\item[{struct addrinfo $\ast$}]{addr }\end{DoxyParamCaption})}
 
+
+
+Attempts to create a socket and bind to a port with the given internet address. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em addr} & The internet address.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The socket in case os success. -\/1 otherwise. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{zip-zop-server_8c_ab9a14cd690eac9781dd224e034fbd01d}\label{zip-zop-server_8c_ab9a14cd690eac9781dd224e034fbd01d}} 
 \index{zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}!create\+\_\+new\+\_\+client@{create\+\_\+new\+\_\+client}}
 \index{create\+\_\+new\+\_\+client@{create\+\_\+new\+\_\+client}!zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}}
 \subsubsection{\texorpdfstring{create\+\_\+new\+\_\+client()}{create\_new\_client()}}
 {\footnotesize\ttfamily void create\+\_\+new\+\_\+client (\begin{DoxyParamCaption}\item[{int}]{sockfd }\end{DoxyParamCaption})}
 
+
+
+Create a new client and add it in the {\ttfamily C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sockfd} & The socket created in \hyperlink{zip-zop-server_8c_acd1dc66d1afd8edcd165dc3f6855d355}{accept\+\_\+clients()}, and that is used to communicate with the client that will be created.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{zip-zop-server_8c_acd1dc66d1afd8edcd165dc3f6855d355}{accept\+\_\+clients} 
+
+\hyperlink{zip-zop-server_8c_a32076dcdfaf1057a014d74d01cc7e08e}{C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{zip-zop-server_8c_a2d9748875d07382b9dbecb97c6cd9b62}\label{zip-zop-server_8c_a2d9748875d07382b9dbecb97c6cd9b62}} 
 \index{zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}!get\+\_\+internet\+\_\+addr@{get\+\_\+internet\+\_\+addr}}
 \index{get\+\_\+internet\+\_\+addr@{get\+\_\+internet\+\_\+addr}!zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}}
 \subsubsection{\texorpdfstring{get\+\_\+internet\+\_\+addr()}{get\_internet\_addr()}}
 {\footnotesize\ttfamily struct addrinfo$\ast$ get\+\_\+internet\+\_\+addr (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
+
+
+Find a set of possible internet addresses of localhost. 
+
+\begin{DoxyReturn}{Returns}
+A list of addrinfo, wich contain the adresses. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{zip-zop-server_8c_ae5845d7e65c1c7407d1df63105450b5e}\label{zip-zop-server_8c_ae5845d7e65c1c7407d1df63105450b5e}} 
 \index{zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}!kill\+\_\+client@{kill\+\_\+client}}
 \index{kill\+\_\+client@{kill\+\_\+client}!zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}}
@@ -137,6 +197,10 @@ pthread\+\_\+mutex\+\_\+t \hyperlink{zip-zop-server_8c_ac58873310e66c9bfafdbc798
 
 
 
+The zip-\/zop-\/server. 
+
+A T\+CP server that will accept connections from zip-\/zop-\/clients, hear its messages and broadcast them to all connected clients. Working as a chatroom. 
+
 \subsection{Variable Documentation}
 \mbox{\Hypertarget{zip-zop-server_8c_a32076dcdfaf1057a014d74d01cc7e08e}\label{zip-zop-server_8c_a32076dcdfaf1057a014d74d01cc7e08e}} 
 \index{zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}!C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST@{C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST}}
@@ -144,9 +208,28 @@ pthread\+\_\+mutex\+\_\+t \hyperlink{zip-zop-server_8c_ac58873310e66c9bfafdbc798
 \subsubsection{\texorpdfstring{C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST}{CLIENT\_LIST}}
 {\footnotesize\ttfamily struct \hyperlink{structsllist}{sllist}$\ast$ C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST = \hyperlink{sllist_8h_a4f1348bb9eb6fe8c2b112e39c1887290}{S\+L\+L\+\_\+\+I\+N\+IT}()}
 
+
+
+A singly linked list that will keep all the connected clients. 
+
+\begin{DoxyWarning}{Warning}
+Mutual exclusion must be ensured before accessing this list.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{zip-zop-server_8c_ac58873310e66c9bfafdbc798a8a7c7e2}{C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+S\+T\+\_\+\+M\+U\+T\+EX} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{zip-zop-server_8c_ac58873310e66c9bfafdbc798a8a7c7e2}\label{zip-zop-server_8c_ac58873310e66c9bfafdbc798a8a7c7e2}} 
 \index{zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}!C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+S\+T\+\_\+\+M\+U\+T\+EX@{C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+S\+T\+\_\+\+M\+U\+T\+EX}}
 \index{C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+S\+T\+\_\+\+M\+U\+T\+EX@{C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+S\+T\+\_\+\+M\+U\+T\+EX}!zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}}
 \subsubsection{\texorpdfstring{C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+S\+T\+\_\+\+M\+U\+T\+EX}{CLIENT\_LIST\_MUTEX}}
 {\footnotesize\ttfamily pthread\+\_\+mutex\+\_\+t C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+S\+T\+\_\+\+M\+U\+T\+EX}
 
+
+
+The {\ttfamily C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST} mutex. 
+
+This is used to ensure mutual exclusion wen accessing the {\ttfamily C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST}, given the nature of the application where multiple threads might use the list.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{zip-zop-server_8c_a32076dcdfaf1057a014d74d01cc7e08e}{C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST} 
+\end{DoxySeeAlso}

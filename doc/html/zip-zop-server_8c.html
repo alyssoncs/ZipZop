@@ -98,12 +98,16 @@ Include dependency graph for zip-zop-server.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a614217d263be1fb1a5f76e2ff7be19a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-server_8c.html#a614217d263be1fb1a5f76e2ff7be19a2">PORT</a>&#160;&#160;&#160;&quot;1234&quot;</td></tr>
+<tr class="memdesc:a614217d263be1fb1a5f76e2ff7be19a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The port where this application will be running.  <a href="#a614217d263be1fb1a5f76e2ff7be19a2">More...</a><br /></td></tr>
 <tr class="separator:a614217d263be1fb1a5f76e2ff7be19a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeefbbafa97642defe3ee6c3080b7d66f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-server_8c.html#aeefbbafa97642defe3ee6c3080b7d66f">BACKLOG</a>&#160;&#160;&#160;10</td></tr>
+<tr class="memdesc:aeefbbafa97642defe3ee6c3080b7d66f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of clients that will be kept in the queue if the server is not ready for accepting them.  <a href="#aeefbbafa97642defe3ee6c3080b7d66f">More...</a><br /></td></tr>
 <tr class="separator:aeefbbafa97642defe3ee6c3080b7d66f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2966c973ff2fbc59d762420ad283e82f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-server_8c.html#a2966c973ff2fbc59d762420ad283e82f">CLIENT_NAME_LEN</a>&#160;&#160;&#160;100</td></tr>
+<tr class="memdesc:a2966c973ff2fbc59d762420ad283e82f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum length of a client name.  <a href="#a2966c973ff2fbc59d762420ad283e82f">More...</a><br /></td></tr>
 <tr class="separator:a2966c973ff2fbc59d762420ad283e82f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2dfc63100e2bed7efb1b0cd09dea107"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-server_8c.html#aa2dfc63100e2bed7efb1b0cd09dea107">MESSAGE_LEN</a>&#160;&#160;&#160;2000</td></tr>
+<tr class="memdesc:aa2dfc63100e2bed7efb1b0cd09dea107"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum length of a client message.  <a href="#aa2dfc63100e2bed7efb1b0cd09dea107">More...</a><br /></td></tr>
 <tr class="separator:aa2dfc63100e2bed7efb1b0cd09dea107"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -115,21 +119,28 @@ Functions</h2></td></tr>
 <tr class="memitem:a9076f5ad072ef4654917b662bfdd94ce"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-server_8c.html#a9076f5ad072ef4654917b662bfdd94ce">client_thread_listen</a> (void *<a class="el" href="structclient.html">client</a>)</td></tr>
 <tr class="separator:a9076f5ad072ef4654917b662bfdd94ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d9748875d07382b9dbecb97c6cd9b62"><td class="memItemLeft" align="right" valign="top">struct addrinfo *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-server_8c.html#a2d9748875d07382b9dbecb97c6cd9b62">get_internet_addr</a> (void)</td></tr>
+<tr class="memdesc:a2d9748875d07382b9dbecb97c6cd9b62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a set of possible internet addresses of localhost.  <a href="#a2d9748875d07382b9dbecb97c6cd9b62">More...</a><br /></td></tr>
 <tr class="separator:a2d9748875d07382b9dbecb97c6cd9b62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ecdeaf556729d827a07915b7a89866c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-server_8c.html#a0ecdeaf556729d827a07915b7a89866c">create_and_bind</a> (struct addrinfo *addr)</td></tr>
+<tr class="memdesc:a0ecdeaf556729d827a07915b7a89866c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to create a socket and bind to a port with the given internet address.  <a href="#a0ecdeaf556729d827a07915b7a89866c">More...</a><br /></td></tr>
 <tr class="separator:a0ecdeaf556729d827a07915b7a89866c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9a14cd690eac9781dd224e034fbd01d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-server_8c.html#ab9a14cd690eac9781dd224e034fbd01d">create_new_client</a> (int sockfd)</td></tr>
+<tr class="memdesc:ab9a14cd690eac9781dd224e034fbd01d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new client and add it in the <code>CLIENT_LIST</code>.  <a href="#ab9a14cd690eac9781dd224e034fbd01d">More...</a><br /></td></tr>
 <tr class="separator:ab9a14cd690eac9781dd224e034fbd01d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd1dc66d1afd8edcd165dc3f6855d355"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-server_8c.html#acd1dc66d1afd8edcd165dc3f6855d355">accept_clients</a> (int sockfd)</td></tr>
+<tr class="memdesc:acd1dc66d1afd8edcd165dc3f6855d355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keeps on accepting new clients connections.  <a href="#acd1dc66d1afd8edcd165dc3f6855d355">More...</a><br /></td></tr>
 <tr class="separator:acd1dc66d1afd8edcd165dc3f6855d355"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-server_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
+<tr class="memdesc:a840291bc02cba5474a4cb46a9b9566fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">The zip-zop-server.  <a href="#a840291bc02cba5474a4cb46a9b9566fe">More...</a><br /></td></tr>
 <tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a32076dcdfaf1057a014d74d01cc7e08e"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structsllist.html">sllist</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-server_8c.html#a32076dcdfaf1057a014d74d01cc7e08e">CLIENT_LIST</a> = <a class="el" href="sllist_8h.html#a4f1348bb9eb6fe8c2b112e39c1887290">SLL_INIT</a>()</td></tr>
+<tr class="memdesc:a32076dcdfaf1057a014d74d01cc7e08e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A singly linked list that will keep all the connected clients.  <a href="#a32076dcdfaf1057a014d74d01cc7e08e">More...</a><br /></td></tr>
 <tr class="separator:a32076dcdfaf1057a014d74d01cc7e08e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac58873310e66c9bfafdbc798a8a7c7e2"><td class="memItemLeft" align="right" valign="top">pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-server_8c.html#ac58873310e66c9bfafdbc798a8a7c7e2">CLIENT_LIST_MUTEX</a></td></tr>
+<tr class="memdesc:ac58873310e66c9bfafdbc798a8a7c7e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <code>CLIENT_LIST</code> mutex.  <a href="#ac58873310e66c9bfafdbc798a8a7c7e2">More...</a><br /></td></tr>
 <tr class="separator:ac58873310e66c9bfafdbc798a8a7c7e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -145,6 +156,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The number of clients that will be kept in the queue if the server is not ready for accepting them. </p>
+
 </div>
 </div>
 <a id="a2966c973ff2fbc59d762420ad283e82f"></a>
@@ -158,6 +171,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Maximum length of a client name. </p>
 
 </div>
 </div>
@@ -173,6 +188,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Maximum length of a client message. </p>
+
 </div>
 </div>
 <a id="a614217d263be1fb1a5f76e2ff7be19a2"></a>
@@ -186,6 +203,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The port where this application will be running. </p>
 
 </div>
 </div>
@@ -205,6 +224,15 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Keeps on accepting new clients connections. </p>
+<p>Keeps listening for incoming connections, wen a new one arrives accepts it and instantiates a new client.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sockfd</td><td>Socket used to listen to new connections. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -270,6 +298,15 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Attempts to create a socket and bind to a port with the given internet address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>The internet address.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The socket in case os success. -1 otherwise. </dd></dl>
+
 </div>
 </div>
 <a id="ab9a14cd690eac9781dd224e034fbd01d"></a>
@@ -288,6 +325,17 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Create a new client and add it in the <code>CLIENT_LIST</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sockfd</td><td>The socket created in <a class="el" href="zip-zop-server_8c.html#acd1dc66d1afd8edcd165dc3f6855d355" title="Keeps on accepting new clients connections. ">accept_clients()</a>, and that is used to communicate with the client that will be created.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="zip-zop-server_8c.html#acd1dc66d1afd8edcd165dc3f6855d355" title="Keeps on accepting new clients connections. ">accept_clients</a> </dd>
+<dd>
+<a class="el" href="zip-zop-server_8c.html#a32076dcdfaf1057a014d74d01cc7e08e" title="A singly linked list that will keep all the connected clients. ">CLIENT_LIST</a> </dd></dl>
+
 </div>
 </div>
 <a id="a2d9748875d07382b9dbecb97c6cd9b62"></a>
@@ -305,6 +353,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Find a set of possible internet addresses of localhost. </p>
+<dl class="section return"><dt>Returns</dt><dd>A list of addrinfo, wich contain the adresses. </dd></dl>
 
 </div>
 </div>
@@ -342,6 +393,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The zip-zop-server. </p>
+<p>A TCP server that will accept connections from zip-zop-clients, hear its messages and broadcast them to all connected clients. Working as a chatroom. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -357,6 +411,10 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>A singly linked list that will keep all the connected clients. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Mutual exclusion must be ensured before accessing this list.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="zip-zop-server_8c.html#ac58873310e66c9bfafdbc798a8a7c7e2" title="The CLIENT_LIST mutex. ">CLIENT_LIST_MUTEX</a> </dd></dl>
+
 </div>
 </div>
 <a id="ac58873310e66c9bfafdbc798a8a7c7e2"></a>
@@ -370,6 +428,10 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The <code>CLIENT_LIST</code> mutex. </p>
+<p>This is used to ensure mutual exclusion wen accessing the <code>CLIENT_LIST</code>, given the nature of the application where multiple threads might use the list.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="zip-zop-server_8c.html#a32076dcdfaf1057a014d74d01cc7e08e" title="A singly linked list that will keep all the connected clients. ">CLIENT_LIST</a> </dd></dl>
 
 </div>
 </div>

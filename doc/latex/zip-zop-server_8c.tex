@@ -35,11 +35,11 @@ Include dependency graph for zip-\/zop-\/server.c\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{zip-zop-server_8c_a3608e5c14908c59afe16bf1fc85895c9}{client\+\_\+thread\+\_\+broadcast} (struct \hyperlink{structclient}{client} $\ast$c, const char $\ast$msg)
-\item 
+\begin{DoxyCompactList}\small\item\em Sends a message to all clients. \end{DoxyCompactList}\item 
 void \hyperlink{zip-zop-server_8c_ae5845d7e65c1c7407d1df63105450b5e}{kill\+\_\+client} (struct \hyperlink{structclient}{client} $\ast$c)
-\item 
+\begin{DoxyCompactList}\small\item\em Kill a client. \end{DoxyCompactList}\item 
 void $\ast$ \hyperlink{zip-zop-server_8c_a9076f5ad072ef4654917b662bfdd94ce}{client\+\_\+thread\+\_\+listen} (void $\ast$\hyperlink{structclient}{client})
-\item 
+\begin{DoxyCompactList}\small\item\em Keeps listening to client messages. \end{DoxyCompactList}\item 
 struct addrinfo $\ast$ \hyperlink{zip-zop-server_8c_a2d9748875d07382b9dbecb97c6cd9b62}{get\+\_\+internet\+\_\+addr} (void)
 \begin{DoxyCompactList}\small\item\em Find a set of possible internet addresses of localhost. \end{DoxyCompactList}\item 
 int \hyperlink{zip-zop-server_8c_a0ecdeaf556729d827a07915b7a89866c}{create\+\_\+and\+\_\+bind} (struct addrinfo $\ast$addr)
@@ -126,12 +126,44 @@ Keeps listening for incoming connections, wen a new one arrives accepts it and i
 \subsubsection{\texorpdfstring{client\+\_\+thread\+\_\+broadcast()}{client\_thread\_broadcast()}}
 {\footnotesize\ttfamily void client\+\_\+thread\+\_\+broadcast (\begin{DoxyParamCaption}\item[{struct \hyperlink{structclient}{client} $\ast$}]{c,  }\item[{const char $\ast$}]{msg }\end{DoxyParamCaption})}
 
+
+
+Sends a message to all clients. 
+
+The message will be sent as a packet version of a struct message.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & The client that sent the message. \\
+\hline
+\mbox{\tt in}  & {\em msg} & The message content.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{message_8h_a0e07715664284f7a821216ca83317e60}{message\+\_\+pack} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{zip-zop-server_8c_a9076f5ad072ef4654917b662bfdd94ce}\label{zip-zop-server_8c_a9076f5ad072ef4654917b662bfdd94ce}} 
 \index{zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}!client\+\_\+thread\+\_\+listen@{client\+\_\+thread\+\_\+listen}}
 \index{client\+\_\+thread\+\_\+listen@{client\+\_\+thread\+\_\+listen}!zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}}
 \subsubsection{\texorpdfstring{client\+\_\+thread\+\_\+listen()}{client\_thread\_listen()}}
 {\footnotesize\ttfamily void$\ast$ client\+\_\+thread\+\_\+listen (\begin{DoxyParamCaption}\item[{void $\ast$}]{client }\end{DoxyParamCaption})}
 
+
+
+Keeps listening to client messages. 
+
+This function will be executed by a thread that is responsable for keep checking if there is a new message from the client.
+
+If there is an new message, the thread will execute the \hyperlink{zip-zop-server_8c_a3608e5c14908c59afe16bf1fc85895c9}{client\+\_\+thread\+\_\+broadcast()}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em client} & A pointer to the client.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{zip-zop-server_8c_a3608e5c14908c59afe16bf1fc85895c9}{client\+\_\+thread\+\_\+broadcast} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{zip-zop-server_8c_a0ecdeaf556729d827a07915b7a89866c}\label{zip-zop-server_8c_a0ecdeaf556729d827a07915b7a89866c}} 
 \index{zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}!create\+\_\+and\+\_\+bind@{create\+\_\+and\+\_\+bind}}
 \index{create\+\_\+and\+\_\+bind@{create\+\_\+and\+\_\+bind}!zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}}
@@ -189,6 +221,20 @@ A list of addrinfo, wich contain the adresses.
 \subsubsection{\texorpdfstring{kill\+\_\+client()}{kill\_client()}}
 {\footnotesize\ttfamily void kill\+\_\+client (\begin{DoxyParamCaption}\item[{struct \hyperlink{structclient}{client} $\ast$}]{c }\end{DoxyParamCaption})}
 
+
+
+Kill a client. 
+
+Removes a client from the {\ttfamily C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST}, destroys it and closes the connection.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & The client.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{zip-zop-server_8c_a32076dcdfaf1057a014d74d01cc7e08e}{C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{zip-zop-server_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{zip-zop-server_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
 \index{zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}!main@{main}}
 \index{main@{main}!zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}}

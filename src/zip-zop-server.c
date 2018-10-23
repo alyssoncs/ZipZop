@@ -45,8 +45,19 @@ struct sllist *CLIENT_LIST = SLL_INIT();
  */
 pthread_mutex_t CLIENT_LIST_MUTEX;
 
+/**
+ * @brief Sends a message to all clients.
+ *
+ * The message will be sent as a packet version of a struct message.
+ *
+ * @param[in] c The client that sent the message.
+ * @param[in] msg The message content.
+ *
+ * @see message_pack
+ */
 void client_thread_broadcast(struct client *c, const char *msg)
 {
+	/* The serialized message will be stored here */
 	char *pack = "";
 
 	struct message *m = message_create(msg, client_get_name(c));
@@ -56,6 +67,7 @@ void client_thread_broadcast(struct client *c, const char *msg)
 		if (pack) {
 			pthread_mutex_lock(&CLIENT_LIST_MUTEX);
 
+			/* Iterate through all the CLIENT_LIST, and send the message to all the connected clients */
 			for (struct sllist *p = CLIENT_LIST; p; p = sll_get_next(&p)) {
 				struct client *current_client = (struct client *)sll_get_key(p);
 				int rv = send(client_get_socket(current_client), pack, len, 0);
@@ -72,6 +84,15 @@ void client_thread_broadcast(struct client *c, const char *msg)
 	}
 }
 
+/**
+ * @brief Kill a client.
+ *
+ * Removes a client from the @c CLIENT_LIST, destroys it and closes the connection.
+ *
+ * @param[in] c The client.
+ *
+ * @see CLIENT_LIST
+ */
 void kill_client(struct client *c)
 {
 	if (c) {
@@ -80,11 +101,25 @@ void kill_client(struct client *c)
 		pthread_mutex_unlock(&CLIENT_LIST_MUTEX);
 
 		if (key) {
+			close(client_get_socket(c));
 			client_destroy(c);
 		}
 	}
 
 }
+
+/**
+ * @brief Keeps listening to client messages.
+ *
+ * This function will be executed by a thread that is responsable for 
+ * keep checking if there is a new message from the client.
+ *
+ * If there is an new message, the thread will execute the client_thread_broadcast().
+ *
+ * @param[in] client A pointer to the client.
+ *
+ * @see client_thread_broadcast
+ */
 void *client_thread_listen(void *client)
 {
 	struct client *c = (struct client *)client;

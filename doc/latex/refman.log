@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.10.18)  22 OCT 2018 21:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.10.18)  23 OCT 2018 08:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1319,39 +1319,56 @@ Package pdftex.def Info: zip-zop-server_8c__incl.pdf  used on input line 20.
  [37 <./zip-zop-server_8c__incl.pdf>]
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <9> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 48.
- [38] [39]
-Underfull \hbox (badness 10000) detected at line 150
+ [38]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [39]
+Underfull \hbox (badness 10000) detected at line 142
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 168
+Underfull \hbox (badness 10000) detected at line 164
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 183
+Underfull \hbox (badness 10000) detected at line 182
 [][][]
  []
 
 [40]
+Underfull \hbox (badness 10000) detected at line 200
+[][][]
+ []
+
+
 Underfull \hbox (badness 10000) detected at line 215
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 218
+Underfull \hbox (badness 10000) detected at line 235
+[][][]
+ []
+
+[41]
+Underfull \hbox (badness 10000) detected at line 261
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 233
+Underfull \hbox (badness 10000) detected at line 264
 [][][]
  []
 
-) [41] [42
 
-] (./refman.ind [43
+Underfull \hbox (badness 10000) detected at line 279
+[][][]
+ []
+
+) [42] (./refman.ind [43
+
 
 
 ] [44] [45
@@ -1367,10 +1384,10 @@ Package rerunfilecheck Info: File `refman.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 169.
  ) 
 Here is how much of TeX's memory you used:
- 15451 strings out of 492638
- 228184 string characters out of 6131709
- 328037 words of memory out of 5000000
- 18726 multiletter control sequences out of 15000+600000
+ 15457 strings out of 492638
+ 228238 string characters out of 6131709
+ 328155 words of memory out of 5000000
+ 18729 multiletter control sequences out of 15000+600000
  66758 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  53i,14n,92p,2068b,627s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1383,10 +1400,10 @@ rier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (51 pages, 239996 bytes).
+Output written on refman.pdf (51 pages, 241434 bytes).
 PDF statistics:
- 1631 PDF objects out of 1728 (max. 8388607)
- 1521 compressed objects within 16 object streams
- 340 named destinations out of 1000 (max. 500000)
+ 1639 PDF objects out of 1728 (max. 8388607)
+ 1529 compressed objects within 16 object streams
+ 343 named destinations out of 1000 (max. 500000)
  1002 words of extra memory for PDF output out of 10000 (max. 10000000)
 

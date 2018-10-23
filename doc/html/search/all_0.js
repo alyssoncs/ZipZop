@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['accept_5fclients',['accept_clients',['../zip-zop-server_8c.html#acd1dc66d1afd8edcd165dc3f6855d355',1,'zip-zop-server.c']]]
+  ['client',['client',['../structclient.html',1,'']]],
+  ['content',['content',['../structmessage.html#ad3b965525fe62cb25162084d97a3f0ff',1,'message']]]
 ];

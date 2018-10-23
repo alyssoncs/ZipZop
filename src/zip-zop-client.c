@@ -13,9 +13,19 @@
 #include "message.h"
 #include "client.h"
 
+/** @brief The port where this application will be running */
 #define PORT "1234"
+
+/** @brief Maximum length of a client message */
 #define MESSAGE_LEN 2000 
 
+/**
+ * @brief Checks if the user enter the arguments in the correct manner.
+ *
+ * @param[in] argc Number of arguments.
+ *
+ * @return @c true if the arguments are correct, @c false otherwise.
+ */
 bool check_args(int argc)
 {
 	if (argc == 3)
@@ -23,11 +33,21 @@ bool check_args(int argc)
 	return false;
 }
 
+/**
+ * @brief Prints the correct usage of the program.
+ *
+ * @param[in] name The name of this program.
+ */
 void print_usage(const char *name)
 {
 	printf("usage: %s <server addr> <username>\n", name);
 }
 
+/**
+ * @brief Displays a message in the screen.
+ *
+ * @param[in] m The message.
+ */
 void show_message(struct message *m)
 {
 	if (m) {
@@ -36,6 +56,18 @@ void show_message(struct message *m)
 	}
 }
 
+/**
+ * @brief Keeps listening to server messages.
+ *
+ * This function will be executed by a thread that is responsable for 
+ * keep checking if there is a new message from the server.
+ *
+ * If there is an new message, the thread will display the message.
+ *
+ * @param[in] client A pointer to the client.
+ *
+ * @see show_message
+ */
 void *listen_thread(void *client)
 {
 	struct client *c = (struct client *)client;
@@ -52,6 +84,15 @@ void *listen_thread(void *client)
 	return NULL;
 }
 
+/**
+ * @brief Keeps reading messages from @c stdin and send them to server.
+ *
+ * The message will be sent as a packet version of a struct message.
+ *
+ * @param[in] c The client that sent the message.
+ *
+ * @see message_pack
+ */
 void *speak_thread(void *client)
 {
 	struct client *c = (struct client *)client;
@@ -73,6 +114,15 @@ void *speak_thread(void *client)
 	return NULL;
 }
 
+/**
+ * @brief Gets the internet address of the server.
+ *
+ * Given the server name, this function will try to find an internet address to this server.
+ *
+ * @param[in] server_name The server name.
+ *
+ * @return A pointer to a list of possibly valid server internet addresses.
+ */
 struct addrinfo *get_server_addr(const char * server_name)
 {
 	struct addrinfo hints, *servinfo;
@@ -90,6 +140,14 @@ struct addrinfo *get_server_addr(const char * server_name)
 	return servinfo;
 }
 
+/**
+ * @brief Attempts to create a socket to an internet address 
+ * and connect to it in to a port.
+ *
+ * @param[in] addr The internet address.
+ *
+ * @return The socket in case os success. @c -1 otherwise.
+ */
 int create_and_connect(struct addrinfo *addr)
 {
 	int sockfd;
@@ -105,6 +163,15 @@ int create_and_connect(struct addrinfo *addr)
 	return sockfd;
 }
 
+/**
+ * @brief Presents the client to the server.
+ *
+ * This function sends everything that is needed to introduce the client to the server.
+ *
+ * In this case only the client name is sent to the server.
+ *
+ * @param c The client.
+ */
 void server_introduction(struct client *c)
 {
 	int sockfd 			= client_get_socket(c);
@@ -117,6 +184,16 @@ void server_introduction(struct client *c)
 	}
 }
 
+/**
+ * @brief Manages the connection with a user and a server.
+ *
+ * Given a username and a socket connected with the server, manages the connection, 
+ * creating a thread to listen to incomming messages from the server, and another to 
+ * read messages from the user and send them to the server.
+ *
+ * @param[in] user_name The username.
+ * @param[in] sockfd The socket connected to the server.
+ */
 void communicate(const char *user_name, int sockfd)
 {
 	struct client *c = client_create(user_name, sockfd);
@@ -130,6 +207,16 @@ void communicate(const char *user_name, int sockfd)
 	}
 }
 
+/**
+ * @brief The zip-zop-client.
+ *
+ * A TCP client that will connect with an instance of the zip-zop-server.
+ *
+ * @param[in] argc Number of arguments given by the user.
+ * @param[in] argc An array of strings representing the arguments given by the user
+ * 
+ * @note Usage: ./zip-zop-client <server_addr> <username>
+ */
 int main(int argc, char **argv)
 {
 	if (check_args(argc) == false) {
@@ -144,6 +231,7 @@ int main(int argc, char **argv)
 	
 	struct addrinfo *p;
 	int sockfd;
+	/* Iterate through all the list of server addresses, and try to connect to one of them */
 	for (p = servinfo; p != NULL; p = p->ai_next) {
 		if ((sockfd = create_and_connect(p)) == -1) {
 			continue;

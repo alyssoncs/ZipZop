@@ -23,32 +23,32 @@ Include dependency graph for zip-\/zop-\/client.c\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \#define \hyperlink{zip-zop-client_8c_a614217d263be1fb1a5f76e2ff7be19a2}{P\+O\+RT}~\char`\"{}1234\char`\"{}
-\item 
+\begin{DoxyCompactList}\small\item\em The port where this application will be running. \end{DoxyCompactList}\item 
 \#define \hyperlink{zip-zop-client_8c_aa2dfc63100e2bed7efb1b0cd09dea107}{M\+E\+S\+S\+A\+G\+E\+\_\+\+L\+EN}~2000
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Maximum length of a client message. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 bool \hyperlink{zip-zop-client_8c_ae42aaff0193542f01451e25d0d0e6725}{check\+\_\+args} (int argc)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the user enter the arguments in the correct manner. \end{DoxyCompactList}\item 
 void \hyperlink{zip-zop-client_8c_a120fec5c70bad673e9b1c2e91b28fe5f}{print\+\_\+usage} (const char $\ast$name)
-\item 
+\begin{DoxyCompactList}\small\item\em Prints the correct usage of the program. \end{DoxyCompactList}\item 
 void \hyperlink{zip-zop-client_8c_aec5550cf115ba01d0da023ba9d1876bb}{show\+\_\+message} (struct \hyperlink{structmessage}{message} $\ast$m)
-\item 
+\begin{DoxyCompactList}\small\item\em Displays a message in the screen. \end{DoxyCompactList}\item 
 void $\ast$ \hyperlink{zip-zop-client_8c_aafa1438575f3295609976f35a6518cca}{listen\+\_\+thread} (void $\ast$\hyperlink{structclient}{client})
-\item 
+\begin{DoxyCompactList}\small\item\em Keeps listening to server messages. \end{DoxyCompactList}\item 
 void $\ast$ \hyperlink{zip-zop-client_8c_a7ca038c133aa6aca1c539e69d4ee675f}{speak\+\_\+thread} (void $\ast$\hyperlink{structclient}{client})
-\item 
+\begin{DoxyCompactList}\small\item\em Keeps reading messages from {\ttfamily stdin} and send them to server. \end{DoxyCompactList}\item 
 struct addrinfo $\ast$ \hyperlink{zip-zop-client_8c_a76840de4643d86b9d0a968ec2d1acae3}{get\+\_\+server\+\_\+addr} (const char $\ast$server\+\_\+name)
-\item 
+\begin{DoxyCompactList}\small\item\em Gets the internet address of the server. \end{DoxyCompactList}\item 
 int \hyperlink{zip-zop-client_8c_aff1f8c91603968e32da45fc6ef4bad4d}{create\+\_\+and\+\_\+connect} (struct addrinfo $\ast$addr)
-\item 
+\begin{DoxyCompactList}\small\item\em Attempts to create a socket to an internet address and connect to it in to a port. \end{DoxyCompactList}\item 
 void \hyperlink{zip-zop-client_8c_acb0e43d47379736b891394dd383064be}{server\+\_\+introduction} (struct \hyperlink{structclient}{client} $\ast$c)
-\item 
+\begin{DoxyCompactList}\small\item\em Presents the client to the server. \end{DoxyCompactList}\item 
 void \hyperlink{zip-zop-client_8c_a1c3a34b362da4351d526c8af94b228c6}{communicate} (const char $\ast$user\+\_\+name, int sockfd)
-\item 
+\begin{DoxyCompactList}\small\item\em Manages the connection with a user and a server. \end{DoxyCompactList}\item 
 int \hyperlink{zip-zop-client_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The zip-\/zop-\/client. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Macro Definition Documentation}
@@ -58,11 +58,19 @@ int \hyperlink{zip-zop-client_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int a
 \subsubsection{\texorpdfstring{M\+E\+S\+S\+A\+G\+E\+\_\+\+L\+EN}{MESSAGE\_LEN}}
 {\footnotesize\ttfamily \#define M\+E\+S\+S\+A\+G\+E\+\_\+\+L\+EN~2000}
 
+
+
+Maximum length of a client message. 
+
 \mbox{\Hypertarget{zip-zop-client_8c_a614217d263be1fb1a5f76e2ff7be19a2}\label{zip-zop-client_8c_a614217d263be1fb1a5f76e2ff7be19a2}} 
 \index{zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}!P\+O\+RT@{P\+O\+RT}}
 \index{P\+O\+RT@{P\+O\+RT}!zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}}
 \subsubsection{\texorpdfstring{P\+O\+RT}{PORT}}
 {\footnotesize\ttfamily \#define P\+O\+RT~\char`\"{}1234\char`\"{}}
+
+
+
+The port where this application will be running. 
 
 
 
@@ -73,57 +81,185 @@ int \hyperlink{zip-zop-client_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int a
 \subsubsection{\texorpdfstring{check\+\_\+args()}{check\_args()}}
 {\footnotesize\ttfamily bool check\+\_\+args (\begin{DoxyParamCaption}\item[{int}]{argc }\end{DoxyParamCaption})}
 
+
+
+Checks if the user enter the arguments in the correct manner. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em argc} & Number of arguments.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the arguments are correct, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{zip-zop-client_8c_a1c3a34b362da4351d526c8af94b228c6}\label{zip-zop-client_8c_a1c3a34b362da4351d526c8af94b228c6}} 
 \index{zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}!communicate@{communicate}}
 \index{communicate@{communicate}!zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}}
 \subsubsection{\texorpdfstring{communicate()}{communicate()}}
 {\footnotesize\ttfamily void communicate (\begin{DoxyParamCaption}\item[{const char $\ast$}]{user\+\_\+name,  }\item[{int}]{sockfd }\end{DoxyParamCaption})}
 
+
+
+Manages the connection with a user and a server. 
+
+Given a username and a socket connected with the server, manages the connection, creating a thread to listen to incomming messages from the server, and another to read messages from the user and send them to the server.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em user\+\_\+name} & The username. \\
+\hline
+\mbox{\tt in}  & {\em sockfd} & The socket connected to the server. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{zip-zop-client_8c_aff1f8c91603968e32da45fc6ef4bad4d}\label{zip-zop-client_8c_aff1f8c91603968e32da45fc6ef4bad4d}} 
 \index{zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}!create\+\_\+and\+\_\+connect@{create\+\_\+and\+\_\+connect}}
 \index{create\+\_\+and\+\_\+connect@{create\+\_\+and\+\_\+connect}!zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}}
 \subsubsection{\texorpdfstring{create\+\_\+and\+\_\+connect()}{create\_and\_connect()}}
 {\footnotesize\ttfamily int create\+\_\+and\+\_\+connect (\begin{DoxyParamCaption}\item[{struct addrinfo $\ast$}]{addr }\end{DoxyParamCaption})}
 
+
+
+Attempts to create a socket to an internet address and connect to it in to a port. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em addr} & The internet address.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The socket in case os success. {\ttfamily -\/1} otherwise. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{zip-zop-client_8c_a76840de4643d86b9d0a968ec2d1acae3}\label{zip-zop-client_8c_a76840de4643d86b9d0a968ec2d1acae3}} 
 \index{zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}!get\+\_\+server\+\_\+addr@{get\+\_\+server\+\_\+addr}}
 \index{get\+\_\+server\+\_\+addr@{get\+\_\+server\+\_\+addr}!zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}}
 \subsubsection{\texorpdfstring{get\+\_\+server\+\_\+addr()}{get\_server\_addr()}}
 {\footnotesize\ttfamily struct addrinfo$\ast$ get\+\_\+server\+\_\+addr (\begin{DoxyParamCaption}\item[{const char $\ast$}]{server\+\_\+name }\end{DoxyParamCaption})}
 
+
+
+Gets the internet address of the server. 
+
+Given the server name, this function will try to find an internet address to this server.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em server\+\_\+name} & The server name.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to a list of possibly valid server internet addresses. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{zip-zop-client_8c_aafa1438575f3295609976f35a6518cca}\label{zip-zop-client_8c_aafa1438575f3295609976f35a6518cca}} 
 \index{zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}!listen\+\_\+thread@{listen\+\_\+thread}}
 \index{listen\+\_\+thread@{listen\+\_\+thread}!zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}}
 \subsubsection{\texorpdfstring{listen\+\_\+thread()}{listen\_thread()}}
 {\footnotesize\ttfamily void$\ast$ listen\+\_\+thread (\begin{DoxyParamCaption}\item[{void $\ast$}]{client }\end{DoxyParamCaption})}
 
+
+
+Keeps listening to server messages. 
+
+This function will be executed by a thread that is responsable for keep checking if there is a new message from the server.
+
+If there is an new message, the thread will display the message.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em client} & A pointer to the client.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{zip-zop-client_8c_aec5550cf115ba01d0da023ba9d1876bb}{show\+\_\+message} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{zip-zop-client_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{zip-zop-client_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
 \index{zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}!main@{main}}
 \index{main@{main}!zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}}
 \subsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
 
+
+
+The zip-\/zop-\/client. 
+
+A T\+CP client that will connect with an instance of the zip-\/zop-\/server.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em argc} & Number of arguments given by the user. \\
+\hline
+\mbox{\tt in}  & {\em argc} & An array of strings representing the arguments given by the user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Usage\+: ./zip-\/zop-\/client $<$server\+\_\+addr$>$ $<$username$>$ 
+\end{DoxyNote}
 \mbox{\Hypertarget{zip-zop-client_8c_a120fec5c70bad673e9b1c2e91b28fe5f}\label{zip-zop-client_8c_a120fec5c70bad673e9b1c2e91b28fe5f}} 
 \index{zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}!print\+\_\+usage@{print\+\_\+usage}}
 \index{print\+\_\+usage@{print\+\_\+usage}!zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}}
 \subsubsection{\texorpdfstring{print\+\_\+usage()}{print\_usage()}}
 {\footnotesize\ttfamily void print\+\_\+usage (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
 
+
+
+Prints the correct usage of the program. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & The name of this program. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{zip-zop-client_8c_acb0e43d47379736b891394dd383064be}\label{zip-zop-client_8c_acb0e43d47379736b891394dd383064be}} 
 \index{zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}!server\+\_\+introduction@{server\+\_\+introduction}}
 \index{server\+\_\+introduction@{server\+\_\+introduction}!zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}}
 \subsubsection{\texorpdfstring{server\+\_\+introduction()}{server\_introduction()}}
 {\footnotesize\ttfamily void server\+\_\+introduction (\begin{DoxyParamCaption}\item[{struct \hyperlink{structclient}{client} $\ast$}]{c }\end{DoxyParamCaption})}
 
+
+
+Presents the client to the server. 
+
+This function sends everything that is needed to introduce the client to the server.
+
+In this case only the client name is sent to the server.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The client. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{zip-zop-client_8c_aec5550cf115ba01d0da023ba9d1876bb}\label{zip-zop-client_8c_aec5550cf115ba01d0da023ba9d1876bb}} 
 \index{zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}!show\+\_\+message@{show\+\_\+message}}
 \index{show\+\_\+message@{show\+\_\+message}!zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}}
 \subsubsection{\texorpdfstring{show\+\_\+message()}{show\_message()}}
 {\footnotesize\ttfamily void show\+\_\+message (\begin{DoxyParamCaption}\item[{struct \hyperlink{structmessage}{message} $\ast$}]{m }\end{DoxyParamCaption})}
 
+
+
+Displays a message in the screen. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em m} & The message. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{zip-zop-client_8c_a7ca038c133aa6aca1c539e69d4ee675f}\label{zip-zop-client_8c_a7ca038c133aa6aca1c539e69d4ee675f}} 
 \index{zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}!speak\+\_\+thread@{speak\+\_\+thread}}
 \index{speak\+\_\+thread@{speak\+\_\+thread}!zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}}
 \subsubsection{\texorpdfstring{speak\+\_\+thread()}{speak\_thread()}}
 {\footnotesize\ttfamily void$\ast$ speak\+\_\+thread (\begin{DoxyParamCaption}\item[{void $\ast$}]{client }\end{DoxyParamCaption})}
 
+
+
+Keeps reading messages from {\ttfamily stdin} and send them to server. 
+
+The message will be sent as a packet version of a struct message.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & The client that sent the message.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{message_8h_a0e07715664284f7a821216ca83317e60}{message\+\_\+pack} 
+\end{DoxySeeAlso}

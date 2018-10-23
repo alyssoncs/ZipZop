@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['get_5finternet_5faddr',['get_internet_addr',['../zip-zop-server_8c.html#a2d9748875d07382b9dbecb97c6cd9b62',1,'zip-zop-server.c']]],
-  ['get_5fserver_5faddr',['get_server_addr',['../zip-zop-client_8c.html#a76840de4643d86b9d0a968ec2d1acae3',1,'zip-zop-client.c']]]
+  ['sender_5fname',['sender_name',['../structmessage.html#a93d4525b657c15744e45ca9504840000',1,'message']]],
+  ['sllist',['sllist',['../structsllist.html',1,'']]],
+  ['sockfd',['sockfd',['../structclient.html#ab7c05dd7a1a5daa5383849d8b3b0ce3f',1,'client']]]
 ];

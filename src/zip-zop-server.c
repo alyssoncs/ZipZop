@@ -164,7 +164,7 @@ struct addrinfo *get_internet_addr(void)
  *
  * @param[in] addr The internet address.
  *
- * @return The socket in case os success. -1 otherwise.
+ * @return The socket in case os success. @c -1 otherwise.
  */
 int create_and_bind(struct addrinfo *addr)
 {

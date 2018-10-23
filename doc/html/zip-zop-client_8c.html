@@ -95,31 +95,43 @@ Include dependency graph for zip-zop-client.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a614217d263be1fb1a5f76e2ff7be19a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-client_8c.html#a614217d263be1fb1a5f76e2ff7be19a2">PORT</a>&#160;&#160;&#160;&quot;1234&quot;</td></tr>
+<tr class="memdesc:a614217d263be1fb1a5f76e2ff7be19a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The port where this application will be running.  <a href="#a614217d263be1fb1a5f76e2ff7be19a2">More...</a><br /></td></tr>
 <tr class="separator:a614217d263be1fb1a5f76e2ff7be19a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2dfc63100e2bed7efb1b0cd09dea107"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-client_8c.html#aa2dfc63100e2bed7efb1b0cd09dea107">MESSAGE_LEN</a>&#160;&#160;&#160;2000</td></tr>
+<tr class="memdesc:aa2dfc63100e2bed7efb1b0cd09dea107"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum length of a client message.  <a href="#aa2dfc63100e2bed7efb1b0cd09dea107">More...</a><br /></td></tr>
 <tr class="separator:aa2dfc63100e2bed7efb1b0cd09dea107"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae42aaff0193542f01451e25d0d0e6725"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-client_8c.html#ae42aaff0193542f01451e25d0d0e6725">check_args</a> (int argc)</td></tr>
+<tr class="memdesc:ae42aaff0193542f01451e25d0d0e6725"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the user enter the arguments in the correct manner.  <a href="#ae42aaff0193542f01451e25d0d0e6725">More...</a><br /></td></tr>
 <tr class="separator:ae42aaff0193542f01451e25d0d0e6725"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a120fec5c70bad673e9b1c2e91b28fe5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-client_8c.html#a120fec5c70bad673e9b1c2e91b28fe5f">print_usage</a> (const char *name)</td></tr>
+<tr class="memdesc:a120fec5c70bad673e9b1c2e91b28fe5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the correct usage of the program.  <a href="#a120fec5c70bad673e9b1c2e91b28fe5f">More...</a><br /></td></tr>
 <tr class="separator:a120fec5c70bad673e9b1c2e91b28fe5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec5550cf115ba01d0da023ba9d1876bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-client_8c.html#aec5550cf115ba01d0da023ba9d1876bb">show_message</a> (struct <a class="el" href="structmessage.html">message</a> *m)</td></tr>
+<tr class="memdesc:aec5550cf115ba01d0da023ba9d1876bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message in the screen.  <a href="#aec5550cf115ba01d0da023ba9d1876bb">More...</a><br /></td></tr>
 <tr class="separator:aec5550cf115ba01d0da023ba9d1876bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafa1438575f3295609976f35a6518cca"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-client_8c.html#aafa1438575f3295609976f35a6518cca">listen_thread</a> (void *<a class="el" href="structclient.html">client</a>)</td></tr>
+<tr class="memdesc:aafa1438575f3295609976f35a6518cca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keeps listening to server messages.  <a href="#aafa1438575f3295609976f35a6518cca">More...</a><br /></td></tr>
 <tr class="separator:aafa1438575f3295609976f35a6518cca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ca038c133aa6aca1c539e69d4ee675f"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-client_8c.html#a7ca038c133aa6aca1c539e69d4ee675f">speak_thread</a> (void *<a class="el" href="structclient.html">client</a>)</td></tr>
+<tr class="memdesc:a7ca038c133aa6aca1c539e69d4ee675f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keeps reading messages from <code>stdin</code> and send them to server.  <a href="#a7ca038c133aa6aca1c539e69d4ee675f">More...</a><br /></td></tr>
 <tr class="separator:a7ca038c133aa6aca1c539e69d4ee675f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76840de4643d86b9d0a968ec2d1acae3"><td class="memItemLeft" align="right" valign="top">struct addrinfo *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-client_8c.html#a76840de4643d86b9d0a968ec2d1acae3">get_server_addr</a> (const char *server_name)</td></tr>
+<tr class="memdesc:a76840de4643d86b9d0a968ec2d1acae3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the internet address of the server.  <a href="#a76840de4643d86b9d0a968ec2d1acae3">More...</a><br /></td></tr>
 <tr class="separator:a76840de4643d86b9d0a968ec2d1acae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff1f8c91603968e32da45fc6ef4bad4d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-client_8c.html#aff1f8c91603968e32da45fc6ef4bad4d">create_and_connect</a> (struct addrinfo *addr)</td></tr>
+<tr class="memdesc:aff1f8c91603968e32da45fc6ef4bad4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to create a socket to an internet address and connect to it in to a port.  <a href="#aff1f8c91603968e32da45fc6ef4bad4d">More...</a><br /></td></tr>
 <tr class="separator:aff1f8c91603968e32da45fc6ef4bad4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb0e43d47379736b891394dd383064be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-client_8c.html#acb0e43d47379736b891394dd383064be">server_introduction</a> (struct <a class="el" href="structclient.html">client</a> *c)</td></tr>
+<tr class="memdesc:acb0e43d47379736b891394dd383064be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Presents the client to the server.  <a href="#acb0e43d47379736b891394dd383064be">More...</a><br /></td></tr>
 <tr class="separator:acb0e43d47379736b891394dd383064be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c3a34b362da4351d526c8af94b228c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-client_8c.html#a1c3a34b362da4351d526c8af94b228c6">communicate</a> (const char *user_name, int sockfd)</td></tr>
+<tr class="memdesc:a1c3a34b362da4351d526c8af94b228c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manages the connection with a user and a server.  <a href="#a1c3a34b362da4351d526c8af94b228c6">More...</a><br /></td></tr>
 <tr class="separator:a1c3a34b362da4351d526c8af94b228c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-client_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
+<tr class="memdesc:a3c04138a5bfe5d72780bb7e82a18e627"><td class="mdescLeft">&#160;</td><td class="mdescRight">The zip-zop-client.  <a href="#a3c04138a5bfe5d72780bb7e82a18e627">More...</a><br /></td></tr>
 <tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -135,6 +147,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Maximum length of a client message. </p>
+
 </div>
 </div>
 <a id="a614217d263be1fb1a5f76e2ff7be19a2"></a>
@@ -148,6 +162,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The port where this application will be running. </p>
 
 </div>
 </div>
@@ -167,6 +183,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Checks if the user enter the arguments in the correct manner. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">argc</td><td>Number of arguments.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the arguments are correct, <code>false</code> otherwise. </dd></dl>
 
 </div>
 </div>
@@ -196,6 +221,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Manages the connection with a user and a server. </p>
+<p>Given a username and a socket connected with the server, manages the connection, creating a thread to listen to incomming messages from the server, and another to read messages from the user and send them to the server.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_name</td><td>The username. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sockfd</td><td>The socket connected to the server. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="aff1f8c91603968e32da45fc6ef4bad4d"></a>
@@ -213,6 +248,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Attempts to create a socket to an internet address and connect to it in to a port. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>The internet address.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The socket in case os success. <code>-1</code> otherwise. </dd></dl>
 
 </div>
 </div>
@@ -232,6 +276,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Gets the internet address of the server. </p>
+<p>Given the server name, this function will try to find an internet address to this server.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">server_name</td><td>The server name.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to a list of possibly valid server internet addresses. </dd></dl>
+
 </div>
 </div>
 <a id="aafa1438575f3295609976f35a6518cca"></a>
@@ -249,6 +303,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Keeps listening to server messages. </p>
+<p>This function will be executed by a thread that is responsable for keep checking if there is a new message from the server.</p>
+<p>If there is an new message, the thread will display the message.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">client</td><td>A pointer to the client.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="zip-zop-client_8c.html#aec5550cf115ba01d0da023ba9d1876bb" title="Displays a message in the screen. ">show_message</a> </dd></dl>
 
 </div>
 </div>
@@ -278,6 +343,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The zip-zop-client. </p>
+<p>A TCP client that will connect with an instance of the zip-zop-server.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">argc</td><td>Number of arguments given by the user. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">argc</td><td>An array of strings representing the arguments given by the user</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Usage: ./zip-zop-client &lt;server_addr&gt; &lt;username&gt; </dd></dl>
+
 </div>
 </div>
 <a id="a120fec5c70bad673e9b1c2e91b28fe5f"></a>
@@ -295,6 +371,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Prints the correct usage of the program. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of this program. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -314,6 +398,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Presents the client to the server. </p>
+<p>This function sends everything that is needed to introduce the client to the server.</p>
+<p>In this case only the client name is sent to the server.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>The client. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="aec5550cf115ba01d0da023ba9d1876bb"></a>
@@ -332,6 +426,14 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Displays a message in the screen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>The message. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a7ca038c133aa6aca1c539e69d4ee675f"></a>
@@ -349,6 +451,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Keeps reading messages from <code>stdin</code> and send them to server. </p>
+<p>The message will be sent as a packet version of a struct message.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>The client that sent the message.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="message_8h.html#a0e07715664284f7a821216ca83317e60" title="Serialize a message. ">message_pack</a> </dd></dl>
 
 </div>
 </div>

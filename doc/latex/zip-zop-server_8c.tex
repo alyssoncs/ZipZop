@@ -192,6 +192,8 @@ The socket in case os success. {\ttfamily -\/1} otherwise.
 
 Create a new client and add it in the {\ttfamily C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST}. 
 
+Also broadcast everyone that the new client has entered the room.
+
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em sockfd} & The socket created in \hyperlink{zip-zop-server_8c_acd1dc66d1afd8edcd165dc3f6855d355}{accept\+\_\+clients()}, and that is used to communicate with the client that will be created.\\

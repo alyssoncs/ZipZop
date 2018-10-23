@@ -192,6 +192,8 @@ int create_and_bind(struct addrinfo *addr)
 /**
  * @brief Create a new client and add it in the @c CLIENT_LIST.
  *
+ * Also broadcast everyone that the new client has entered the room.
+ *
  * @param[in] sockfd The socket created in accept_clients(),  and that 
  * is used to communicate with the client that will be created.
  *
@@ -225,6 +227,14 @@ void create_new_client(int sockfd)
 		if (pthread_create(client_get_thread(c), NULL, client_thread_listen, c)) {
 			exit(E_PTHREAD_CREATE);
 		}
+
+		struct client *server = client_create("server", 1);
+		char welcome_message[MESSAGE_LEN];
+
+		snprintf(welcome_message, MESSAGE_LEN, "%s entered the room", client_get_name(c));
+		client_thread_broadcast(server, welcome_message);
+
+		client_destroy(server);
 	}
 }
 

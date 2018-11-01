@@ -82,6 +82,7 @@ struct client *remove_client_concurrent(struct client *c)
 
 	return (struct client *)key;
 }
+
 /**
  * @brief Sends a message to all clients.
  *

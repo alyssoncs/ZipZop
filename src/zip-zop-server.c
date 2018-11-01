@@ -63,7 +63,7 @@ void insert_client_concurrent(struct client *c)
 }
 
 /**
- * @brief Carry out mutual exclusion and insert the new client on the list.
+ * @brief Carry out mutual exclusion and remove the new client on the list.
  * 
  * This function locks the @c CLIENT_LIST_MUTEX and inserts the client on the list, then unlocks the mutex.
  *

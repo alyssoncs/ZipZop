@@ -34,6 +34,10 @@ Include dependency graph for zip-\/zop-\/server.c\+:\nopagebreak
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \hyperlink{zip-zop-server_8c_a84f39912128d6dc7a66bbdd88fad00b5}{insert\+\_\+client\+\_\+concurrent} (struct \hyperlink{structclient}{client} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Inserts a client in the {\ttfamily C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST} dealing with concurrency. \end{DoxyCompactList}\item 
+struct \hyperlink{structclient}{client} $\ast$ \hyperlink{zip-zop-server_8c_a37f14ecc30cc2b45249b544fe70f2b6d}{remove\+\_\+client\+\_\+concurrent} (struct \hyperlink{structclient}{client} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Removes a client in the {\ttfamily C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST} dealing with concurrency. \end{DoxyCompactList}\item 
 void \hyperlink{zip-zop-server_8c_a3608e5c14908c59afe16bf1fc85895c9}{client\+\_\+thread\+\_\+broadcast} (struct \hyperlink{structclient}{client} $\ast$c, const char $\ast$msg)
 \begin{DoxyCompactList}\small\item\em Sends a message to all clients. \end{DoxyCompactList}\item 
 void \hyperlink{zip-zop-server_8c_ae5845d7e65c1c7407d1df63105450b5e}{kill\+\_\+client} (struct \hyperlink{structclient}{client} $\ast$c)
@@ -217,6 +221,28 @@ Find a set of possible internet addresses of localhost.
 \begin{DoxyReturn}{Returns}
 A list of addrinfo, wich contain the adresses. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{zip-zop-server_8c_a84f39912128d6dc7a66bbdd88fad00b5}\label{zip-zop-server_8c_a84f39912128d6dc7a66bbdd88fad00b5}} 
+\index{zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}!insert\+\_\+client\+\_\+concurrent@{insert\+\_\+client\+\_\+concurrent}}
+\index{insert\+\_\+client\+\_\+concurrent@{insert\+\_\+client\+\_\+concurrent}!zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}}
+\subsubsection{\texorpdfstring{insert\+\_\+client\+\_\+concurrent()}{insert\_client\_concurrent()}}
+{\footnotesize\ttfamily void insert\+\_\+client\+\_\+concurrent (\begin{DoxyParamCaption}\item[{struct \hyperlink{structclient}{client} $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Inserts a client in the {\ttfamily C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST} dealing with concurrency. 
+
+This function locks the {\ttfamily C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+S\+T\+\_\+\+M\+U\+T\+EX} and inserts the client on the list, then unlocks the mutex.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & The client.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{zip-zop-server_8c_a32076dcdfaf1057a014d74d01cc7e08e}{C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST} 
+
+\hyperlink{zip-zop-server_8c_ac58873310e66c9bfafdbc798a8a7c7e2}{C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+S\+T\+\_\+\+M\+U\+T\+EX} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{zip-zop-server_8c_ae5845d7e65c1c7407d1df63105450b5e}\label{zip-zop-server_8c_ae5845d7e65c1c7407d1df63105450b5e}} 
 \index{zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}!kill\+\_\+client@{kill\+\_\+client}}
 \index{kill\+\_\+client@{kill\+\_\+client}!zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}}
@@ -247,7 +273,32 @@ Removes a client from the {\ttfamily C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST}, destroys
 
 The zip-\/zop-\/server. 
 
-A T\+CP server that will accept connections from zip-\/zop-\/clients, hear its messages and broadcast them to all connected clients. Working as a chatroom. 
+A T\+CP server that will accept connections from zip-\/zop-\/clients, hear its messages and broadcast them to all connected clients. Working as a chatroom. \mbox{\Hypertarget{zip-zop-server_8c_a37f14ecc30cc2b45249b544fe70f2b6d}\label{zip-zop-server_8c_a37f14ecc30cc2b45249b544fe70f2b6d}} 
+\index{zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}!remove\+\_\+client\+\_\+concurrent@{remove\+\_\+client\+\_\+concurrent}}
+\index{remove\+\_\+client\+\_\+concurrent@{remove\+\_\+client\+\_\+concurrent}!zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}}
+\subsubsection{\texorpdfstring{remove\+\_\+client\+\_\+concurrent()}{remove\_client\_concurrent()}}
+{\footnotesize\ttfamily struct \hyperlink{structclient}{client}$\ast$ remove\+\_\+client\+\_\+concurrent (\begin{DoxyParamCaption}\item[{struct \hyperlink{structclient}{client} $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Removes a client in the {\ttfamily C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST} dealing with concurrency. 
+
+This function locks the {\ttfamily C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+S\+T\+\_\+\+M\+U\+T\+EX} and inserts the client on the list, then unlocks the mutex.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & The client.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The client just removed. N\+U\+LL otherwise.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{zip-zop-server_8c_a32076dcdfaf1057a014d74d01cc7e08e}{C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST} 
+
+\hyperlink{zip-zop-server_8c_ac58873310e66c9bfafdbc798a8a7c7e2}{C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+S\+T\+\_\+\+M\+U\+T\+EX} 
+\end{DoxySeeAlso}
+
 
 \subsection{Variable Documentation}
 \mbox{\Hypertarget{zip-zop-server_8c_a32076dcdfaf1057a014d74d01cc7e08e}\label{zip-zop-server_8c_a32076dcdfaf1057a014d74d01cc7e08e}} 

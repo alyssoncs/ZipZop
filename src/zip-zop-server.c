@@ -46,6 +46,43 @@ struct sllist *CLIENT_LIST = SLL_INIT();
 pthread_mutex_t CLIENT_LIST_MUTEX;
 
 /**
+ * @brief Inserts a client in the @c CLIENT_LIST dealing with concurrency.
+ *
+ * This function locks the @c CLIENT_LIST_MUTEX and inserts the client on the list, then unlocks the mutex.
+ *
+ * @param[in] c The client.
+ *
+ * @see CLIENT_LIST
+ * @see CLIENT_LIST_MUTEX
+ */
+void insert_client_concurrent(struct client *c)
+{
+	pthread_mutex_lock(&CLIENT_LIST_MUTEX);
+	sll_insert_last(&CLIENT_LIST, c);
+	pthread_mutex_unlock(&CLIENT_LIST_MUTEX);
+}
+
+/**
+ * @brief Removes a client in the @c CLIENT_LIST dealing with concurrency.
+ *
+ * This function locks the @c CLIENT_LIST_MUTEX and inserts the client on the list, then unlocks the mutex.
+ *
+ * @param[in] c The client.
+ *
+ * @return The client just removed. NULL otherwise.
+ *
+ * @see CLIENT_LIST
+ * @see CLIENT_LIST_MUTEX
+ */
+struct client *remove_client_concurrent(struct client *c)
+{
+	pthread_mutex_lock(&CLIENT_LIST_MUTEX);
+	void *key = sll_remove_elm(&CLIENT_LIST, c);
+	pthread_mutex_unlock(&CLIENT_LIST_MUTEX);
+
+	return (struct client *)key;
+}
+/**
  * @brief Sends a message to all clients.
  *
  * The message will be sent as a packet version of a struct message.

@@ -133,9 +133,7 @@ void client_thread_broadcast(struct client *c, const char *msg)
 void kill_client(struct client *c)
 {
 	if (c) {
-		pthread_mutex_lock(&CLIENT_LIST_MUTEX);
-		void *key = sll_remove_elm(&CLIENT_LIST, c);
-		pthread_mutex_unlock(&CLIENT_LIST_MUTEX);
+		void *key = remove_client_concurrent(c);
 
 		if (key) {
 			close(client_get_socket(c));
@@ -253,9 +251,7 @@ void create_new_client(int sockfd)
 	struct client *c = client_create(client_name, sockfd);
 	if (c) {
 		/* Carry out mutual exclusion and insert the new client on the list */
-		pthread_mutex_lock(&CLIENT_LIST_MUTEX);
-		sll_insert_last(&CLIENT_LIST, c);
-		pthread_mutex_unlock(&CLIENT_LIST_MUTEX);
+		insert_client_concurrent(c);
 
 		/* 
 		 * Create a a new thread for that client, this thread 

@@ -46,7 +46,7 @@ struct sllist *CLIENT_LIST = SLL_INIT();
 pthread_mutex_t CLIENT_LIST_MUTEX;
 
 /**
- * @brief Inserts a client in the @c CLIENT_LIST dealing with concurrency.
+ * @brief Carry out mutual exclusion and insert the new client on the list.
  *
  * This function locks the @c CLIENT_LIST_MUTEX and inserts the client on the list, then unlocks the mutex.
  *
@@ -63,8 +63,8 @@ void insert_client_concurrent(struct client *c)
 }
 
 /**
- * @brief Removes a client in the @c CLIENT_LIST dealing with concurrency.
- *
+ * @brief Carry out mutual exclusion and insert the new client on the list.
+ * 
  * This function locks the @c CLIENT_LIST_MUTEX and inserts the client on the list, then unlocks the mutex.
  *
  * @param[in] c The client.

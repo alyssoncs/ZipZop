@@ -173,59 +173,6 @@ void *client_thread_listen(void *client)
 }
 
 /**
- * @brief Find a set of possible internet addresses of localhost.
- *
- * @return A list of addrinfo, wich contain the adresses.
- */
-struct addrinfo *get_internet_addr(void)
-{
-	struct addrinfo hints, *servinfo;
-
-	memset(&hints, 0, sizeof(hints));  /* Zero the hints variable */
-	hints.ai_family 	= AF_UNSPEC;   /* Use IPv4 or IPv6 */
-	hints.ai_socktype 	= SOCK_STREAM; /* Use TCP */
-	hints.ai_flags 		= AI_PASSIVE;  /* Use my IP (this server will run on localhost) */
-
-	int rv;
-	if ((rv = getaddrinfo(NULL, PORT, &hints, &servinfo)) != 0) {
-		fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(rv));
-		exit(E_GETADDRINFO);
-	}
-
-	return servinfo;
-}
-
-/**
- * @brief Attempts to create a socket and bind to a port with the given internet address.
- *
- * @param[in] addr The internet address.
- *
- * @return The socket in case os success. @c -1 otherwise.
- */
-int create_and_bind(struct addrinfo *addr)
-{
-	int yes = 1;
-	int sockfd;
-
-	/* Tries to create a socket */
-	if ((sockfd = socket(addr->ai_family, addr->ai_socktype, addr->ai_protocol)) == -1) {
-		return -1;
-	}
-
-	/* Configure to reuse the same address between instantiations (prevents the "address alredy in use" error) */
-	if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(yes)) == -1) {
-		return -1;
-	}
-
-	/* Ties to bind to a given port */
-	if (bind(sockfd, addr->ai_addr, addr->ai_addrlen) == -1) {
-		return -1;
-	}
-
-	return sockfd;
-}
-
-/**
  * @brief Create a new client and add it in the @c CLIENT_LIST.
  *
  * Also broadcast everyone that the new client has entered the room.
@@ -300,6 +247,59 @@ int accept_clients(int sockfd)
 	}
 
 	return 0;
+}
+
+/**
+ * @brief Find a set of possible internet addresses of localhost.
+ *
+ * @return A list of addrinfo, wich contain the adresses.
+ */
+struct addrinfo *get_internet_addr(void)
+{
+	struct addrinfo hints, *servinfo;
+
+	memset(&hints, 0, sizeof(hints));  /* Zero the hints variable */
+	hints.ai_family 	= AF_UNSPEC;   /* Use IPv4 or IPv6 */
+	hints.ai_socktype 	= SOCK_STREAM; /* Use TCP */
+	hints.ai_flags 		= AI_PASSIVE;  /* Use my IP (this server will run on localhost) */
+
+	int rv;
+	if ((rv = getaddrinfo(NULL, PORT, &hints, &servinfo)) != 0) {
+		fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(rv));
+		exit(E_GETADDRINFO);
+	}
+
+	return servinfo;
+}
+
+/**
+ * @brief Attempts to create a socket and bind to a port with the given internet address.
+ *
+ * @param[in] addr The internet address.
+ *
+ * @return The socket in case os success. @c -1 otherwise.
+ */
+int create_and_bind(struct addrinfo *addr)
+{
+	int yes = 1;
+	int sockfd;
+
+	/* Tries to create a socket */
+	if ((sockfd = socket(addr->ai_family, addr->ai_socktype, addr->ai_protocol)) == -1) {
+		return -1;
+	}
+
+	/* Configure to reuse the same address between instantiations (prevents the "address alredy in use" error) */
+	if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(yes)) == -1) {
+		return -1;
+	}
+
+	/* Ties to bind to a given port */
+	if (bind(sockfd, addr->ai_addr, addr->ai_addrlen) == -1) {
+		return -1;
+	}
+
+	return sockfd;
 }
 
 /**

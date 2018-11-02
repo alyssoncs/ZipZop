@@ -61,8 +61,8 @@ $(function() {
 <div class="textblock">Here is a list of all functions, variables, defines, enums, and typedefs with links to the files they belong to:</div>
 
 <h3><a id="index_a"></a>- a -</h3><ul>
-<li>accept_clients()
-: <a class="el" href="zip-zop-server_8c.html#acd1dc66d1afd8edcd165dc3f6855d355">zip-zop-server.c</a>
+<li>accept_clients_thread()
+: <a class="el" href="zip-zop-server_8c.html#aecda02796082ba70b0c51545862d03a6">zip-zop-server.c</a>
 </li>
 </ul>
 
@@ -70,6 +70,9 @@ $(function() {
 <h3><a id="index_b"></a>- b -</h3><ul>
 <li>BACKLOG
 : <a class="el" href="zip-zop-server_8c.html#aeefbbafa97642defe3ee6c3080b7d66f">zip-zop-server.c</a>
+</li>
+<li>broadcast_client_message()
+: <a class="el" href="zip-zop-server_8c.html#a36e911ded647a0697ca152cae890bcf5">zip-zop-server.c</a>
 </li>
 </ul>
 
@@ -118,12 +121,6 @@ $(function() {
 <li>client_set_thread()
 : <a class="el" href="client_8c.html#a8316dd83e8f2d0fff9b3953897db8f4b">client.c</a>
 , <a class="el" href="client_8h.html#a8316dd83e8f2d0fff9b3953897db8f4b">client.h</a>
-</li>
-<li>client_thread_broadcast()
-: <a class="el" href="zip-zop-server_8c.html#a3608e5c14908c59afe16bf1fc85895c9">zip-zop-server.c</a>
-</li>
-<li>client_thread_listen()
-: <a class="el" href="zip-zop-server_8c.html#a9076f5ad072ef4654917b662bfdd94ce">zip-zop-server.c</a>
 </li>
 <li>communicate()
 : <a class="el" href="zip-zop-client_8c.html#a1c3a34b362da4351d526c8af94b228c6">zip-zop-client.c</a>
@@ -195,6 +192,9 @@ $(function() {
 <h3><a id="index_l"></a>- l -</h3><ul>
 <li>listen_thread()
 : <a class="el" href="zip-zop-client_8c.html#aafa1438575f3295609976f35a6518cca">zip-zop-client.c</a>
+</li>
+<li>listen_to_client_thread()
+: <a class="el" href="zip-zop-server_8c.html#abb42bd69f5e5088fef8519780a977f98">zip-zop-server.c</a>
 </li>
 </ul>
 
@@ -268,12 +268,12 @@ $(function() {
 : <a class="el" href="sllist_8c.html#aa391dba476f2cf8290a77d7445bde246">sllist.c</a>
 , <a class="el" href="sllist_8h.html#aa391dba476f2cf8290a77d7445bde246">sllist.h</a>
 </li>
-<li>SLL_INIT
-: <a class="el" href="sllist_8h.html#a4f1348bb9eb6fe8c2b112e39c1887290">sllist.h</a>
-</li>
 <li>sll_init()
 : <a class="el" href="sllist_8c.html#ada173d32da00693ac4e803b1343ec4ac">sllist.c</a>
 , <a class="el" href="sllist_8h.html#ada173d32da00693ac4e803b1343ec4ac">sllist.h</a>
+</li>
+<li>SLL_INIT
+: <a class="el" href="sllist_8h.html#a4f1348bb9eb6fe8c2b112e39c1887290">sllist.h</a>
 </li>
 <li>sll_insert_first()
 : <a class="el" href="sllist_8c.html#a798d672d70a10222966c9de995496f9f">sllist.c</a>

@@ -61,8 +61,15 @@ $(function() {
 &#160;
 
 <h3><a id="index_a"></a>- a -</h3><ul>
-<li>accept_clients()
-: <a class="el" href="zip-zop-server_8c.html#acd1dc66d1afd8edcd165dc3f6855d355">zip-zop-server.c</a>
+<li>accept_clients_thread()
+: <a class="el" href="zip-zop-server_8c.html#aecda02796082ba70b0c51545862d03a6">zip-zop-server.c</a>
+</li>
+</ul>
+
+
+<h3><a id="index_b"></a>- b -</h3><ul>
+<li>broadcast_client_message()
+: <a class="el" href="zip-zop-server_8c.html#a36e911ded647a0697ca152cae890bcf5">zip-zop-server.c</a>
 </li>
 </ul>
 
@@ -96,18 +103,12 @@ $(function() {
 , <a class="el" href="client_8h.html#a1a0a4dc1973ebe7e14fb34546f870829">client.h</a>
 </li>
 <li>client_set_socket()
-: <a class="el" href="client_8c.html#af6bd0240b4fb0e0128cb9d91da55f2b8">client.c</a>
-, <a class="el" href="client_8h.html#af6bd0240b4fb0e0128cb9d91da55f2b8">client.h</a>
+: <a class="el" href="client_8h.html#af6bd0240b4fb0e0128cb9d91da55f2b8">client.h</a>
+, <a class="el" href="client_8c.html#af6bd0240b4fb0e0128cb9d91da55f2b8">client.c</a>
 </li>
 <li>client_set_thread()
 : <a class="el" href="client_8c.html#a8316dd83e8f2d0fff9b3953897db8f4b">client.c</a>
 , <a class="el" href="client_8h.html#a8316dd83e8f2d0fff9b3953897db8f4b">client.h</a>
-</li>
-<li>client_thread_broadcast()
-: <a class="el" href="zip-zop-server_8c.html#a3608e5c14908c59afe16bf1fc85895c9">zip-zop-server.c</a>
-</li>
-<li>client_thread_listen()
-: <a class="el" href="zip-zop-server_8c.html#a9076f5ad072ef4654917b662bfdd94ce">zip-zop-server.c</a>
 </li>
 <li>communicate()
 : <a class="el" href="zip-zop-client_8c.html#a1c3a34b362da4351d526c8af94b228c6">zip-zop-client.c</a>
@@ -152,6 +153,9 @@ $(function() {
 <li>listen_thread()
 : <a class="el" href="zip-zop-client_8c.html#aafa1438575f3295609976f35a6518cca">zip-zop-client.c</a>
 </li>
+<li>listen_to_client_thread()
+: <a class="el" href="zip-zop-server_8c.html#abb42bd69f5e5088fef8519780a977f98">zip-zop-server.c</a>
+</li>
 </ul>
 
 
@@ -161,16 +165,16 @@ $(function() {
 , <a class="el" href="zip-zop-server_8c.html#a840291bc02cba5474a4cb46a9b9566fe">zip-zop-server.c</a>
 </li>
 <li>message_create()
-: <a class="el" href="message_8c.html#af0270eefb03058e936215fd11fde4b93">message.c</a>
-, <a class="el" href="message_8h.html#af0270eefb03058e936215fd11fde4b93">message.h</a>
+: <a class="el" href="message_8h.html#af0270eefb03058e936215fd11fde4b93">message.h</a>
+, <a class="el" href="message_8c.html#af0270eefb03058e936215fd11fde4b93">message.c</a>
 </li>
 <li>message_destroy()
 : <a class="el" href="message_8c.html#ad0eaa8623d0f22248ec230fd91bd819b">message.c</a>
 , <a class="el" href="message_8h.html#ad0eaa8623d0f22248ec230fd91bd819b">message.h</a>
 </li>
 <li>message_get_content()
-: <a class="el" href="message_8c.html#a31cd31a7acd86c44c38238f5a5b1da76">message.c</a>
-, <a class="el" href="message_8h.html#a31cd31a7acd86c44c38238f5a5b1da76">message.h</a>
+: <a class="el" href="message_8h.html#a31cd31a7acd86c44c38238f5a5b1da76">message.h</a>
+, <a class="el" href="message_8c.html#a31cd31a7acd86c44c38238f5a5b1da76">message.c</a>
 </li>
 <li>message_get_sender()
 : <a class="el" href="message_8c.html#ac6e3d955212965dc1ab7b5e3f88bc535">message.c</a>
@@ -181,8 +185,8 @@ $(function() {
 , <a class="el" href="message_8h.html#a0e07715664284f7a821216ca83317e60">message.h</a>
 </li>
 <li>message_unpack()
-: <a class="el" href="message_8c.html#a3ba54a38dd0b04dea973f33437bb9125">message.c</a>
-, <a class="el" href="message_8h.html#a3ba54a38dd0b04dea973f33437bb9125">message.h</a>
+: <a class="el" href="message_8h.html#a3ba54a38dd0b04dea973f33437bb9125">message.h</a>
+, <a class="el" href="message_8c.html#a3ba54a38dd0b04dea973f33437bb9125">message.c</a>
 </li>
 </ul>
 
@@ -209,16 +213,16 @@ $(function() {
 : <a class="el" href="zip-zop-client_8c.html#aec5550cf115ba01d0da023ba9d1876bb">zip-zop-client.c</a>
 </li>
 <li>sll_get_key()
-: <a class="el" href="sllist_8c.html#ac2c3278ad40114c39ec8d55e7ffc46b3">sllist.c</a>
-, <a class="el" href="sllist_8h.html#ac2c3278ad40114c39ec8d55e7ffc46b3">sllist.h</a>
+: <a class="el" href="sllist_8h.html#ac2c3278ad40114c39ec8d55e7ffc46b3">sllist.h</a>
+, <a class="el" href="sllist_8c.html#ac2c3278ad40114c39ec8d55e7ffc46b3">sllist.c</a>
 </li>
 <li>sll_get_next()
 : <a class="el" href="sllist_8c.html#aa391dba476f2cf8290a77d7445bde246">sllist.c</a>
 , <a class="el" href="sllist_8h.html#aa391dba476f2cf8290a77d7445bde246">sllist.h</a>
 </li>
 <li>sll_init()
-: <a class="el" href="sllist_8c.html#ada173d32da00693ac4e803b1343ec4ac">sllist.c</a>
-, <a class="el" href="sllist_8h.html#ada173d32da00693ac4e803b1343ec4ac">sllist.h</a>
+: <a class="el" href="sllist_8h.html#ada173d32da00693ac4e803b1343ec4ac">sllist.h</a>
+, <a class="el" href="sllist_8c.html#ada173d32da00693ac4e803b1343ec4ac">sllist.c</a>
 </li>
 <li>sll_insert_first()
 : <a class="el" href="sllist_8c.html#a798d672d70a10222966c9de995496f9f">sllist.c</a>

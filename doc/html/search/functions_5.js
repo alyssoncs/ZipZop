@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['listen_5fthread',['listen_thread',['../zip-zop-client_8c.html#aafa1438575f3295609976f35a6518cca',1,'zip-zop-client.c']]]
+  ['kill_5fclient',['kill_client',['../zip-zop-server_8c.html#ae5845d7e65c1c7407d1df63105450b5e',1,'zip-zop-server.c']]]
 ];

@@ -130,9 +130,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ab9a14cd690eac9781dd224e034fbd01d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-server_8c.html#ab9a14cd690eac9781dd224e034fbd01d">create_new_client</a> (int sockfd)</td></tr>
 <tr class="memdesc:ab9a14cd690eac9781dd224e034fbd01d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new client and add it in the <code>CLIENT_LIST</code>.  <a href="#ab9a14cd690eac9781dd224e034fbd01d">More...</a><br /></td></tr>
 <tr class="separator:ab9a14cd690eac9781dd224e034fbd01d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecda02796082ba70b0c51545862d03a6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-server_8c.html#aecda02796082ba70b0c51545862d03a6">accept_clients_thread</a> (int sockfd)</td></tr>
-<tr class="memdesc:aecda02796082ba70b0c51545862d03a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keeps on accepting new clients connections.  <a href="#aecda02796082ba70b0c51545862d03a6">More...</a><br /></td></tr>
-<tr class="separator:aecda02796082ba70b0c51545862d03a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c505192e7c73e767d53f7d282cfb646"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-server_8c.html#a8c505192e7c73e767d53f7d282cfb646">accept_clients_thread</a> (void *sock)</td></tr>
+<tr class="memdesc:a8c505192e7c73e767d53f7d282cfb646"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keeps on accepting new clients connections.  <a href="#a8c505192e7c73e767d53f7d282cfb646">More...</a><br /></td></tr>
+<tr class="separator:a8c505192e7c73e767d53f7d282cfb646"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d9748875d07382b9dbecb97c6cd9b62"><td class="memItemLeft" align="right" valign="top">struct addrinfo *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-server_8c.html#a2d9748875d07382b9dbecb97c6cd9b62">get_internet_addr</a> (void)</td></tr>
 <tr class="memdesc:a2d9748875d07382b9dbecb97c6cd9b62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a set of possible internet addresses of localhost.  <a href="#a2d9748875d07382b9dbecb97c6cd9b62">More...</a><br /></td></tr>
 <tr class="separator:a2d9748875d07382b9dbecb97c6cd9b62"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -221,8 +221,8 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aecda02796082ba70b0c51545862d03a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aecda02796082ba70b0c51545862d03a6">&#9670;&nbsp;</a></span>accept_clients_thread()</h2>
+<a id="a8c505192e7c73e767d53f7d282cfb646"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c505192e7c73e767d53f7d282cfb646">&#9670;&nbsp;</a></span>accept_clients_thread()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -230,8 +230,8 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">int accept_clients_thread </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>sockfd</em></td><td>)</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>sock</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -241,7 +241,7 @@ Variables</h2></td></tr>
 <p>Keeps listening for incoming connections, wen a new one arrives accepts it and instantiates a new client.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">sockfd</td><td>Socket used to listen to new connections. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sock</td><td>Adress to the socket used to listen to new connections. </td></tr>
   </table>
   </dd>
 </dl>
@@ -355,11 +355,11 @@ Variables</h2></td></tr>
 <p>Also broadcast everyone that the new client has entered the room.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">sockfd</td><td>The socket created in <a class="el" href="zip-zop-server_8c.html#aecda02796082ba70b0c51545862d03a6" title="Keeps on accepting new clients connections. ">accept_clients_thread()</a>, and that is used to communicate with the client that will be created.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sockfd</td><td>The socket created in <a class="el" href="zip-zop-server_8c.html#a8c505192e7c73e767d53f7d282cfb646" title="Keeps on accepting new clients connections. ">accept_clients_thread()</a>, and that is used to communicate with the client that will be created.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="zip-zop-server_8c.html#aecda02796082ba70b0c51545862d03a6" title="Keeps on accepting new clients connections. ">accept_clients_thread</a> </dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="zip-zop-server_8c.html#a8c505192e7c73e767d53f7d282cfb646" title="Keeps on accepting new clients connections. ">accept_clients_thread</a> </dd>
 <dd>
 <a class="el" href="zip-zop-server_8c.html#a32076dcdfaf1057a014d74d01cc7e08e" title="A singly linked list that will keep all the connected clients. ">CLIENT_LIST</a> </dd></dl>
 

@@ -172,6 +172,22 @@ void *listen_to_client_thread(void *client)
 	return NULL;
 }
 
+void *listen_to_commands_thread(void *arg)
+{
+	char cmd[MESSAGE_LEN];
+
+	while (fgets(cmd, MESSAGE_LEN, stdin)) {
+		char *nl = strchr(cmd, '\n');
+		if (nl) {
+			*nl = '\0';
+		}
+		
+		printf("%s\n", cmd);
+	}
+
+	return NULL;
+}
+
 /**
  * @brief Create a new client and add it in the @c CLIENT_LIST.
  *
@@ -225,10 +241,12 @@ void create_new_client(int sockfd)
  * Keeps listening for incoming connections, wen a new one
  * arrives accepts it and instantiates a new client.
  *
- * @param[in] sockfd Socket used to listen to new connections.
+ * @param[in] sock Adress to the socket used to listen to new connections.
  */
-int accept_clients_thread(int sockfd)
+void *accept_clients_thread(void *sock)
 {
+	int sockfd = *((int *)sock);
+
 	pthread_mutex_init(&CLIENT_LIST_MUTEX, NULL);
 
 	struct sockaddr_storage client_addr;
@@ -246,7 +264,7 @@ int accept_clients_thread(int sockfd)
 		create_new_client(client_sockfd);
 	}
 
-	return 0;
+	return NULL;
 }
 
 /**
@@ -350,7 +368,13 @@ int configure_as_server(void)
 int main(void)
 {
 	int sockfd = configure_as_server();
-	accept_clients_thread(sockfd);
+
+	pthread_t accept_thread;
+	if (pthread_create(&accept_thread, NULL, accept_clients_thread, &sockfd)) {
+		exit(E_PTHREAD_CREATE);
+	}
+
+	listen_to_commands_thread(NULL);
 
 	return 0;
 }

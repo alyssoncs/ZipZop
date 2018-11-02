@@ -294,7 +294,7 @@ int create_and_bind(struct addrinfo *addr)
 		return -1;
 	}
 
-	/* Ties to bind to a given port */
+	/* Tries to bind to a given port */
 	if (bind(sockfd, addr->ai_addr, addr->ai_addrlen) == -1) {
 		return -1;
 	}
@@ -302,13 +302,7 @@ int create_and_bind(struct addrinfo *addr)
 	return sockfd;
 }
 
-/**
- * @brief The zip-zop-server. 
- *
- * A TCP server that will accept connections from zip-zop-clients, 
- * hear its messages and broadcast them to all connected clients. Working as a chatroom.
- */
-int main(void)
+int configure_as_server(void)
 {
 	struct addrinfo *servinfo = get_internet_addr();
 	
@@ -336,6 +330,16 @@ int main(void)
 		perror("listen");
 		exit(E_LISTEN);
 	}
+
+}
+/**
+ * @brief The zip-zop-server. 
+ *
+ * A TCP server that will accept connections from zip-zop-clients, 
+ * hear its messages and broadcast them to all connected clients. Working as a chatroom.
+ */
+int main(void)
+{
 
 	accept_clients_thread(sockfd);
 

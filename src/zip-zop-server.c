@@ -93,7 +93,7 @@ struct client *remove_client_concurrent(struct client *c)
  *
  * @see message_pack
  */
-void client_thread_broadcast(struct client *c, const char *msg)
+void broadcast_client_message(struct client *c, const char *msg)
 {
 	/* The serialized message will be stored here */
 	char *pack = "";
@@ -150,13 +150,13 @@ void kill_client(struct client *c)
  * This function will be executed by a thread that is responsable for 
  * keep checking if there is a new message from the client.
  *
- * If there is an new message, the thread will execute the client_thread_broadcast().
+ * If there is an new message, the thread will execute the broadcast_client_message().
  *
  * @param[in] client A pointer to the client.
  *
- * @see client_thread_broadcast
+ * @see broadcast_client_message
  */
-void *client_thread_listen(void *client)
+void *listen_to_client_thread(void *client)
 {
 	struct client *c = (struct client *)client;
 	char msg[MESSAGE_LEN];
@@ -164,9 +164,9 @@ void *client_thread_listen(void *client)
 	ssize_t numbytes;
 	while ((numbytes = recv(client_get_socket(c), msg, MESSAGE_LEN - 1, 0)) > 0) {
 		msg[numbytes] = '\0';
-		client_thread_broadcast(c, msg);
+		broadcast_client_message(c, msg);
 	}
-	perror("client_thread_listen -> recv():");
+	perror("listen_to_client_thread -> recv():");
 	kill_client(c);
 
 	return NULL;
@@ -177,10 +177,10 @@ void *client_thread_listen(void *client)
  *
  * Also broadcast everyone that the new client has entered the room.
  *
- * @param[in] sockfd The socket created in accept_clients(),  and that 
+ * @param[in] sockfd The socket created in accept_clients_thread(),  and that 
  * is used to communicate with the client that will be created.
  *
- * @see accept_clients
+ * @see accept_clients_thread
  * @see CLIENT_LIST
  */
 void create_new_client(int sockfd)
@@ -203,9 +203,9 @@ void create_new_client(int sockfd)
 
 		/* 
 		 * Create a a new thread for that client, this thread 
-		 * will execute the client_thread_listen() function 
+		 * will execute the listen_to_client_thread() function 
 		 */
-		if (pthread_create(client_get_thread(c), NULL, client_thread_listen, c)) {
+		if (pthread_create(client_get_thread(c), NULL, listen_to_client_thread, c)) {
 			exit(E_PTHREAD_CREATE);
 		}
 
@@ -213,7 +213,7 @@ void create_new_client(int sockfd)
 		char welcome_message[MESSAGE_LEN];
 
 		snprintf(welcome_message, MESSAGE_LEN, "%s entered the room", client_get_name(c));
-		client_thread_broadcast(server, welcome_message);
+		broadcast_client_message(server, welcome_message);
 
 		client_destroy(server);
 	}
@@ -227,7 +227,7 @@ void create_new_client(int sockfd)
  *
  * @param[in] sockfd Socket used to listen to new connections.
  */
-int accept_clients(int sockfd)
+int accept_clients_thread(int sockfd)
 {
 	pthread_mutex_init(&CLIENT_LIST_MUTEX, NULL);
 
@@ -337,7 +337,7 @@ int main(void)
 		exit(E_LISTEN);
 	}
 
-	accept_clients(sockfd);
+	accept_clients_thread(sockfd);
 
 	return 0;
 }

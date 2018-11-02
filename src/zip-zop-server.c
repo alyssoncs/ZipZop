@@ -294,7 +294,7 @@ int create_and_bind(struct addrinfo *addr)
 		return -1;
 	}
 
-	/* Tries to bind to a given port */
+	/* Tries to bind to a given address and port */
 	if (bind(sockfd, addr->ai_addr, addr->ai_addrlen) == -1) {
 		return -1;
 	}
@@ -302,6 +302,13 @@ int create_and_bind(struct addrinfo *addr)
 	return sockfd;
 }
 
+/**
+ * @brief This function is responsible to make the initial 
+ * configuration, so that this program can run as a server.
+ *
+ * @return A socket in passive mode, that has the localhost address asigned to it.
+ * The user should be able to call accept() in this socket.
+ */
 int configure_as_server(void)
 {
 	struct addrinfo *servinfo = get_internet_addr();
@@ -331,7 +338,9 @@ int configure_as_server(void)
 		exit(E_LISTEN);
 	}
 
+	return sockfd;
 }
+
 /**
  * @brief The zip-zop-server. 
  *
@@ -340,7 +349,7 @@ int configure_as_server(void)
  */
 int main(void)
 {
-
+	int sockfd = configure_as_server();
 	accept_clients_thread(sockfd);
 
 	return 0;

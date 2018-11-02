@@ -52,6 +52,8 @@ struct addrinfo $\ast$ \hyperlink{zip-zop-server_8c_a2d9748875d07382b9dbecb97c6c
 \begin{DoxyCompactList}\small\item\em Find a set of possible internet addresses of localhost. \end{DoxyCompactList}\item 
 int \hyperlink{zip-zop-server_8c_a0ecdeaf556729d827a07915b7a89866c}{create\+\_\+and\+\_\+bind} (struct addrinfo $\ast$addr)
 \begin{DoxyCompactList}\small\item\em Attempts to create a socket and bind to a port with the given internet address. \end{DoxyCompactList}\item 
+int \hyperlink{zip-zop-server_8c_a59ee6eb284b065353164c1aa7d487ce2}{configure\+\_\+as\+\_\+server} (void)
+\begin{DoxyCompactList}\small\item\em This function is responsible to make the initial configuration, so that this program can run as a server. \end{DoxyCompactList}\item 
 int \hyperlink{zip-zop-server_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
 \begin{DoxyCompactList}\small\item\em The zip-\/zop-\/server. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
@@ -146,6 +148,19 @@ The message will be sent as a packet version of a struct message.
 \begin{DoxySeeAlso}{See also}
 \hyperlink{message_8h_a0e07715664284f7a821216ca83317e60}{message\+\_\+pack} 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{zip-zop-server_8c_a59ee6eb284b065353164c1aa7d487ce2}\label{zip-zop-server_8c_a59ee6eb284b065353164c1aa7d487ce2}} 
+\index{zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}!configure\+\_\+as\+\_\+server@{configure\+\_\+as\+\_\+server}}
+\index{configure\+\_\+as\+\_\+server@{configure\+\_\+as\+\_\+server}!zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}}
+\subsubsection{\texorpdfstring{configure\+\_\+as\+\_\+server()}{configure\_as\_server()}}
+{\footnotesize\ttfamily int configure\+\_\+as\+\_\+server (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function is responsible to make the initial configuration, so that this program can run as a server. 
+
+\begin{DoxyReturn}{Returns}
+A socket in passive mode, that has the localhost address asigned to it. The user should be able to call accept() in this socket. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{zip-zop-server_8c_a0ecdeaf556729d827a07915b7a89866c}\label{zip-zop-server_8c_a0ecdeaf556729d827a07915b7a89866c}} 
 \index{zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}!create\+\_\+and\+\_\+bind@{create\+\_\+and\+\_\+bind}}
 \index{create\+\_\+and\+\_\+bind@{create\+\_\+and\+\_\+bind}!zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}}

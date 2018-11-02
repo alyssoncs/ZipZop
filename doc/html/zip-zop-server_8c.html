@@ -139,6 +139,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a0ecdeaf556729d827a07915b7a89866c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-server_8c.html#a0ecdeaf556729d827a07915b7a89866c">create_and_bind</a> (struct addrinfo *addr)</td></tr>
 <tr class="memdesc:a0ecdeaf556729d827a07915b7a89866c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to create a socket and bind to a port with the given internet address.  <a href="#a0ecdeaf556729d827a07915b7a89866c">More...</a><br /></td></tr>
 <tr class="separator:a0ecdeaf556729d827a07915b7a89866c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59ee6eb284b065353164c1aa7d487ce2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-server_8c.html#a59ee6eb284b065353164c1aa7d487ce2">configure_as_server</a> (void)</td></tr>
+<tr class="memdesc:a59ee6eb284b065353164c1aa7d487ce2"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is responsible to make the initial configuration, so that this program can run as a server.  <a href="#a59ee6eb284b065353164c1aa7d487ce2">More...</a><br /></td></tr>
+<tr class="separator:a59ee6eb284b065353164c1aa7d487ce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zip-zop-server_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
 <tr class="memdesc:a840291bc02cba5474a4cb46a9b9566fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">The zip-zop-server.  <a href="#a840291bc02cba5474a4cb46a9b9566fe">More...</a><br /></td></tr>
 <tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -281,6 +284,27 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="message_8h.html#a0e07715664284f7a821216ca83317e60" title="Serialize a message. ">message_pack</a> </dd></dl>
+
+</div>
+</div>
+<a id="a59ee6eb284b065353164c1aa7d487ce2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59ee6eb284b065353164c1aa7d487ce2">&#9670;&nbsp;</a></span>configure_as_server()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int configure_as_server </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function is responsible to make the initial configuration, so that this program can run as a server. </p>
+<dl class="section return"><dt>Returns</dt><dd>A socket in passive mode, that has the localhost address asigned to it. The user should be able to call accept() in this socket. </dd></dl>
 
 </div>
 </div>

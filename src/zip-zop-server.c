@@ -183,6 +183,27 @@ void kill_client(struct client *c)
 }
 
 /**
+ * @brief Kill all connected clients.
+ *
+ * Removes all clients from the @c CLIENT_LIST, destroy them and closes the connection.
+ *
+ * @see CLIENT_LIST
+ */
+void kill_all_clients(void)
+{
+	pthread_mutex_lock(&CLIENT_LIST_MUTEX);
+
+	struct client *c;
+	while ((c = sll_remove_first(&CLIENT_LIST))) {
+		pthread_cancel(*client_get_thread(c));
+		close(client_get_socket(c));
+		client_destroy(c);
+	}
+
+	pthread_mutex_unlock(&CLIENT_LIST_MUTEX);
+}
+
+/**
  * @brief Keeps listening to client messages.
  *
  * This function will be executed by a thread that is responsable for 
@@ -204,8 +225,13 @@ void *listen_to_client_thread(void *client)
 		msg[numbytes] = '\0';
 		broadcast_client_message(c, msg);
 	}
+
 	perror("listen_to_client_thread -> recv():");
+	sprintf(msg, "%s has exit the room", client_get_name(c));
+
 	kill_client(c);
+
+	broadcast_server_message(msg);
 
 	return NULL;
 }
@@ -226,12 +252,19 @@ void *listen_to_commands_thread(void *arg)
 			if (strcmp(tok, "/exit") == 0) {
 				char goodbye_message[] = "Server shutting down in 10 seconds.";
 				broadcast_server_message(goodbye_message);
+
+				unsigned time = 10;
+				while ((time = sleep(time)) != 0) {
+					/* Empty body */
+				}
+
+				kill_all_clients();
 			}
 		}
 		
 	}
 
-	return NULL;
+	return arg;
 }
 
 /**

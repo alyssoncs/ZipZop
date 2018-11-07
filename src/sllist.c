@@ -30,9 +30,9 @@ struct sllist *sll_init(void)
  *
  * Example to interate over a list:
  * @code
- * struct sllist **l = sll_init();
+ * struct sllist *l = sll_init();
  * // fill the list
- * for (struct sllist *p = *l; p; p = sll_get_next(&p)) {
+ * for (struct sllist *p = l; p; p = sll_get_next(&p)) {
  *     void *key = sll_get_key(p);
  *     // do stuff with p
  * }
@@ -40,7 +40,10 @@ struct sllist *sll_init(void)
  */
 struct sllist *sll_get_next(struct sllist **l)
 {
-	return (*l)->next;
+	if (*l) {
+		return (*l)->next;
+	}
+	return NULL;
 }
 
 /**

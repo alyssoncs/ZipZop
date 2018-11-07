@@ -68,7 +68,7 @@ void show_message(struct message *m)
  *
  * @see show_message
  */
-void *listen_thread(void *client)
+void *listen_to_server_thread(void *client)
 {
 	struct client *c = (struct client *)client;
 	char msg[MESSAGE_LEN];
@@ -80,6 +80,12 @@ void *listen_thread(void *client)
 		show_message(m);
 		message_destroy(m);
 	}
+
+	perror("listen_to_server_thread -> recv():");
+
+	pthread_cancel(*client_get_thread(c));
+	close(client_get_socket(c));
+	client_destroy(c);
 
 	return NULL;
 }
@@ -106,7 +112,7 @@ void *speak_thread(void *client)
 		}
 
 		int rv = send(client_get_socket(c), msg, strlen(msg) + 1, 0);
-		if (rv == -1) {
+		if (rv <= 0) {
 			perror("send()");
 		}
 	}
@@ -200,10 +206,10 @@ void communicate(const char *user_name, int sockfd)
 
 	if (c) {
 		server_introduction(c);
-		if (pthread_create(client_get_thread(c), NULL, listen_thread, c)) {
+		if (pthread_create(client_get_thread(c), NULL, speak_thread, c)) {
 			exit(E_PTHREAD_CREATE);
 		}
-		speak_thread(c);
+		listen_to_server_thread(c);
 	}
 }
 

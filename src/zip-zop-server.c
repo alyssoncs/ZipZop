@@ -84,7 +84,7 @@ struct client *remove_client_concurrent(struct client *c)
 }
 
 /**
- * @brief Sends a message to all clients.
+ * @brief Sends a message from one client to all clients.
  *
  * The message will be sent as a packet version of a struct message.
  *
@@ -99,6 +99,44 @@ void broadcast_client_message(struct client *c, const char *msg)
 	char *pack = "";
 
 	struct message *m = message_create(msg, client_get_name(c));
+	if (m) {
+		int len;
+		pack = message_pack(m, &len);
+		if (pack) {
+			pthread_mutex_lock(&CLIENT_LIST_MUTEX);
+
+			/* Iterate through all the CLIENT_LIST, and send the message to all the connected clients */
+			for (struct sllist *p = CLIENT_LIST; p; p = sll_get_next(&p)) {
+				struct client *current_client = (struct client *)sll_get_key(p);
+				int rv = send(client_get_socket(current_client), pack, len, 0);
+				if (rv == -1) {
+					perror("send()");
+				}
+			}
+
+			pthread_mutex_unlock(&CLIENT_LIST_MUTEX);
+
+			free(pack);
+		}
+		message_destroy(m);
+	}
+}
+
+/**
+ * @brief Sends a message from the server to all clients.
+ *
+ * The message will be sent as a packet version of a struct message.
+ *
+ * @param[in] msg The message content.
+ *
+ * @see message_pack
+ */
+void broadcast_server_message(const char *msg)
+{
+	/* The serialized message will be stored here */
+	char *pack = "";
+
+	struct message *m = message_create(msg, "server");
 	if (m) {
 		int len;
 		pack = message_pack(m, &len);
@@ -172,17 +210,25 @@ void *listen_to_client_thread(void *client)
 	return NULL;
 }
 
+/**
+ * @brief Keeps listening commands from stdin.
+ *
+ * This function will be executed by a thread responsible for listen to user commands.
+ */
 void *listen_to_commands_thread(void *arg)
 {
 	char cmd[MESSAGE_LEN];
 
 	while (fgets(cmd, MESSAGE_LEN, stdin)) {
-		char *nl = strchr(cmd, '\n');
-		if (nl) {
-			*nl = '\0';
+		char *tok = strtok(cmd, " \n\t");
+
+		if (tok) {
+			if (strcmp(tok, "/exit") == 0) {
+				char goodbye_message[] = "Server shutting down in 10 seconds.";
+				broadcast_server_message(goodbye_message);
+			}
 		}
 		
-		printf("%s\n", cmd);
 	}
 
 	return NULL;
@@ -225,13 +271,10 @@ void create_new_client(int sockfd)
 			exit(E_PTHREAD_CREATE);
 		}
 
-		struct client *server = client_create("server", 1);
 		char welcome_message[MESSAGE_LEN];
 
 		snprintf(welcome_message, MESSAGE_LEN, "%s entered the room", client_get_name(c));
-		broadcast_client_message(server, welcome_message);
-
-		client_destroy(server);
+		broadcast_server_message(welcome_message);
 	}
 }
 
@@ -378,3 +421,4 @@ int main(void)
 
 	return 0;
 }
+

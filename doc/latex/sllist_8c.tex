@@ -73,9 +73,9 @@ A pointer to the next node in the list; N\+U\+LL if there is no next element.
 \end{DoxyReturn}
 Example to interate over a list\+: 
 \begin{DoxyCode}
-\textcolor{keyword}{struct }\hyperlink{structsllist}{sllist} **l = \hyperlink{sllist_8c_ada173d32da00693ac4e803b1343ec4ac}{sll\_init}();
+\textcolor{keyword}{struct }\hyperlink{structsllist}{sllist} *l = \hyperlink{sllist_8c_ada173d32da00693ac4e803b1343ec4ac}{sll\_init}();
 \textcolor{comment}{// fill the list}
-\textcolor{keywordflow}{for} (\textcolor{keyword}{struct} \hyperlink{structsllist}{sllist} *p = *l; p; p = \hyperlink{sllist_8c_aa391dba476f2cf8290a77d7445bde246}{sll\_get\_next}(&p)) \{
+\textcolor{keywordflow}{for} (\textcolor{keyword}{struct} \hyperlink{structsllist}{sllist} *p = l; p; p = \hyperlink{sllist_8c_aa391dba476f2cf8290a77d7445bde246}{sll\_get\_next}(&p)) \{
     \textcolor{keywordtype}{void} *\hyperlink{structsllist_aba6ff88336afdd0d2a8cb0ce396f79b6}{key} = \hyperlink{sllist_8c_ac2c3278ad40114c39ec8d55e7ffc46b3}{sll\_get\_key}(p);
     \textcolor{comment}{// do stuff with p}
 \}

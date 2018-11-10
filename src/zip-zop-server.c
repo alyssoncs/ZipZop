@@ -240,16 +240,24 @@ void *listen_to_client_thread(void *client)
  * @brief Keeps listening commands from stdin.
  *
  * This function will be executed by a thread responsible for listen to user commands.
+ *
+ * @param arg An adress to the accept_clients_thread() thread, so it can cancel the 
+ * thread when the server administrator executes the @c /shutdown command.
+ *
+ * @see accept_clients_thread
  */
 void *listen_to_commands_thread(void *arg)
 {
+	/* accept_clients_thread() thread */
+	pthread_t accept_thread = *(pthread_t *)arg;
+
 	char cmd[MESSAGE_LEN];
 
 	while (fgets(cmd, MESSAGE_LEN, stdin)) {
 		char *tok = strtok(cmd, " \n\t");
 
 		if (tok) {
-			if (strcmp(tok, "/exit") == 0) {
+			if (strcmp(tok, "/shutdown") == 0) {
 				char goodbye_message[] = "Server shutting down in 10 seconds.";
 				broadcast_server_message(goodbye_message);
 
@@ -259,6 +267,8 @@ void *listen_to_commands_thread(void *arg)
 				}
 
 				kill_all_clients();
+				pthread_cancel(accept_thread);
+				break;
 			}
 		}
 		
@@ -450,7 +460,7 @@ int main(void)
 		exit(E_PTHREAD_CREATE);
 	}
 
-	listen_to_commands_thread(NULL);
+	listen_to_commands_thread(&accept_thread);
 
 	return 0;
 }

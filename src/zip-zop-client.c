@@ -104,11 +104,20 @@ void *speak_thread(void *client)
 	struct client *c = (struct client *)client;
 	char msg[MESSAGE_LEN];
 
-	while (true) {
-		fgets(msg, MESSAGE_LEN, stdin);
+	while (fgets(msg, MESSAGE_LEN, stdin)) {
 		char *nl = strchr(msg, '\n');
 		if (nl) {
 			*nl = '\0';
+		}
+
+		char cmd[MESSAGE_LEN];
+		strcpy(cmd, msg);
+		char *tok = strtok(cmd, " \n\t");
+
+		if (tok) {
+			if (strcmp(tok, "/exit") == 0) {
+				exit(0);
+			}
 		}
 
 		int rv = send(client_get_socket(c), msg, strlen(msg) + 1, 0);

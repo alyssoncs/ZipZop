@@ -39,14 +39,20 @@ void \hyperlink{zip-zop-server_8c_a84f39912128d6dc7a66bbdd88fad00b5}{insert\+\_\
 struct \hyperlink{structclient}{client} $\ast$ \hyperlink{zip-zop-server_8c_a37f14ecc30cc2b45249b544fe70f2b6d}{remove\+\_\+client\+\_\+concurrent} (struct \hyperlink{structclient}{client} $\ast$c)
 \begin{DoxyCompactList}\small\item\em Carry out mutual exclusion and remove the new client on the list. \end{DoxyCompactList}\item 
 void \hyperlink{zip-zop-server_8c_a36e911ded647a0697ca152cae890bcf5}{broadcast\+\_\+client\+\_\+message} (struct \hyperlink{structclient}{client} $\ast$c, const char $\ast$msg)
-\begin{DoxyCompactList}\small\item\em Sends a message to all clients. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Sends a message from one client to all clients. \end{DoxyCompactList}\item 
+void \hyperlink{zip-zop-server_8c_a74c8ecf978805ab40daaee7c593c82ee}{broadcast\+\_\+server\+\_\+message} (const char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Sends a message from the server to all clients. \end{DoxyCompactList}\item 
 void \hyperlink{zip-zop-server_8c_ae5845d7e65c1c7407d1df63105450b5e}{kill\+\_\+client} (struct \hyperlink{structclient}{client} $\ast$c)
 \begin{DoxyCompactList}\small\item\em Kill a client. \end{DoxyCompactList}\item 
+void \hyperlink{zip-zop-server_8c_ae3219dbffc65a1b8e1f4170f205f647a}{kill\+\_\+all\+\_\+clients} (void)
+\begin{DoxyCompactList}\small\item\em Kill all connected clients. \end{DoxyCompactList}\item 
 void $\ast$ \hyperlink{zip-zop-server_8c_abb42bd69f5e5088fef8519780a977f98}{listen\+\_\+to\+\_\+client\+\_\+thread} (void $\ast$\hyperlink{structclient}{client})
 \begin{DoxyCompactList}\small\item\em Keeps listening to client messages. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{zip-zop-server_8c_aecc6f61fca90c0a9fa8093c7cc0eb687}{listen\+\_\+to\+\_\+commands\+\_\+thread} (void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Keeps listening commands from stdin. \end{DoxyCompactList}\item 
 void \hyperlink{zip-zop-server_8c_ab9a14cd690eac9781dd224e034fbd01d}{create\+\_\+new\+\_\+client} (int sockfd)
 \begin{DoxyCompactList}\small\item\em Create a new client and add it in the {\ttfamily C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST}. \end{DoxyCompactList}\item 
-int \hyperlink{zip-zop-server_8c_a8c505192e7c73e767d53f7d282cfb646}{accept\+\_\+clients\+\_\+thread} (void $\ast$sock)
+void $\ast$ \hyperlink{zip-zop-server_8c_aebe94d23e0b61c3ffd1df3a19071fb4b}{accept\+\_\+clients\+\_\+thread} (void $\ast$sock)
 \begin{DoxyCompactList}\small\item\em Keeps on accepting new clients connections. \end{DoxyCompactList}\item 
 struct addrinfo $\ast$ \hyperlink{zip-zop-server_8c_a2d9748875d07382b9dbecb97c6cd9b62}{get\+\_\+internet\+\_\+addr} (void)
 \begin{DoxyCompactList}\small\item\em Find a set of possible internet addresses of localhost. \end{DoxyCompactList}\item 
@@ -109,11 +115,11 @@ The port where this application will be running.
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{zip-zop-server_8c_a8c505192e7c73e767d53f7d282cfb646}\label{zip-zop-server_8c_a8c505192e7c73e767d53f7d282cfb646}} 
+\mbox{\Hypertarget{zip-zop-server_8c_aebe94d23e0b61c3ffd1df3a19071fb4b}\label{zip-zop-server_8c_aebe94d23e0b61c3ffd1df3a19071fb4b}} 
 \index{zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}!accept\+\_\+clients\+\_\+thread@{accept\+\_\+clients\+\_\+thread}}
 \index{accept\+\_\+clients\+\_\+thread@{accept\+\_\+clients\+\_\+thread}!zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}}
 \subsubsection{\texorpdfstring{accept\+\_\+clients\+\_\+thread()}{accept\_clients\_thread()}}
-{\footnotesize\ttfamily int accept\+\_\+clients\+\_\+thread (\begin{DoxyParamCaption}\item[{void $\ast$}]{sock }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void$\ast$ accept\+\_\+clients\+\_\+thread (\begin{DoxyParamCaption}\item[{void $\ast$}]{sock }\end{DoxyParamCaption})}
 
 
 
@@ -134,7 +140,7 @@ Keeps listening for incoming connections, wen a new one arrives accepts it and i
 
 
 
-Sends a message to all clients. 
+Sends a message from one client to all clients. 
 
 The message will be sent as a packet version of a struct message.
 
@@ -142,6 +148,26 @@ The message will be sent as a packet version of a struct message.
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em c} & The client that sent the message. \\
 \hline
+\mbox{\tt in}  & {\em msg} & The message content.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{message_8h_a0e07715664284f7a821216ca83317e60}{message\+\_\+pack} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{zip-zop-server_8c_a74c8ecf978805ab40daaee7c593c82ee}\label{zip-zop-server_8c_a74c8ecf978805ab40daaee7c593c82ee}} 
+\index{zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}!broadcast\+\_\+server\+\_\+message@{broadcast\+\_\+server\+\_\+message}}
+\index{broadcast\+\_\+server\+\_\+message@{broadcast\+\_\+server\+\_\+message}!zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}}
+\subsubsection{\texorpdfstring{broadcast\+\_\+server\+\_\+message()}{broadcast\_server\_message()}}
+{\footnotesize\ttfamily void broadcast\+\_\+server\+\_\+message (\begin{DoxyParamCaption}\item[{const char $\ast$}]{msg }\end{DoxyParamCaption})}
+
+
+
+Sends a message from the server to all clients. 
+
+The message will be sent as a packet version of a struct message.
+
+
+\begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em msg} & The message content.\\
 \hline
 \end{DoxyParams}
@@ -193,11 +219,11 @@ Also broadcast everyone that the new client has entered the room.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em sockfd} & The socket created in \hyperlink{zip-zop-server_8c_a8c505192e7c73e767d53f7d282cfb646}{accept\+\_\+clients\+\_\+thread()}, and that is used to communicate with the client that will be created.\\
+\mbox{\tt in}  & {\em sockfd} & The socket created in \hyperlink{zip-zop-server_8c_aebe94d23e0b61c3ffd1df3a19071fb4b}{accept\+\_\+clients\+\_\+thread()}, and that is used to communicate with the client that will be created.\\
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\hyperlink{zip-zop-server_8c_a8c505192e7c73e767d53f7d282cfb646}{accept\+\_\+clients\+\_\+thread} 
+\hyperlink{zip-zop-server_8c_aebe94d23e0b61c3ffd1df3a19071fb4b}{accept\+\_\+clients\+\_\+thread} 
 
 \hyperlink{zip-zop-server_8c_a32076dcdfaf1057a014d74d01cc7e08e}{C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST} 
 \end{DoxySeeAlso}
@@ -235,6 +261,21 @@ This function locks the {\ttfamily C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+S\+T\+\_\+\+M\+
 \hyperlink{zip-zop-server_8c_a32076dcdfaf1057a014d74d01cc7e08e}{C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST} 
 
 \hyperlink{zip-zop-server_8c_ac58873310e66c9bfafdbc798a8a7c7e2}{C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+S\+T\+\_\+\+M\+U\+T\+EX} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{zip-zop-server_8c_ae3219dbffc65a1b8e1f4170f205f647a}\label{zip-zop-server_8c_ae3219dbffc65a1b8e1f4170f205f647a}} 
+\index{zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}!kill\+\_\+all\+\_\+clients@{kill\+\_\+all\+\_\+clients}}
+\index{kill\+\_\+all\+\_\+clients@{kill\+\_\+all\+\_\+clients}!zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}}
+\subsubsection{\texorpdfstring{kill\+\_\+all\+\_\+clients()}{kill\_all\_clients()}}
+{\footnotesize\ttfamily void kill\+\_\+all\+\_\+clients (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Kill all connected clients. 
+
+Removes all clients from the {\ttfamily C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST}, destroy them and closes the connection.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{zip-zop-server_8c_a32076dcdfaf1057a014d74d01cc7e08e}{C\+L\+I\+E\+N\+T\+\_\+\+L\+I\+ST} 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{zip-zop-server_8c_ae5845d7e65c1c7407d1df63105450b5e}\label{zip-zop-server_8c_ae5845d7e65c1c7407d1df63105450b5e}} 
 \index{zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}!kill\+\_\+client@{kill\+\_\+client}}
@@ -278,7 +319,17 @@ If there is an new message, the thread will execute the \hyperlink{zip-zop-serve
 \begin{DoxySeeAlso}{See also}
 \hyperlink{zip-zop-server_8c_a36e911ded647a0697ca152cae890bcf5}{broadcast\+\_\+client\+\_\+message} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{zip-zop-server_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{zip-zop-server_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\mbox{\Hypertarget{zip-zop-server_8c_aecc6f61fca90c0a9fa8093c7cc0eb687}\label{zip-zop-server_8c_aecc6f61fca90c0a9fa8093c7cc0eb687}} 
+\index{zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}!listen\+\_\+to\+\_\+commands\+\_\+thread@{listen\+\_\+to\+\_\+commands\+\_\+thread}}
+\index{listen\+\_\+to\+\_\+commands\+\_\+thread@{listen\+\_\+to\+\_\+commands\+\_\+thread}!zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}}
+\subsubsection{\texorpdfstring{listen\+\_\+to\+\_\+commands\+\_\+thread()}{listen\_to\_commands\_thread()}}
+{\footnotesize\ttfamily void$\ast$ listen\+\_\+to\+\_\+commands\+\_\+thread (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+Keeps listening commands from stdin. 
+
+This function will be executed by a thread responsible for listen to user commands. \mbox{\Hypertarget{zip-zop-server_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{zip-zop-server_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
 \index{zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}!main@{main}}
 \index{main@{main}!zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}}
 \subsubsection{\texorpdfstring{main()}{main()}}

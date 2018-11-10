@@ -35,7 +35,7 @@ void \hyperlink{zip-zop-client_8c_a120fec5c70bad673e9b1c2e91b28fe5f}{print\+\_\+
 \begin{DoxyCompactList}\small\item\em Prints the correct usage of the program. \end{DoxyCompactList}\item 
 void \hyperlink{zip-zop-client_8c_aec5550cf115ba01d0da023ba9d1876bb}{show\+\_\+message} (struct \hyperlink{structmessage}{message} $\ast$m)
 \begin{DoxyCompactList}\small\item\em Displays a message in the screen. \end{DoxyCompactList}\item 
-void $\ast$ \hyperlink{zip-zop-client_8c_aafa1438575f3295609976f35a6518cca}{listen\+\_\+thread} (void $\ast$\hyperlink{structclient}{client})
+void $\ast$ \hyperlink{zip-zop-client_8c_aed34485ec5832caf3b952362921111b4}{listen\+\_\+to\+\_\+server\+\_\+thread} (void $\ast$\hyperlink{structclient}{client})
 \begin{DoxyCompactList}\small\item\em Keeps listening to server messages. \end{DoxyCompactList}\item 
 void $\ast$ \hyperlink{zip-zop-client_8c_a7ca038c133aa6aca1c539e69d4ee675f}{speak\+\_\+thread} (void $\ast$\hyperlink{structclient}{client})
 \begin{DoxyCompactList}\small\item\em Keeps reading messages from {\ttfamily stdin} and send them to server. \end{DoxyCompactList}\item 
@@ -150,11 +150,11 @@ Given the server name, this function will try to find an internet address to thi
 \begin{DoxyReturn}{Returns}
 A pointer to a list of possibly valid server internet addresses. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{zip-zop-client_8c_aafa1438575f3295609976f35a6518cca}\label{zip-zop-client_8c_aafa1438575f3295609976f35a6518cca}} 
-\index{zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}!listen\+\_\+thread@{listen\+\_\+thread}}
-\index{listen\+\_\+thread@{listen\+\_\+thread}!zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}}
-\subsubsection{\texorpdfstring{listen\+\_\+thread()}{listen\_thread()}}
-{\footnotesize\ttfamily void$\ast$ listen\+\_\+thread (\begin{DoxyParamCaption}\item[{void $\ast$}]{client }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{zip-zop-client_8c_aed34485ec5832caf3b952362921111b4}\label{zip-zop-client_8c_aed34485ec5832caf3b952362921111b4}} 
+\index{zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}!listen\+\_\+to\+\_\+server\+\_\+thread@{listen\+\_\+to\+\_\+server\+\_\+thread}}
+\index{listen\+\_\+to\+\_\+server\+\_\+thread@{listen\+\_\+to\+\_\+server\+\_\+thread}!zip-\/zop-\/client.\+c@{zip-\/zop-\/client.\+c}}
+\subsubsection{\texorpdfstring{listen\+\_\+to\+\_\+server\+\_\+thread()}{listen\_to\_server\_thread()}}
+{\footnotesize\ttfamily void$\ast$ listen\+\_\+to\+\_\+server\+\_\+thread (\begin{DoxyParamCaption}\item[{void $\ast$}]{client }\end{DoxyParamCaption})}
 
 
 

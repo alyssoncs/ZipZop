@@ -223,6 +223,35 @@ void communicate(const char *user_name, int sockfd)
 }
 
 /**
+ * @brief This function is responsible to make the initial 
+ * configuration, so that this program can run as a client.
+ *
+ * @return A socket connected with the zip-zop-server.
+ * The user should be able to call @c send() and @c recv() in this socket.
+ */
+int configure_as_client(const char *server_name, const char *user_name)
+{
+	struct addrinfo *servinfo = get_server_addr(server_name);
+	
+	int sockfd;
+	/* Iterate through all the list of server addresses, and try to connect to one of them */
+	for (struct addrinfo *p = servinfo; p != NULL; p = p->ai_next) {
+		if ((sockfd = create_and_connect(p)) == -1) {
+			continue;
+		}
+		break;
+	}
+
+	freeaddrinfo(servinfo);
+
+	if (sockfd == -1) {
+		fprintf(stderr, "failed to connect\n");
+		exit(E_CONNECT);
+	}
+
+	return sockfd;
+}
+/**
  * @brief The zip-zop-client.
  *
  * A TCP client that will connect with an instance of the zip-zop-server.
@@ -242,25 +271,8 @@ int main(int argc, char **argv)
 	const char *server_name 	= argv[1];
 	const char *user_name 		= argv[2];
 
-	struct addrinfo *servinfo = get_server_addr(server_name);
-	
-	struct addrinfo *p;
-	int sockfd;
-	/* Iterate through all the list of server addresses, and try to connect to one of them */
-	for (p = servinfo; p != NULL; p = p->ai_next) {
-		if ((sockfd = create_and_connect(p)) == -1) {
-			continue;
-		}
-		break;
-	}
-
-	freeaddrinfo(servinfo);
-
-	if (!p) {
-		fprintf(stderr, "failed to connect\n");
-		exit(E_CONNECT);
-	}
-
+	int sockfd = configure_as_client(server_name, user_name);
 	communicate(user_name, sockfd);
+
 	return 0;
 }

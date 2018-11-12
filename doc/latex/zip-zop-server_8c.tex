@@ -329,7 +329,17 @@ If there is an new message, the thread will execute the \hyperlink{zip-zop-serve
 
 Keeps listening commands from stdin. 
 
-This function will be executed by a thread responsible for listen to user commands. \mbox{\Hypertarget{zip-zop-server_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{zip-zop-server_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+This function will be executed by a thread responsible for listen to user commands.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & An adress to the \hyperlink{zip-zop-server_8c_aebe94d23e0b61c3ffd1df3a19071fb4b}{accept\+\_\+clients\+\_\+thread()} thread, so it can cancel the thread when the server administrator executes the {\ttfamily /shutdown} command.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{zip-zop-server_8c_aebe94d23e0b61c3ffd1df3a19071fb4b}{accept\+\_\+clients\+\_\+thread} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{zip-zop-server_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{zip-zop-server_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
 \index{zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}!main@{main}}
 \index{main@{main}!zip-\/zop-\/server.\+c@{zip-\/zop-\/server.\+c}}
 \subsubsection{\texorpdfstring{main()}{main()}}

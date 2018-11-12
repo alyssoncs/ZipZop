@@ -549,7 +549,14 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Keeps listening commands from stdin. </p>
-<p>This function will be executed by a thread responsible for listen to user commands. </p>
+<p>This function will be executed by a thread responsible for listen to user commands.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arg</td><td>An adress to the <a class="el" href="zip-zop-server_8c.html#aebe94d23e0b61c3ffd1df3a19071fb4b" title="Keeps on accepting new clients connections. ">accept_clients_thread()</a> thread, so it can cancel the thread when the server administrator executes the <code>/shutdown</code> command.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="zip-zop-server_8c.html#aebe94d23e0b61c3ffd1df3a19071fb4b" title="Keeps on accepting new clients connections. ">accept_clients_thread</a> </dd></dl>
 
 </div>
 </div>

@@ -331,7 +331,7 @@ void create_new_client(int sockfd)
  */
 void *accept_clients_thread(void *sock)
 {
-	int sockfd = *((int *)sock);
+	int sockfd = *(int *)sock;
 
 	pthread_mutex_init(&CLIENT_LIST_MUTEX, NULL);
 
@@ -417,21 +417,19 @@ int configure_as_server(void)
 {
 	struct addrinfo *servinfo = get_internet_addr();
 	
-	struct addrinfo *p;
 	int sockfd;
 	/* Iterate in the list of internet addresses, trying to bind in the PORT with it */
-	for (p = servinfo; p != NULL; p = p->ai_next) {
-		if ((sockfd = create_and_bind(p)) == -1) {
-			perror("socket()");
-			continue;
+	for (struct addrinfo *p = servinfo; p != NULL; p = p->ai_next) {
+		if ((sockfd = create_and_bind(p)) != -1) {
+			break;
 		}
-		break;
+		perror("socket()");
 	}
 
 	freeaddrinfo(servinfo);
 
-	/* if p is NULL, that means that we could not find an address in wich we managed to bind to a port */
-	if (!p) {
+	/* if sockfd is -1, that means that we could not find an address in wich we managed to bind to a port */
+	if (sockfd == -1) {
 		fprintf(stderr, "failed to bind\n");
 		exit(E_BIND);
 	}

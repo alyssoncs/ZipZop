@@ -229,17 +229,16 @@ void communicate(const char *user_name, int sockfd)
  * @return A socket connected with the zip-zop-server.
  * The user should be able to call @c send() and @c recv() in this socket.
  */
-int configure_as_client(const char *server_name, const char *user_name)
+int configure_as_client(const char *server_name)
 {
 	struct addrinfo *servinfo = get_server_addr(server_name);
 	
 	int sockfd;
 	/* Iterate through all the list of server addresses, and try to connect to one of them */
 	for (struct addrinfo *p = servinfo; p != NULL; p = p->ai_next) {
-		if ((sockfd = create_and_connect(p)) == -1) {
-			continue;
+		if ((sockfd = create_and_connect(p)) != -1) {
+			break;
 		}
-		break;
 	}
 
 	freeaddrinfo(servinfo);
@@ -271,7 +270,7 @@ int main(int argc, char **argv)
 	const char *server_name 	= argv[1];
 	const char *user_name 		= argv[2];
 
-	int sockfd = configure_as_client(server_name, user_name);
+	int sockfd = configure_as_client(server_name);
 	communicate(user_name, sockfd);
 
 	return 0;

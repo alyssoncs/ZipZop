@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-Wall -Wextra -lpthread
+CFLAGS=-Wall -Wextra -fno-strict-aliasing -lpthread
 OBJSERV=zip-zop-server.o client.o sllist.o message.o
 OBJCLIE=zip-zop-client.o client.o message.o
 

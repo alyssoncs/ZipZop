@@ -258,13 +258,13 @@ void *listen_to_commands_thread(void *arg)
 
 		if (tok) {
 			if (strcmp(tok, "/shutdown") == 0) {
-				char goodbye_message[] = "Server shutting down in 10 seconds.";
-				broadcast_server_message(goodbye_message);
-
 				unsigned time = 10;
-				while ((time = sleep(time)) != 0) {
-					/* Empty body */
-				}
+				while(time--) {
+					char goodbye_message[50];
+					sprintf(goodbye_message, "Server shutting down in %.2d seconds.", time+1);
+					broadcast_server_message(goodbye_message);
+					sleep(1);
+				} 
 
 				kill_all_clients();
 				pthread_cancel(accept_thread);

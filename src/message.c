@@ -132,7 +132,7 @@ char *message_pack(struct message *m, int *len)
 }
 
 /**
- * Deserialize a message.
+ * @brief Deserialize a message.
  *
  * Unpack/Deserialize a string into a struct message.
  *

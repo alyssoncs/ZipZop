@@ -1,7 +1,7 @@
 #include "client.h"
 
 /**
- * @brief Struct representing a connect client in the server.
+ * @brief Struct representing a connected client in the server.
  */
 struct client {
 	const char *name; 	/**< Client name */

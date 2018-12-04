@@ -30,7 +30,7 @@ const char $\ast$ \hyperlink{message_8h_ac6e3d955212965dc1ab7b5e3f88bc535}{messa
 char $\ast$ \hyperlink{message_8h_a0e07715664284f7a821216ca83317e60}{message\+\_\+pack} (struct \hyperlink{structmessage}{message} $\ast$m, int $\ast$len)
 \begin{DoxyCompactList}\small\item\em Serialize a message. \end{DoxyCompactList}\item 
 struct \hyperlink{structmessage}{message} $\ast$ \hyperlink{message_8h_a3ba54a38dd0b04dea973f33437bb9125}{message\+\_\+unpack} (char $\ast$pack)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Deserialize a message. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
@@ -150,7 +150,9 @@ A pointer to the serialized message. This should be freed when is not necessary 
 \subsubsection{\texorpdfstring{message\+\_\+unpack()}{message\_unpack()}}
 {\footnotesize\ttfamily struct \hyperlink{structmessage}{message}$\ast$ message\+\_\+unpack (\begin{DoxyParamCaption}\item[{char $\ast$}]{pack }\end{DoxyParamCaption})}
 
-Deserialize a message.
+
+
+Deserialize a message. 
 
 Unpack/\+Deserialize a string into a struct message.
 

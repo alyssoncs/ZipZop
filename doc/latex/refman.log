@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.12)  12 NOV 2018 14:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.24)  3 DEC 2018 12:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1118,12 +1118,12 @@ Underfull \hbox (badness 10000) detected at line 141
  []
 
 
-Underfull \hbox (badness 10000) detected at line 159
+Underfull \hbox (badness 10000) detected at line 161
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 162
+Underfull \hbox (badness 10000) detected at line 164
 [][][]
  []
 
@@ -1184,12 +1184,12 @@ Underfull \hbox (badness 10000) detected at line 144
  []
 
 [24]
-Underfull \hbox (badness 10000) detected at line 162
+Underfull \hbox (badness 10000) detected at line 164
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 165
+Underfull \hbox (badness 10000) detected at line 167
 [][][]
  []
 
@@ -1455,7 +1455,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 169.
 Here is how much of TeX's memory you used:
  15519 strings out of 492638
  229554 string characters out of 6131709
- 330414 words of memory out of 5000000
+ 329413 words of memory out of 5000000
  18757 multiletter control sequences out of 15000+600000
  66758 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1469,7 +1469,7 @@ rier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (59 pages, 254075 bytes).
+Output written on refman.pdf (59 pages, 254091 bytes).
 PDF statistics:
  1772 PDF objects out of 2073 (max. 8388607)
  1651 compressed objects within 17 object streams
